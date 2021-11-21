@@ -131,6 +131,7 @@ const onClickSearch = () => {
 --------------------------------------------------------------
 Description: cheack for search match and creat dropdown accordingly */
 const onSearch = () => {
+    document.querySelector('.dropDown').innerHTML = "";
     // Goes over the object to check for a search match.
     for (let keys of Object.keys(PAGES.recipePage)){
         if (keys !== "classes" && keys !== "bottomNavBar" && keys !== "topNavBar"  && keys !== "functions") {

@@ -67,7 +67,7 @@ html, body {
 /* ניווט עליון */
 .topNavBar {
     height: 10vh;
-    width: 53.5vw;
+    width: 55.5vw;
     background: #0D635F;
     position: fixed;
     top: 0;
@@ -234,12 +234,12 @@ html, body {
 
 .searchBox {
     background-color: #E8E8E8;
-    position: absolute;
+    /* position: absolute; */
     top: 23vh;
     width: 74vw;
     height: 10vh;
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%;
+    transform: translateX(-50%); */
     border: none;
     border-radius: 0.4em;
     font-size: 1.4em;
@@ -262,8 +262,8 @@ html, body {
 
 .searchIcon {
     position: absolute;
-    top: 25vh;
-    left: 10vw;
+    top: 2vh;
+    left: 2vw;
     width: 8vw;
 }
 
@@ -275,4 +275,14 @@ html, body {
     transform: translateX(-50%);
     top: 33vh;
     overflow-y: scroll;
+}
+
+.searchBoxContainer{
+    display: flex;
+    width: 74vw;
+    position: absolute;
+    top: 23vh;
+    width: 74vw;
+    left: 50%;
+    transform: translateX(-50%);
 }

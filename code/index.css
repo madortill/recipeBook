@@ -263,3 +263,13 @@ html, body {
     left: 10vw;
     width: 8vw;
 }
+
+.dropDown {
+    width: 73vw;
+    height: 63vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 33vh;
+    overflow-y: scroll;
+}

@@ -109,6 +109,13 @@ const showPage = (event) => {
     // eval(PAGES.strCurrentPage.functions);
 }
 
+/* showRecipe
+--------------------------------------------------------------
+Description: change hyphen to space */
+const showRecipe = () => {
+
+}
+
 /* onClickSearch
 --------------------------------------------------------------
 Description: change hyphen to space */
@@ -117,6 +124,27 @@ const onClickSearch = () => {
     document.querySelector(`.closeSearch`).addEventListener('click', () => {
         document.querySelector('.searchScreen').classList.add("hidden");
     });
+    document.querySelector(`.searchBox`).addEventListener("input", onSearch);
+}
+
+/* onSearch
+--------------------------------------------------------------
+Description: cheack for search match and creat dropdown accordingly */
+const onSearch = () => {
+    // Goes over the object to check for a search match.
+    for (let keys of Object.keys(PAGES.recipePage)){
+        if (keys !== "classes" && keys !== "bottomNavBar" && keys !== "topNavBar"  && keys !== "functions") {
+            //Push the current match to it.
+            for (let key of Object.keys(PAGES.recipePage[keys].recipes)) {
+                let strUserInput = document.querySelector(`.searchBox`).value;
+                if(key.includes(strUserInput) && strUserInput !== ""){
+                    let dropDownItem = El("div", {classes : ["dropDownItem", key], listeners : {click : showRecipe}}, key)
+                    document.querySelector('.dropDown').append(dropDownItem);
+                    // currentRecipe = PAGES.recipeBook[keys].recipes[key];
+                 }
+            }
+        }
+    }
 }
 
 /* showNavBar
@@ -158,6 +186,11 @@ const addSpace = (phrase) => {
     return phrase.replace(/-/g, ' ');
 }
 
+
+//   @template T
+//   @param {keyof HTMLElementTagNameMap} tagName 
+//   @param {{classes?: string[], cls?: string, id?: string, attributes: {[index: string]: string | { toString(): string }}, listeners: Listeners}} options 
+//   @param  {...string | Node} children 
 function El(tagName, options = {}, ...children) {
     let el = Object.assign(document.createElement(tagName), options.fields || {});
     if (options.classes && options.classes.length) el.classList.add(...options.classes);

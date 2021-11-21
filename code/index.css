@@ -147,12 +147,15 @@ html, body {
 }
 
 .mainPageButton {
-    border-top: solid #0D635F 1em;
-    border-bottom: solid #0D635F 1em;
+    border-bottom: solid #0D635F 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100vw;
+}
+
+.mainPageButton.recipe {
+    border-top: solid #0D635F 2em;
 }
 
 .textImg {

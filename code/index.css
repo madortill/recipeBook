@@ -6,6 +6,12 @@
 
 @font-face {
     font-family: Assistant;
+    src: url("../assets/fonts/Assistant-SemiBold.ttf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Assistant;
     src: url("../assets/fonts/Assistant-Bold.ttf");
     font-weight: 800;
 }
@@ -79,7 +85,7 @@ html, body {
 }
 
 .topNavLine {
-    background-color: #E9E8E8;
+    background-color: #E8E8E8;
     height: 8vh;
     width: 0.4vw;
     position: absolute;
@@ -211,4 +217,49 @@ html, body {
     position: absolute;
     bottom: 2vh;
     width: 10vw;
+}
+
+/* חיפוש */
+.darkScreen {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.411);
+    z-index: 1;
+    top: 0;
+}
+
+.searchBox {
+    background-color: #E8E8E8;
+    position: absolute;
+    top: 23vh;
+    width: 74vw;
+    height: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 0.4em;
+    font-size: 1.4em;
+    font-family: "Assistant";
+    font-weight: 200;
+    padding: 0 1em;
+}
+
+.searchBox:focus{
+    outline: none;
+    top: 11vh;
+}
+
+.closeSearch {
+    position: absolute;
+    top: 7vh;
+    right: 5vw;
+    width: 12vw;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 25vh;
+    left: 10vw;
+    width: 8vw;
 }

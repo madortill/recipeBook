@@ -112,8 +112,11 @@ const showPage = (event) => {
 /* onClickSearch
 --------------------------------------------------------------
 Description: change hyphen to space */
-const onClickSearch = (event) => {
-    console.log("חיפוש");
+const onClickSearch = () => {
+    document.querySelector('.searchScreen').classList.remove("hidden");
+    document.querySelector(`.closeSearch`).addEventListener('click', () => {
+        document.querySelector('.searchScreen').classList.add("hidden");
+    });
 }
 
 /* showNavBar

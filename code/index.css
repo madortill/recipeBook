@@ -67,7 +67,7 @@ html, body {
 /* ניווט עליון */
 .topNavBar {
     height: 10vh;
-    width: 55.5vw;
+    width: 57.5vw;
     background: #0D635F;
     position: fixed;
     top: 0;
@@ -262,7 +262,6 @@ html, body {
 
 .searchIcon {
     position: absolute;
-    top: 2vh;
     left: 2vw;
     width: 8vw;
 }
@@ -280,9 +279,11 @@ html, body {
 .searchBoxContainer{
     display: flex;
     width: 74vw;
+    height: 10vh;
     position: absolute;
     top: 23vh;
     width: 74vw;
     left: 50%;
     transform: translateX(-50%);
+    align-items: center;
 }

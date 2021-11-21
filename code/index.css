@@ -61,7 +61,7 @@ html, body {
 /* ניווט עליון */
 .topNavBar {
     height: 10vh;
-    width: 53.5%;
+    width: 53.5vw;
     background: #0D635F;
     position: fixed;
     top: 0;

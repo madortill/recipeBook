@@ -71,6 +71,8 @@ let PAGES = {
 
 // varubles
 let strCurrentPage = "mainPage";
+let strFormerPage = "mainPage";
+
 
 /* loading function
 --------------------------------------------------------------
@@ -90,23 +92,28 @@ window.addEventListener(`load`, () => {
 Description: change hyphen to space */
 const showPage = (event) => {
     document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
-    strCurrentPage = event.currentTarget.classList[1] + "Page";
-    console.log(strCurrentPage);
+    if (event.currentTarget.classList[1] !== "x") {   
+        strFormerPage = strCurrentPage;
+        strCurrentPage = event.currentTarget.classList[1] + "Page";
+    } else {
+        strCurrentPage = strFormerPage;
+    }
+
     document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
     if (PAGES[strCurrentPage].listeners) {
         for (key of Object.keys(PAGES[strCurrentPage].listeners)) {
             document.querySelector(`.${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
         }
     }
-    // document.querySelector(`.mainPage`).innerHTML = "";
-    // for (elment of Object.keys(PAGES[strCurrentPage].content)) {
-    //     for (key of Object.keys(PAGES[strCurrentPage].content[elment])) {
-    //         let text = El(elment, { cls: key}, PAGES[strCurrentPage].content[elment][key]);
-    //         document.querySelector(`.mainPage`).append(text);
-    //     }
-    // }
     showNavBar();
     // eval(PAGES.strCurrentPage.functions);
+}
+
+/* onClickSearch
+--------------------------------------------------------------
+Description: change hyphen to space */
+const onClickSearch = (event) => {
+    console.log("חיפוש");
 }
 
 /* showNavBar
@@ -122,7 +129,12 @@ const showNavBar = () => {
                 { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: `${key.slice(4)} ${key.slice(11)}`},
                 listeners: {click : showPage}});
                 document.querySelector(`.topNavBar`).append(navBarItem);
-            } else {
+            } else if (key === "img_SearchIcon") {
+                navBarItem = El(key.slice(0,3), 
+                { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: key.slice(4)},
+                listeners: {click : onClickSearch}});
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            }else {
                 navBarItem = El(key.slice(0,3), 
                 { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: key.slice(4)}});
                 document.querySelector(`.topNavBar`).append(navBarItem);

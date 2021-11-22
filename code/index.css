@@ -67,12 +67,12 @@ html, body {
 /* ניווט עליון */
 .topNavBar {
     height: 10vh;
-    width: 57.5vw;
+    width: 53.5vw;
     background: #0D635F;
     position: fixed;
     top: 0;
-    padding-left: 5em;
-    padding-right: 6em;
+    padding-left: 21.5vw;
+    padding-right: 25vw;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

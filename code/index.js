@@ -131,7 +131,7 @@ const showPage = (event) => {
                 El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/recipe/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
                 El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
             );
-            document.querySelector(`.bottomNavBar`).append(bottomNavBarTopic)
+            document.querySelector(`.${strCurrentPage} .bottomNavBar`).append(bottomNavBarTopic)
         }
         document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
     }

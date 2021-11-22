@@ -321,3 +321,35 @@ html, body {
 .bold {
     font-weight: 500;
 }
+
+.recipesScrollContainer {
+    position: absolute;
+    top: 12vh;
+    overflow-y: scroll;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.recipeDispaly  {
+    height: 18vh;
+    width: 42vw;
+    margin: 0.7em 0;
+}
+
+.recipeDispalyPic {
+    height: 18vh;
+    width: 42vw;
+}
+
+.recipeDispalyText {
+    color: white;
+    width: 40vw;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.527);
+    position: relative;
+    bottom: 6vh;
+    font-weight: 400;
+    padding: 1vh 1vw;
+}

@@ -285,10 +285,10 @@ html, body {
 .dropDownItem {
     background-color: #E8E8E8;
     width: 74vw;
-    height: 5vh;
+    height: 4.5vh;
     border-radius: 0.4em;
     margin-top: 0.3em;
-    padding-top: 0.3em;
+    padding-top: 0.5em;
     text-align: center;
 }
 
@@ -364,7 +364,7 @@ html, body {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.527);
     position: relative;
-    bottom: 6vh;
+    bottom: 5vh;
     font-weight: 400;
     padding: 1vh 1vw;
 }

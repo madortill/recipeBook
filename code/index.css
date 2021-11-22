@@ -288,3 +288,36 @@ html, body {
     transform: translateX(-50%);
     align-items: center;
 }
+ 
+
+/* מתכונים */
+
+.bottomNavBar {
+    height: 13vh;
+    position: fixed;
+    bottom: 0;
+    overflow-x: scroll;
+    width: 100vw;
+    display: flex;
+}
+
+.bottomNavBar::-webkit-scrollbar {
+    display: none;
+}
+
+.bottomNavBarPic {
+    height: 5vh;
+    padding:  0 2em;
+}
+
+.bottomNavBarTopic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3em;
+}
+
+.bold {
+    font-weight: 500;
+}

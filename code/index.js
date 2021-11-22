@@ -46,9 +46,16 @@ let PAGES = {
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
-        bottomNavBar : [], // סמלים של הקטגוריות של המתכונים 
+        bottomNavBar : {
+            salads : ["סלטים", "green_salads"],
+            starters : ["מנות ראשונות", "green_starters"],
+            sides : ["מנות ביניים", "green_sidedishes"],
+            vegan : ["מנות טבעוניות", "green_vegan"],
+            mainCourse : ["מנות עיקריות", "green_maincourse"],
+            baking : ["קונדיטוריה", "green_baking"],
+        }, // סמלים של הקטגוריות של המתכונים 
         classes : [``],// מה שצריך להראות או להסתיר
-        functions : [``], // פונקציות שצריכות לפעול
+        // functions : [``], // פונקציות שצריכות לפעול
         subTopic : { // תת נושא
             picDisplay : [``], // תצוגה של תמונות
             recipes : {
@@ -72,6 +79,7 @@ let PAGES = {
 // varubles
 let strCurrentPage = "mainPage";
 let strFormerPage = "mainPage";
+let strCurrentRecipeTopic = "salads";
 
 
 /* loading function
@@ -98,23 +106,52 @@ const showPage = (event) => {
     } else {
         strCurrentPage = strFormerPage;
     }
-
+    // שם מאזינים אם צריך
     document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
     if (PAGES[strCurrentPage].listeners) {
         for (key of Object.keys(PAGES[strCurrentPage].listeners)) {
             document.querySelector(`.${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
         }
     }
+    // קורא לפונקציות אם צריך
+    if (PAGES[strCurrentPage].functions) {
+        for (let i = 0; i < PAGES[strCurrentPage].functions.length; i++) {
+            eval(PAGES[strCurrentPage].functions[i]);
+        }
+    }
+    // מראה בר תחתון
+    if (PAGES[strCurrentPage].bottomNavBar) {
+        document.querySelector(`.bottomNavBar`).scrollLeft = 0;
+        for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {
+            let bottomNavBarTopic = El("div", 
+            {attributes: {class: `bottomNavBarTopic ${key}`}, 
+            listeners : {click : showRecipeTopic} },
+                El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/recipe/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
+                El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
+            );
+            document.querySelector(`.bottomNavBar`).append(bottomNavBarTopic)
+        }
+        document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
+    }
     showNavBar();
-    // eval(PAGES.strCurrentPage.functions);
 }
 
 /* showRecipe
 --------------------------------------------------------------
 Description: change hyphen to space */
 const showRecipe = () => {
+   
 
 }
+
+/* showRecipeTopic
+--------------------------------------------------------------
+Description: change hyphen to space */
+const showRecipeTopic = (event) => {
+   console.log(event.currentTarget.classList[1]);
+
+}
+
 
 /* onClickSearch
 --------------------------------------------------------------

@@ -314,6 +314,7 @@ html, body {
     overflow-x: scroll;
     width: 100vw;
     display: flex;
+    background-color: #E8E8E8;
 }
 
 .bottomNavBar::-webkit-scrollbar {

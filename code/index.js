@@ -88,6 +88,36 @@ let PAGES = {
                     ingredients : [],
                     preparation : [],
                 },
+                "2סלט-מלפפונים-ובצל" : {
+                    pic: `cucamberSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "2סלט-טחינה" : {
+                    pic: `tahinaSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "2סלט-קולסלאו" : {
+                    pic: `kolslowSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "3סלט-מלפפונים-ובצל" : {
+                    pic: `cucamberSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "3סלט-טחינה" : {
+                    pic: `tahinaSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "3סלט-קולסלאו" : {
+                    pic: `kolslowSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
             }, 
         }
     },
@@ -131,6 +161,7 @@ const showPage = (event) => {
         }
     }
     // מראה בר תחתון
+    document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
     if (PAGES[strCurrentPage].bottomNavBar) {
         document.querySelector(`.bottomNavBar`).scrollLeft = 0;
         for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {

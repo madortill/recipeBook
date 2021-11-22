@@ -268,13 +268,28 @@ html, body {
 }
 
 .dropDown {
-    width: 73vw;
-    height: 63vh;
+    width: 74vw;
+    height: 53vh;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 33vh;
     overflow-y: scroll;
+}
+
+
+.dropDown::-webkit-scrollbar {
+    display: none;
+}
+
+.dropDownItem {
+    background-color: #E8E8E8;
+    width: 74vw;
+    height: 5vh;
+    border-radius: 0.4em;
+    margin-top: 0.3em;
+    padding-top: 0.3em;
+    text-align: center;
 }
 
 .searchBoxContainer{

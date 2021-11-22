@@ -55,21 +55,36 @@ let PAGES = {
             baking : ["קונדיטוריה", "green_baking"],
         }, // סמלים של הקטגוריות של המתכונים 
         classes : [``],// מה שצריך להראות או להסתיר
-        // functions : [``], // פונקציות שצריכות לפעול
+        functions : [`showRecipeTopic()`], // פונקציות שצריכות לפעול
         recipes : {
             salads : { // תת נושא
                 "סלט-מלפפונים-ובצל" : {
-                    pic: `cucamberSalad.jpeg`,
+                    pic: `cucamberSalad`,
                     ingredients : [],
                     preparation : [],
                 },
                 "סלט-טחינה" : {
-                    pic: `tahinaSalad.jpeg`,
+                    pic: `tahinaSalad`,
                     ingredients : [],
                     preparation : [],
                 },
                 "סלט-קולסלאו" : {
-                    pic: ``,
+                    pic: `kolslowSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "1סלט-מלפפונים-ובצל" : {
+                    pic: `cucamberSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "1סלט-טחינה" : {
+                    pic: `tahinaSalad`,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "1סלט-קולסלאו" : {
+                    pic: `kolslowSalad`,
                     ingredients : [],
                     preparation : [],
                 },
@@ -115,12 +130,6 @@ const showPage = (event) => {
             document.querySelector(`.${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
         }
     }
-    // קורא לפונקציות אם צריך
-    if (PAGES[strCurrentPage].functions) {
-        for (let i = 0; i < PAGES[strCurrentPage].functions.length; i++) {
-            eval(PAGES[strCurrentPage].functions[i]);
-        }
-    }
     // מראה בר תחתון
     if (PAGES[strCurrentPage].bottomNavBar) {
         document.querySelector(`.bottomNavBar`).scrollLeft = 0;
@@ -135,14 +144,20 @@ const showPage = (event) => {
         }
         document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
     }
+    // קורא לפונקציות אם צריך
+    if (PAGES[strCurrentPage].functions) {
+        for (let i = 0; i < PAGES[strCurrentPage].functions.length; i++) {
+            eval(PAGES[strCurrentPage].functions[i]);
+        }
+    }
     showNavBar();
 }
 
 /* showRecipe
 --------------------------------------------------------------
 Description: change hyphen to space */
-const showRecipe = () => {
-   
+const showRecipe = (event) => {
+   console.log(event.currentTarget.classList[1]);
 
 }
 
@@ -152,14 +167,25 @@ Description: change hyphen to space */
 const showRecipeTopic = (event) => {
     // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
     document.querySelector(`.${strCurrentRecipeTopic}`).classList.remove("bold");
-    strCurrentRecipeTopic = event.currentTarget.classList[1]
-    document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
-    for(let key of Object.keys(PAGES[strCurrentPage].recipes[strCurrentRecipeTopic])) {
-        El("div", )
-        console.log(key);
+    if(event) {
+        strCurrentRecipeTopic = event.currentTarget.classList[1];
+    } else {
+        strCurrentRecipeTopic = "salads"
     }
-
-
+    document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.recipesScrollContainer`).innerHTML = "";
+    for(let key of Object.keys(PAGES[strCurrentPage].recipes[strCurrentRecipeTopic])) {
+        let recipeDispaly = El("div",
+        {attributes: {class: `recipeDispaly ${key}`}, 
+        listeners : {click : showRecipe}},
+            El("img",
+            {attributes: {class: `recipeDispalyPic`, 
+            src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][key].pic}.jpeg`}}),
+            El("div", {cls: `recipeDispalyText`}, addSpace(key))
+        )
+        document.querySelector(`.recipesScrollContainer`).append(recipeDispaly)
+    }
 }
 
 

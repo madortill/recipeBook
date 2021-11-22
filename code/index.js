@@ -56,23 +56,25 @@ let PAGES = {
         }, // סמלים של הקטגוריות של המתכונים 
         classes : [``],// מה שצריך להראות או להסתיר
         // functions : [``], // פונקציות שצריכות לפעול
-        subTopic : { // תת נושא
-            picDisplay : [``], // תצוגה של תמונות
-            recipes : {
-                "מאכל" : {
+        recipes : {
+            salads : { // תת נושא
+                "סלט-מלפפונים-ובצל" : {
+                    pic: `cucamberSalad.jpeg`,
                     ingredients : [],
                     preparation : [],
                 },
-                "1מאכל" : {
+                "סלט-טחינה" : {
+                    pic: `tahinaSalad.jpeg`,
                     ingredients : [],
                     preparation : [],
                 },
-                "2מאכל" : {
+                "סלט-קולסלאו" : {
+                    pic: ``,
                     ingredients : [],
                     preparation : [],
                 },
-            },
-        },
+            }, 
+        }
     },
 }
 
@@ -125,7 +127,7 @@ const showPage = (event) => {
         for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {
             let bottomNavBarTopic = El("div", 
             {attributes: {class: `bottomNavBarTopic ${key}`}, 
-            listeners : {click : showRecipeTopic} },
+            listeners : {click : showRecipeTopic}},
                 El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/recipe/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
                 El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
             );
@@ -148,7 +150,15 @@ const showRecipe = () => {
 --------------------------------------------------------------
 Description: change hyphen to space */
 const showRecipeTopic = (event) => {
-   console.log(event.currentTarget.classList[1]);
+    // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
+    document.querySelector(`.${strCurrentRecipeTopic}`).classList.remove("bold");
+    strCurrentRecipeTopic = event.currentTarget.classList[1]
+    document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
+    for(let key of Object.keys(PAGES[strCurrentPage].recipes[strCurrentRecipeTopic])) {
+        El("div", )
+        console.log(key);
+    }
+
 
 }
 
@@ -170,18 +180,17 @@ Description: cheack for search match and creat dropdown accordingly */
 const onSearch = () => {
     document.querySelector('.dropDown').innerHTML = "";
     // Goes over the object to check for a search match.
-    for (let keys of Object.keys(PAGES.recipePage)){
-        if (keys !== "classes" && keys !== "bottomNavBar" && keys !== "topNavBar"  && keys !== "functions") {
-            //Push the current match to it.
-            for (let key of Object.keys(PAGES.recipePage[keys].recipes)) {
-                let strUserInput = document.querySelector(`.searchBox`).value;
-                if(key.includes(strUserInput) && strUserInput !== ""){
-                    let dropDownItem = El("div", {classes : ["dropDownItem", key], listeners : {click : showRecipe}}, key)
-                    document.querySelector('.dropDown').append(dropDownItem);
-                    // currentRecipe = PAGES.recipeBook[keys].recipes[key];
-                 }
-            }
+    for (let keys of Object.keys(PAGES.recipePage.recipes)){
+        //Push the current match to it.
+        for (let key of Object.keys(PAGES.recipePage.recipes[keys])) {
+            let strUserInput = document.querySelector(`.searchBox`).value;
+            if(key.includes(strUserInput) && strUserInput !== ""){
+                let dropDownItem = El("div", {classes : ["dropDownItem", key], listeners : {click : showRecipe}}, addSpace(key))
+                document.querySelector('.dropDown').append(dropDownItem);
+                // currentRecipe = PAGES.recipeBook[keys][key];
+                }
         }
+    
     }
 }
 

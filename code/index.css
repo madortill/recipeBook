@@ -371,7 +371,7 @@ html, body {
     position: absolute;
     top: 10vh;
     overflow-y: scroll;
-    height: 90vh;
+    height: 80vh;
 }
 
 .recipeContent::-webkit-scrollbar {

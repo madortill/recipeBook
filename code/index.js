@@ -202,18 +202,20 @@ const showPage = (event) => {
 --------------------------------------------------------------
 Description: change hyphen to space */
 const showRecipe = (event) => {
+    // שומר מתכון וקטגוריה נוכחיים
     let strCurrentRecipe = event.currentTarget.classList[1];
     if(event.currentTarget.classList[2]) {
         strCurrentRecipeTopic = event.currentTarget.classList[2];
     }
-    // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
-    document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
-    strCurrentPage = "recipePage";
-    document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
-    // מראה תפריט עליון
-    showNavBar();
+    // אם באים מחיפוש
     if (document.querySelector('.searchScreen').classList[2] === undefined) {
         document.querySelector('.searchScreen').classList.add("hidden");
+        // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
+        document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
+        strCurrentPage = "recipePage";
+        document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
+        // מראה תפריט עליון
+        showNavBar();
     }
     // עוד לא ברור עם לעשות דיספלי נון או למחוק תוכן!!!!!
     document.querySelector(`.recipesScrollContainer`).classList.add("hidden");

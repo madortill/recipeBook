@@ -293,9 +293,17 @@ const showRecipeTopic = (event) => {
 Description:  */
 const onClickCheckBox = (event) => {
     if (event.currentTarget.classList[0] === "preparationCheckPic") {
-        document.querySelector(`.${event.currentTarget.classList[1]}`).classList.remove("gray");
+        if(event.currentTarget.classList[2] === "gray") {
+            document.querySelector(`.${event.currentTarget.classList[1]}`).classList.remove("gray");
+        } else {
+            document.querySelector(`.${event.currentTarget.classList[1]}`).classList.add("gray");
+        }
     } else {
-        document.querySelector(`.${event.currentTarget.classList[1]}`).setAttribute("src", `../assets/images/grapics/recipe/checkbox_v.svg`);
+        if (document.querySelector(`.${event.currentTarget.classList[1]}`).getAttribute("src") === `../assets/images/grapics/recipe/checkbox_v.svg`) {
+            document.querySelector(`.${event.currentTarget.classList[1]}`).setAttribute("src", `../assets/images/grapics/recipe/checkbox_blank.svg`);
+        } else {
+            document.querySelector(`.${event.currentTarget.classList[1]}`).setAttribute("src", `../assets/images/grapics/recipe/checkbox_v.svg`);
+        }
     }
 
 }

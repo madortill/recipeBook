@@ -60,8 +60,20 @@ let PAGES = {
             salads : { // תת נושא
                 "סלט-מלפפונים-ובצל" : {
                     pic: `cucamberSalad`,
-                    ingredients : [],
-                    preparation : [],
+                    description: `תיאור די קצר של המנה משפט בערך שאומר מה זה מלפפון ומה זה בצל נגיד.`,
+                    ingredients : [
+                        `מלפפון`,
+                        `בצל סגול/לבן`,
+                        `מלח`,
+                        `פלפל`,
+                        `שמן`,
+                        `מיץ לימון`,
+                    ],
+                    preparation : [
+                        `מורידים ראש וזנב, עושים 2-3 פסים למלפפון עם קולפן.`,
+                        `חותכים את המלפפונים בצורה אלכסונית.`,
+                        `מתבלים ומוסיפים פטרוזיליה או שמיר.`,
+                    ],
                 },
                 "סלט-טחינה" : {
                     pic: `tahinaSalad`,
@@ -144,25 +156,26 @@ window.addEventListener(`load`, () => {
 
 /* showPage
 --------------------------------------------------------------
-Description: change hyphen to space */
+Description:  */
 const showPage = (event) => {
+    // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
     document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
-    if (event.currentTarget.classList[1] !== "x") {   
+    if (event.currentTarget.classList[1] !== "x") {   // מטפל במקרה של תפריט
         strFormerPage = strCurrentPage;
         strCurrentPage = event.currentTarget.classList[1] + "Page";
     } else {
         strCurrentPage = strFormerPage;
     }
-    // שם מאזינים אם צריך
     document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
+    // שם מאזינים אם צריך
     if (PAGES[strCurrentPage].listeners) {
         for (key of Object.keys(PAGES[strCurrentPage].listeners)) {
             document.querySelector(`.${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
         }
     }
     // מראה בר תחתון
-    document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
     if (PAGES[strCurrentPage].bottomNavBar) {
+        document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
         document.querySelector(`.bottomNavBar`).scrollLeft = 0;
         for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {
             let bottomNavBarTopic = El("div", 
@@ -181,6 +194,7 @@ const showPage = (event) => {
             eval(PAGES[strCurrentPage].functions[i]);
         }
     }
+    // מראה תפריט עליון
     showNavBar();
 }
 
@@ -188,8 +202,60 @@ const showPage = (event) => {
 --------------------------------------------------------------
 Description: change hyphen to space */
 const showRecipe = (event) => {
-   console.log(event.currentTarget.classList[1]);
-
+    let strCurrentRecipe = event.currentTarget.classList[1];
+    if(event.currentTarget.classList[2]) {
+        strCurrentRecipeTopic = event.currentTarget.classList[2];
+    }
+    // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
+    document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
+    strCurrentPage = "recipePage";
+    document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
+    // מראה תפריט עליון
+    showNavBar();
+    if (document.querySelector('.searchScreen').classList[2] === undefined) {
+        document.querySelector('.searchScreen').classList.add("hidden");
+    }
+    // עוד לא ברור עם לעשות דיספלי נון או למחוק תוכן!!!!!
+    document.querySelector(`.recipesScrollContainer`).classList.add("hidden");
+    document.querySelector(`.bottomNavBar`).classList.add("hidden");
+    if(document.querySelector(`.recipeContent`)) {
+        document.querySelector(`.recipeContent`).innerHTML = "";
+    }
+    // יוצר מתכון ומכניס לדף
+    let recipeContent = El("div", {cls : "recipeContent"},
+        El("img", 
+        {attributes: {class: `recipeContentPic`, 
+        src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].pic}.jpeg`}}),
+        El("div", {cls : "recipeContentHeadline"}, addSpace(strCurrentRecipe)),
+        El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].description),
+        El("div", {cls : "ingredientsContainer"},
+            El("div", {cls : "recipeContentIngredientHead"}, "מצרכים"),
+        ),
+        El("div", {cls : "preparationsContainer"},
+            El("div", {cls : "recipeContentIngredientHead"}, "אופן הכנה"),
+        ),
+    );
+    document.querySelector(`.recipePage`).append(recipeContent);
+    // מכניס מצרכים
+    for (let i = 0; i < PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].ingredients.length; i++ ) {
+        let ingredient = El("div", {cls : "ingredientContainer"},
+        El("img",{attributes: {class: `ingredientCheckPic ingredientCheckPic${i}`, 
+        src : `../assets/images/grapics/recipe/checkbox_blank.svg`},
+        listeners : {click: onClickCheckBox}}),
+        PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].ingredients[i]
+        );
+        document.querySelector(`.ingredientsContainer`).append(ingredient);
+    }
+    // מכניס אופן הכנה
+    for (let i = 0; i < PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].preparation.length; i++ ) {
+        let preparation = El("div", {cls : "preparationContainer"},
+        El("img",{attributes: {class: `preparationCheckPic preparationCheckPic${i} gray`, 
+        src : `../assets/images/grapics/recipe/round_checkbox.svg`},
+        listeners : {click: onClickCheckBox}}),
+        PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].preparation[i]
+        );
+        document.querySelector(`.preparationsContainer`).append(preparation);
+    }
 }
 
 /* showRecipeTopic
@@ -207,22 +273,34 @@ const showRecipeTopic = (event) => {
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
     for(let key of Object.keys(PAGES[strCurrentPage].recipes[strCurrentRecipeTopic])) {
-        let recipeDispaly = El("div",
-        {attributes: {class: `recipeDispaly ${key}`}, 
+        let recipeDisplay = El("div",
+        {attributes: {class: `recipeDisplay ${key}`}, 
         listeners : {click : showRecipe}},
             El("img",
-            {attributes: {class: `recipeDispalyPic`, 
-            src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][key].pic}.jpeg`}}),
-            El("div", {cls: `recipeDispalyText`}, addSpace(key))
+            {attributes: {class: `recipeDisplayPic`, 
+            src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][key].pic}.jpeg`},}),
+            El("div", {cls: `recipeDisplayText`}, addSpace(key))
         )
-        document.querySelector(`.recipesScrollContainer`).append(recipeDispaly)
+        document.querySelector(`.recipesScrollContainer`).append(recipeDisplay)
     }
 }
 
 
+/* onClickCheckBox
+--------------------------------------------------------------
+Description:  */
+const onClickCheckBox = (event) => {
+    if (event.currentTarget.classList[0] === "preparationCheckPic") {
+        document.querySelector(`.${event.currentTarget.classList[1]}`).classList.remove("gray");
+    } else {
+        document.querySelector(`.${event.currentTarget.classList[1]}`).setAttribute("src", `../assets/images/grapics/recipe/checkbox_v.svg`);
+    }
+
+}
+
 /* onClickSearch
 --------------------------------------------------------------
-Description: change hyphen to space */
+Description:  */
 const onClickSearch = () => {
     document.querySelector('.searchScreen').classList.remove("hidden");
     document.querySelector(`.closeSearch`).addEventListener('click', () => {
@@ -236,16 +314,15 @@ const onClickSearch = () => {
 Description: cheack for search match and creat dropdown accordingly */
 const onSearch = () => {
     document.querySelector('.dropDown').innerHTML = "";
-    // Goes over the object to check for a search match.
+    // עובר על כול הקטגוריות של המתכונים
     for (let keys of Object.keys(PAGES.recipePage.recipes)){
-        //Push the current match to it.
+        // בכול קטגוריה, עובר על כול המתכונים ומחפש התאמה לחיפוש
         for (let key of Object.keys(PAGES.recipePage.recipes[keys])) {
             let strUserInput = document.querySelector(`.searchBox`).value;
             if(key.includes(strUserInput) && strUserInput !== ""){
-                let dropDownItem = El("div", {classes : ["dropDownItem", key], listeners : {click : showRecipe}}, addSpace(key))
+                let dropDownItem = El("div", {classes : ["dropDownItem", key, keys], listeners : {click : showRecipe}}, addSpace(key))
                 document.querySelector('.dropDown').append(dropDownItem);
-                // currentRecipe = PAGES.recipeBook[keys][key];
-                }
+            }
         }
     
     }
@@ -255,29 +332,30 @@ const onSearch = () => {
 --------------------------------------------------------------
 Description: change hyphen to space */
 const showNavBar = () => {
+    // מוחק מידע קודם ומכניס תפריט ניווט עליון לפי העמוד הנוכחי 
     document.querySelector(`.topNavBar`).innerHTML = "";
     for (key of Object.keys(PAGES[strCurrentPage].topNavBar)) {
         let navBarItem
         if (key.slice(0,3) === "img") {
-            if (key.includes("button")) {
+            if (key.includes("button")) { // כפתור עליון שמאלי
                 navBarItem = El(key.slice(0,3), 
                 { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: `${key.slice(4)} ${key.slice(11)}`},
                 listeners: {click : showPage}});
                 document.querySelector(`.topNavBar`).append(navBarItem);
-            } else if (key === "img_SearchIcon") {
+            } else if (key === "img_SearchIcon") { // חיפוש
                 navBarItem = El(key.slice(0,3), 
                 { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: key.slice(4)},
                 listeners: {click : onClickSearch}});
                 document.querySelector(`.topNavBar`).append(navBarItem);
-            }else {
+            }else { // סמלים
                 navBarItem = El(key.slice(0,3), 
                 { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: key.slice(4)}});
                 document.querySelector(`.topNavBar`).append(navBarItem);
             }
-        } else if (key.slice(0,3) === "div"){
+        } else if (key.slice(0,3) === "div"){ // כותרת
             navBarItem = El(key.slice(0,3), { cls: key.slice(4)}, PAGES[strCurrentPage].topNavBar[key]);
             document.querySelector(`.topNavBar`).append(navBarItem);
-        } else {
+        } else { // צבע רקע
             document.querySelector(`.topNavBar`).style[key] = PAGES[strCurrentPage].topNavBar[key];
         }
     }

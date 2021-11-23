@@ -4,7 +4,7 @@ let PAGES = {
         topNavBar : {
             backgroundColor : `#0D635F`,
             img_button_about : `about_icon.svg`, // אודות / איקס / תפריט
-            div_topNavText : `לומדת טבחים`,
+            div_topNavText_main : `לומדת טבחים`,
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
@@ -16,7 +16,7 @@ let PAGES = {
             img_button_menu : `3lines_white.svg`, // אודות / איקס / תפריט
             img_SearchIcon : `search_white.svg`, 
             div_topNavLine : ``,
-            div_topNavText : `אודות`,
+            div_topNavText_about : `אודות`,
             img_tillLogo : `about_icon.svg`,
         },
         listeners : {
@@ -42,7 +42,7 @@ let PAGES = {
             img_SearchIcon : `search_white.svg`, 
             div_topNavLine : ``,
             img_topNavTextIcon : `white_cookbook.svg`,
-            div_topNavText : `ספר מתכונים`,
+            div_topNavText_recipe : `ספר מתכונים`,
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
@@ -196,6 +196,10 @@ const showPage = (event) => {
     }
     // מראה תפריט עליון
     showNavBar();
+    if(document.querySelector(`.recipeContent`)) {
+        let recipeContent = document.querySelector(`.recipeContent`);
+        document.querySelector(`.recipePage`).removeChild(recipeContent);
+    }
 }
 
 /* showRecipe
@@ -218,10 +222,11 @@ const showRecipe = (event) => {
         showNavBar();
     }
     // עוד לא ברור עם לעשות דיספלי נון או למחוק תוכן!!!!!
-    document.querySelector(`.recipesScrollContainer`).classList.add("hidden");
-    document.querySelector(`.bottomNavBar`).classList.add("hidden");
+    document.querySelector(`.recipesScrollContainer`).innerHTML = "";
+    document.querySelector(`.bottomNavBar`).innerHTML = "";
     if(document.querySelector(`.recipeContent`)) {
-        document.querySelector(`.recipeContent`).innerHTML = "";
+        let recipeContent = document.querySelector(`.recipeContent`);
+        document.querySelector(`.recipePage`).removeChild(recipeContent);
     }
     // יוצר מתכון ומכניס לדף
     let recipeContent = El("div", {cls : "recipeContent"},
@@ -363,8 +368,13 @@ const showNavBar = () => {
                 document.querySelector(`.topNavBar`).append(navBarItem);
             }
         } else if (key.slice(0,3) === "div"){ // כותרת
-            navBarItem = El(key.slice(0,3), { cls: key.slice(4)}, PAGES[strCurrentPage].topNavBar[key]);
-            document.querySelector(`.topNavBar`).append(navBarItem);
+            if(key.slice(4,14) === "topNavText") {
+                navBarItem = El(key.slice(0,3), { classes: [key.slice(4,14), key.slice(15)], listeners : {click: showPage}}, PAGES[strCurrentPage].topNavBar[key]);
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            } else {
+                navBarItem = El(key.slice(0,3), { cls: key.slice(4)}, PAGES[strCurrentPage].topNavBar[key]);
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            }
         } else { // צבע רקע
             document.querySelector(`.topNavBar`).style[key] = PAGES[strCurrentPage].topNavBar[key];
         }

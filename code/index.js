@@ -33,6 +33,28 @@ let PAGES = {
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_black.svg`,
         },
+        functions : [`showMenu()`], // פונקציות שצריכות לפעול
+        content : {
+            recipe : ["ספר מתכונים","black_cookbook", { // תפריט נפתח
+                salads : ["סלטים", "black_salads"],
+                starters : ["מנות ראשונות", "black_starters"],
+                sides : ["מנות ביניים", "black_sidedishes"],
+                vegan : ["מנות טבעוניות", "black_vegan"],
+                mainCourse : ["מנות עיקריות", "black_maincourse"],
+                baking : ["קונדיטוריה", "black_baking"],
+            }],
+            learning : ["חומרי לימוד","black_materials", { // תפריט נפתח
+                subTopic : ["שם הקטגוריה", "black_starters"],
+            }],
+            gallery : ["תמונות","black_gallery", { // תפריט נפתח
+                subTopic : ["שם הקטגוריה", "black_starters"],
+            }],
+            videos : ["סרטוני הדרכה","black_videos", { // תפריט נפתח
+                recipes : ["מתכונים", "black_cookbook"],
+                safety : ["בטיחות", "black_protection"],
+                publicHealth : [`בוה"צ`, "black_health"],
+            }],
+        }
     },
     // ספר מתכונים
     recipePage : { 
@@ -46,17 +68,17 @@ let PAGES = {
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
-        bottomNavBar : {
+        bottomNavBar : { // סמלים של הקטגוריות של המתכונים
             salads : ["סלטים", "green_salads"],
             starters : ["מנות ראשונות", "green_starters"],
             sides : ["מנות ביניים", "green_sidedishes"],
             vegan : ["מנות טבעוניות", "green_vegan"],
             mainCourse : ["מנות עיקריות", "green_maincourse"],
             baking : ["קונדיטוריה", "green_baking"],
-        }, // סמלים של הקטגוריות של המתכונים 
+        },  
         classes : [``],// מה שצריך להראות או להסתיר
-        functions : [`showRecipeTopic()`], // פונקציות שצריכות לפעול
-        recipes : {
+        functions : [`showTopics()`], // פונקציות שצריכות לפעול
+        content : {
             salads : { // תת נושא
                 "סלט-מלפפונים-ובצל" : {
                     pic: `cucamberSalad`,
@@ -77,56 +99,80 @@ let PAGES = {
                 },
                 "סלט-טחינה" : {
                     pic: `tahinaSalad`,
+                    description: ``,
                     ingredients : [],
                     preparation : [],
                 },
                 "סלט-קולסלאו" : {
                     pic: `kolslowSalad`,
+                    description: ``,
                     ingredients : [],
                     preparation : [],
                 },
                 "1סלט-מלפפונים-ובצל" : {
                     pic: `cucamberSalad`,
-                    ingredients : [],
-                    preparation : [],
-                },
-                "1סלט-טחינה" : {
-                    pic: `tahinaSalad`,
-                    ingredients : [],
-                    preparation : [],
-                },
-                "1סלט-קולסלאו" : {
-                    pic: `kolslowSalad`,
+                    description: ``,
                     ingredients : [],
                     preparation : [],
                 },
                 "2סלט-מלפפונים-ובצל" : {
                     pic: `cucamberSalad`,
-                    ingredients : [],
-                    preparation : [],
-                },
-                "2סלט-טחינה" : {
-                    pic: `tahinaSalad`,
-                    ingredients : [],
-                    preparation : [],
-                },
-                "2סלט-קולסלאו" : {
-                    pic: `kolslowSalad`,
+                    description: ``,
                     ingredients : [],
                     preparation : [],
                 },
                 "3סלט-מלפפונים-ובצל" : {
                     pic: `cucamberSalad`,
+                    description: ``,
                     ingredients : [],
                     preparation : [],
                 },
-                "3סלט-טחינה" : {
+            }, 
+            starters : { // תת נושא
+                "סלט-מלפפונים-ובצל" : {
+                    pic: `cucamberSalad`,
+                    description: `תיאור די קצר של המנה משפט בערך שאומר מה זה מלפפון ומה זה בצל נגיד.`,
+                    ingredients : [
+                        `מלפפון`,
+                        `בצל סגול/לבן`,
+                        `מלח`,
+                        `פלפל`,
+                        `שמן`,
+                        `מיץ לימון`,
+                    ],
+                    preparation : [
+                        `מורידים ראש וזנב, עושים 2-3 פסים למלפפון עם קולפן.`,
+                        `חותכים את המלפפונים בצורה אלכסונית.`,
+                        `מתבלים ומוסיפים פטרוזיליה או שמיר.`,
+                    ],
+                },
+                "סלט-טחינה" : {
                     pic: `tahinaSalad`,
+                    description: ``,
                     ingredients : [],
                     preparation : [],
                 },
-                "3סלט-קולסלאו" : {
+                "סלט-קולסלאו" : {
                     pic: `kolslowSalad`,
+                    description: ``,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "1סלט-מלפפונים-ובצל" : {
+                    pic: `cucamberSalad`,
+                    description: ``,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "2סלט-מלפפונים-ובצל" : {
+                    pic: `cucamberSalad`,
+                    description: ``,
+                    ingredients : [],
+                    preparation : [],
+                },
+                "3סלט-מלפפונים-ובצל" : {
+                    pic: `cucamberSalad`,
+                    description: ``,
                     ingredients : [],
                     preparation : [],
                 },
@@ -161,8 +207,13 @@ const showPage = (event) => {
     // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
     document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
     if (event.currentTarget.classList[1] !== "x") {   // מטפל במקרה של תפריט
-        strFormerPage = strCurrentPage;
-        strCurrentPage = event.currentTarget.classList[1] + "Page";
+        if (strCurrentPage === "menuPage") {
+            document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
+            strCurrentPage = `${event.currentTarget.classList[2]}Page`;
+        } else {
+            strFormerPage = strCurrentPage;
+            strCurrentPage = event.currentTarget.classList[1] + "Page";
+        }
     } else {
         strCurrentPage = strFormerPage;
     }
@@ -180,7 +231,7 @@ const showPage = (event) => {
         for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {
             let bottomNavBarTopic = El("div", 
             {attributes: {class: `bottomNavBarTopic ${key}`}, 
-            listeners : {click : showRecipeTopic}},
+            listeners : {click : showTopics}},
                 El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/recipe/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
                 El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
             );
@@ -204,7 +255,7 @@ const showPage = (event) => {
 
 /* showRecipe
 --------------------------------------------------------------
-Description: change hyphen to space */
+Description:  */
 const showRecipe = (event) => {
     // שומר מתכון וקטגוריה נוכחיים
     let strCurrentRecipe = event.currentTarget.classList[1];
@@ -232,9 +283,9 @@ const showRecipe = (event) => {
     let recipeContent = El("div", {cls : "recipeContent"},
         El("img", 
         {attributes: {class: `recipeContentPic`, 
-        src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].pic}.jpeg`}}),
+        src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].pic}.jpeg`}}),
         El("div", {cls : "recipeContentHeadline"}, addSpace(strCurrentRecipe)),
-        El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].description),
+        El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].description),
         El("div", {cls : "ingredientsContainer"},
             El("div", {cls : "recipeContentIngredientHead"}, "מצרכים"),
         ),
@@ -244,48 +295,54 @@ const showRecipe = (event) => {
     );
     document.querySelector(`.recipePage`).append(recipeContent);
     // מכניס מצרכים
-    for (let i = 0; i < PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].ingredients.length; i++ ) {
+    for (let i = 0; i < PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].ingredients.length; i++ ) {
         let ingredient = El("div", {cls : "ingredientContainer"},
         El("img",{attributes: {class: `ingredientCheckPic ingredientCheckPic${i}`, 
         src : `../assets/images/grapics/recipe/checkbox_blank.svg`},
         listeners : {click: onClickCheckBox}}),
-        PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].ingredients[i]
+        PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].ingredients[i]
         );
         document.querySelector(`.ingredientsContainer`).append(ingredient);
     }
     // מכניס אופן הכנה
-    for (let i = 0; i < PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].preparation.length; i++ ) {
+    for (let i = 0; i < PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].preparation.length; i++ ) {
         let preparation = El("div", {cls : "preparationContainer"},
         El("img",{attributes: {class: `preparationCheckPic preparationCheckPic${i} gray`, 
         src : `../assets/images/grapics/recipe/round_checkbox.svg`},
         listeners : {click: onClickCheckBox}}),
-        PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][strCurrentRecipe].preparation[i]
+        PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].preparation[i]
         );
         document.querySelector(`.preparationsContainer`).append(preparation);
     }
 }
 
-/* showRecipeTopic
+/* showTopics
 --------------------------------------------------------------
 Description: change hyphen to space */
-const showRecipeTopic = (event) => {
+const showTopics = (event) => {
     // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
-    document.querySelector(`.${strCurrentRecipeTopic}`).classList.remove("bold");
+    document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.remove("bold");
     if(event) {
         strCurrentRecipeTopic = event.currentTarget.classList[1];
+    } else if(strCurrentPage === "menuPage") {
+        strCurrentRecipeTopic = event.currentTarget.classList[1];
     } else {
-        strCurrentRecipeTopic = "salads"
+        let arrTopic = [];
+        for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
+            arrTopic.push(topics);
+        }
+        strCurrentRecipeTopic = arrTopic[0];
     }
-    document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
+    document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.add("bold");
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
-    for(let key of Object.keys(PAGES[strCurrentPage].recipes[strCurrentRecipeTopic])) {
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentRecipeTopic])) {
         let recipeDisplay = El("div",
         {attributes: {class: `recipeDisplay ${key}`}, 
         listeners : {click : showRecipe}},
             El("img",
             {attributes: {class: `recipeDisplayPic`, 
-            src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].recipes[strCurrentRecipeTopic][key].pic}.jpeg`},}),
+            src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].content[strCurrentRecipeTopic][key].pic}.jpeg`},}),
             El("div", {cls: `recipeDisplayText`}, addSpace(key))
         )
         document.querySelector(`.recipesScrollContainer`).append(recipeDisplay)
@@ -313,6 +370,66 @@ const onClickCheckBox = (event) => {
 
 }
 
+/* showMenu
+--------------------------------------------------------------
+Description:  */
+const showMenu = () => {
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.menuPage`).innerHTML = "";
+    for(let key of Object.keys(PAGES.menuPage.content)) {
+        let menuDisplay = El("div",{classes: [`menuContainer`, key]},
+            El("div",
+            {attributes: {class: `menuItem`}}, 
+                El("div", {classes: [`menuItemContainer`,"container", key],
+                listeners : {click : showPage}}, 
+                    El("img",
+                    {attributes: {class: `menuItemicon`, 
+                    src : `../assets/images/grapics/menu/${PAGES.menuPage.content[key][1]}.svg`},}),
+                    PAGES.menuPage.content[key][0],
+                ),
+                El("img",
+                    {attributes: {class: `menuItemArrow ${key}`, 
+                    src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`},
+                    listeners : {click : menuDropDown}}),
+                )
+        )
+        document.querySelector(`.menuPage`).append(menuDisplay)
+    }
+
+}
+
+/* menuDropDown
+--------------------------------------------------------------
+Description:  */
+const menuDropDown = (event) => {
+    let currentPage = event.currentTarget.classList[1];
+    let objCurrentDropDown = PAGES.menuPage.content[event.currentTarget.classList[1]][2];
+    // מראה דרופ דאון
+    if (document.querySelector(`.menuPage > .${currentPage} > .menuItem`).lastChild.getAttribute("src") === "../assets/images/grapics/menu/dropdown_sideArrow.svg") {
+        document.querySelector(`.menuPage > .${currentPage} > .menuItem`).lastChild.setAttribute("src", "../assets/images/grapics/menu/opened_dropdown.svg");
+        for(let key of Object.keys(objCurrentDropDown)) {
+            let menuDropDown = 
+                El("div", {classes: [`menuDropDownItemContainer`, key, currentPage],
+                listeners : {click : showTopics, click : showPage}}, 
+                    El("img",
+                    {attributes: {class: `menuDropDownItemicon`, 
+                    src : `../assets/images/grapics/menu/${objCurrentDropDown[key][1]}.svg`},}),
+                    objCurrentDropDown[key][0],
+                );
+            document.querySelector(`.menuPage > .${currentPage}`).append(menuDropDown)
+        }
+    } else { // מעלים דרופ דאון
+        document.querySelector(`.menuPage > .${currentPage} > .menuItem`).lastChild.setAttribute("src", "../assets/images/grapics/menu/dropdown_sideArrow.svg");
+        let arrDropDownItems = document.querySelectorAll(`.menuPage > .${currentPage} .menuDropDownItemContainer`);
+        for (let i = 0; i < arrDropDownItems.length; i++) {
+            document.querySelector(`.menuPage > .${currentPage}`).removeChild(arrDropDownItems[i]);
+        };
+    }
+
+
+
+}
+
 /* onClickSearch
 --------------------------------------------------------------
 Description:  */
@@ -330,9 +447,9 @@ Description: cheack for search match and creat dropdown accordingly */
 const onSearch = () => {
     document.querySelector('.dropDown').innerHTML = "";
     // עובר על כול הקטגוריות של המתכונים
-    for (let keys of Object.keys(PAGES.recipePage.recipes)){
+    for (let keys of Object.keys(PAGES.recipePage.content)){
         // בכול קטגוריה, עובר על כול המתכונים ומחפש התאמה לחיפוש
-        for (let key of Object.keys(PAGES.recipePage.recipes[keys])) {
+        for (let key of Object.keys(PAGES.recipePage.content[keys])) {
             let strUserInput = document.querySelector(`.searchBox`).value;
             if(key.includes(strUserInput) && strUserInput !== ""){
                 let dropDownItem = El("div", {classes : ["dropDownItem", key, keys], listeners : {click : showRecipe}}, addSpace(key))

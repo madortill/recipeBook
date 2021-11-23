@@ -392,14 +392,14 @@ html, body {
     font-weight: 200;
     padding: 0 0.9em 0.5em;
     font-size: 1.1em;
-    border-bottom: solid rgb(158, 157, 157) 0.15em;
+    border-bottom: solid rgb(158, 157, 157) 0.11em;
 }
 
 .recipeContentIngredientHead {
     font-weight: 800;
     font-size: 1.5em;
     padding: 0.2em 0.4em;
-    border-top: solid rgb(158, 157, 157) 0.15em;
+    border-top: solid rgb(158, 157, 157) 0.11em;
 }
 
 .ingredientContainer, .preparationContainer {
@@ -412,6 +412,64 @@ html, body {
     padding: 1em 0.6em;
 }
 
+/* תפריט */
+.menuPage {
+    position: absolute;
+    top: 10.5vh;
+    overflow-y: scroll;
+    font-weight: 800;
+    font-size: 1.7em;
+    height: 80vh;
+}
+
+.menuPage::-webkit-scrollbar {
+    display: none;
+}
+
+.menuItem {
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid rgb(158, 157, 157) 0.09em;
+}
+
+.menuContainer.recipe {
+    border-top: solid rgb(158, 157, 157) 0.09em;
+}
+
+.menuItemicon {
+    width: 8vw;
+    padding: 0.3em 0.5em;
+}
+
+.menuItemArrow {
+    height: 3vh;
+    width: 5.5vw;
+    padding: 0.3em;
+    padding-left: 1em;
+}
+
+.menuItemContainer, .menuDropDownItemContainer {
+    display: flex;
+    align-items: center;
+}
+
+.menuDropDownItemContainer {
+    background-color: rgb(194, 193, 193);
+    font-size: 1.5rem;
+    height: 8vh;
+    border-bottom: solid rgb(158, 157, 157) 0.09em;
+}
+
+.menuDropDownItemicon {
+    width: 6.5vw;
+    padding: 0.3em 0.5em;
+}
+
+
+/* כללי - חשוב שיהיה למטה */
 .hidden {
     display: none;
 }

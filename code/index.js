@@ -69,12 +69,12 @@ let PAGES = {
             img_tillLogo : `till_logo_white.svg`,
         },
         bottomNavBar : { // סמלים של הקטגוריות של המתכונים
-            salads : ["סלטים", "green_salads"],
-            starters : ["מנות ראשונות", "green_starters"],
-            sides : ["מנות ביניים", "green_sidedishes"],
-            vegan : ["מנות טבעוניות", "green_vegan"],
-            mainCourse : ["מנות עיקריות", "green_maincourse"],
-            baking : ["קונדיטוריה", "green_baking"],
+            salads : ["סלטים", "green_salads", 0],
+            starters : ["מנות ראשונות", "green_starters", 0],
+            sides : ["מנות ביניים", "green_sidedishes", -100],
+            vegan : ["מנות טבעוניות", "green_vegan", -220],
+            mainCourse : ["מנות עיקריות", "green_maincourse", -300],
+            baking : ["קונדיטוריה", "green_baking", -300],
         },  
         classes : [``],// מה שצריך להראות או להסתיר
         functions : [`showTopics()`], // פונקציות שצריכות לפעול
@@ -129,49 +129,40 @@ let PAGES = {
                 },
             }, 
             starters : { // תת נושא
-                "סלט-מלפפונים-ובצל" : {
-                    pic: `cucamberSalad`,
-                    description: `תיאור די קצר של המנה משפט בערך שאומר מה זה מלפפון ומה זה בצל נגיד.`,
-                    ingredients : [
-                        `מלפפון`,
-                        `בצל סגול/לבן`,
-                        `מלח`,
-                        `פלפל`,
-                        `שמן`,
-                        `מיץ לימון`,
-                    ],
-                    preparation : [
-                        `מורידים ראש וזנב, עושים 2-3 פסים למלפפון עם קולפן.`,
-                        `חותכים את המלפפונים בצורה אלכסונית.`,
-                        `מתבלים ומוסיפים פטרוזיליה או שמיר.`,
-                    ],
-                },
                 "סלט-טחינה" : {
                     pic: `tahinaSalad`,
                     description: ``,
                     ingredients : [],
                     preparation : [],
                 },
-                "סלט-קולסלאו" : {
-                    pic: `kolslowSalad`,
+            }, 
+            sides : { // תת נושא
+                "סלט-טחינה" : {
+                    pic: `tahinaSalad`,
                     description: ``,
                     ingredients : [],
                     preparation : [],
                 },
-                "1סלט-מלפפונים-ובצל" : {
-                    pic: `cucamberSalad`,
+            }, 
+            vegan : { // תת נושא
+                "סלט-טחינה" : {
+                    pic: `tahinaSalad`,
                     description: ``,
                     ingredients : [],
                     preparation : [],
                 },
-                "2סלט-מלפפונים-ובצל" : {
-                    pic: `cucamberSalad`,
+            }, 
+            mainCourse : { // תת נושא
+                "סלט-טחינה" : {
+                    pic: `tahinaSalad`,
                     description: ``,
                     ingredients : [],
                     preparation : [],
                 },
-                "3סלט-מלפפונים-ובצל" : {
-                    pic: `cucamberSalad`,
+            }, 
+            baking : { // תת נושא
+                "סלט-טחינה" : {
+                    pic: `tahinaSalad`,
                     description: ``,
                     ingredients : [],
                     preparation : [],
@@ -185,6 +176,7 @@ let PAGES = {
 let strCurrentPage = "mainPage";
 let strFormerPage = "mainPage";
 let strCurrentRecipeTopic = "salads";
+let bMenuPage = false;
 
 
 /* loading function
@@ -224,20 +216,24 @@ const showPage = (event) => {
             document.querySelector(`.${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
         }
     }
+
+    if (bMenuPage) {
+        strCurrentRecipeTopic = event.currentTarget.classList[1];
+    }
     // מראה בר תחתון
     if (PAGES[strCurrentPage].bottomNavBar) {
         document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
-        document.querySelector(`.bottomNavBar`).scrollLeft = 0;
         for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {
             let bottomNavBarTopic = El("div", 
             {attributes: {class: `bottomNavBarTopic ${key}`}, 
             listeners : {click : showTopics}},
-                El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/recipe/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
-                El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
+            El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/recipe/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
+            El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
             );
             document.querySelector(`.${strCurrentPage} .bottomNavBar`).append(bottomNavBarTopic)
         }
         document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
+        document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];
     }
     // קורא לפונקציות אם צריך
     if (PAGES[strCurrentPage].functions) {
@@ -245,6 +241,7 @@ const showPage = (event) => {
             eval(PAGES[strCurrentPage].functions[i]);
         }
     }
+
     // מראה תפריט עליון
     showNavBar();
     if(document.querySelector(`.recipeContent`)) {
@@ -324,8 +321,8 @@ const showTopics = (event) => {
     document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.remove("bold");
     if(event) {
         strCurrentRecipeTopic = event.currentTarget.classList[1];
-    } else if(strCurrentPage === "menuPage") {
-        strCurrentRecipeTopic = event.currentTarget.classList[1];
+    } else if (bMenuPage) {
+        bMenuPage = false;    
     } else {
         let arrTopic = [];
         for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
@@ -374,6 +371,7 @@ const onClickCheckBox = (event) => {
 --------------------------------------------------------------
 Description:  */
 const showMenu = () => {
+    bMenuPage = true;
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.menuPage`).innerHTML = "";
     for(let key of Object.keys(PAGES.menuPage.content)) {
@@ -410,7 +408,7 @@ const menuDropDown = (event) => {
         for(let key of Object.keys(objCurrentDropDown)) {
             let menuDropDown = 
                 El("div", {classes: [`menuDropDownItemContainer`, key, currentPage],
-                listeners : {click : showTopics, click : showPage}}, 
+                listeners : {click : showPage}}, 
                     El("img",
                     {attributes: {class: `menuDropDownItemicon`, 
                     src : `../assets/images/grapics/menu/${objCurrentDropDown[key][1]}.svg`},}),

@@ -100,72 +100,159 @@ let PAGES = {
                 "סלט-טחינה" : {
                     pic: `tahinaSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        `טחינה גולמית`,
+                        `מלח`,
+                        `פלפל`,
+                        `שום`,
+                        `לימון טרי`,
+                        `פטרוזיליה`,
+                        `מים`,
+                        `קרח`,
+                    ],
+                    preparation : [
+                        `מרוקנים את תוכן הקופסא לקערה.`,
+                        `מוסיפים 80% מהנפח מים על כמות הטחינה ומערבבים.`,
+                        `מוסיפים תבלינים, לימון, שום וממשיכים לערבב.`,
+                        `מוסיפים קצת קוביות קרח כדי להשלים נוזל קר לקבלת טחינה בהירה. `,
+                        `מעטרים בפטרוזיליה.`,
+                    ],
                 },
-                "סלט-קולסלאו" : {
+                "סלט-קולסלאו" :  {
                     pic: `kolslowSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        `כרוב לבן`,
+                        `גזר`,
+                        `פטרוזיליה/שמיר`,
+                        `מיונז`,
+                        `מלח`,
+                        `פלפל`,
+                        `מעט חומץ/מיץ לימון`,
+                    ],
+                    preparation : [
+                        `קוצצים את הכרוב שיפונד דק (שערות דקות) משרים במי מלח למשך 10 דקות.`,
+                        `לאחר מכן רצוי לפזר מעט מלח על הכרוב ולתת לו לנוח במסננת להורדת נוזלים.`,
+                        `מגרדים גזר, מוסיפים מיונז ומתבלים להשלמת הטעם.`,
+                        `לבסוף מעטרים בפטרוזיליה/שמיר.`,
+                    ],
                 },
-                "1סלט-מלפפונים-ובצל" : {
-                    pic: `cucamberSalad`,
+                "סלט-ירק" :  {
+                    pic: `greenSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        `סלרי - 70% עלים, 30% גבעולים`,
+                        `פטרוזיליה`,
+                        `כוסברה`,
+                        `נענע`,
+                        `בוטנים/אגוזי לוז/קשיו קלוי/גרעיני חמנייה`,
+                        `דלעת`,
+                        `חמוציות`,
+                        `חומץ`,
+                        `סילאן`,
+                        `שמן זית`,
+                        `מלח`,
+                        `פלפל`,
+                    ],
+                    preparation : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
                 },
-                "2סלט-מלפפונים-ובצל" : {
-                    pic: `cucamberSalad`,
+                "דוגמא" :  {
+                    pic: `tahinaSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
-                },
-                "3סלט-מלפפונים-ובצל" : {
-                    pic: `cucamberSalad`,
-                    description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
+                    preparation : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
                 },
             }, 
             starters : { // תת נושא
-                "סלט-טחינה" : {
+                "סלט-טחינה" :  {
                     pic: `tahinaSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
+                    preparation : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
                 },
             }, 
             sides : { // תת נושא
-                "סלט-טחינה" : {
+                "סלט-טחינה" :  {
                     pic: `tahinaSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
+                    preparation : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
                 },
             }, 
             vegan : { // תת נושא
-                "סלט-טחינה" : {
+                "סלט-טחינה" :  {
                     pic: `tahinaSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
+                    preparation : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
                 },
             }, 
             mainCourse : { // תת נושא
-                "סלט-טחינה" : {
+                "סלט-טחינה" :  {
                     pic: `tahinaSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
+                    preparation : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
                 },
             }, 
             baking : { // תת נושא
-                "סלט-טחינה" : {
+                "סלט-טחינה" :  {
                     pic: `tahinaSalad`,
                     description: ``,
-                    ingredients : [],
-                    preparation : [],
+                    ingredients : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
+                    preparation : [
+                        ``,
+                        ``,
+                        ``,
+                    ],
                 },
             }, 
         }
@@ -217,7 +304,7 @@ const showPage = (event) => {
         }
     }
 
-    if (bMenuPage) {
+    if (event.currentTarget.classList[0] === "menuDropDownItemContainer") {
         strCurrentRecipeTopic = event.currentTarget.classList[1];
     }
     // מראה בר תחתון

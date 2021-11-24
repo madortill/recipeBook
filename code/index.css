@@ -349,6 +349,7 @@ html, body {
     height: 18vh;
     width: 42vw;
     margin: 0.7em 0;
+    position: relative;
 }
 
 .recipeDisplayPic {
@@ -361,8 +362,8 @@ html, body {
     width: 40vw;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.527);
-    position: relative;
-    bottom: 5vh;
+    position: absolute;
+    bottom: 0;
     font-weight: 400;
     padding: 1vh 1vw;
 }
@@ -372,6 +373,7 @@ html, body {
     top: 10vh;
     overflow-y: scroll;
     height: 80vh;
+    -webkit-user-select: text;
 }
 
 .recipeContent::-webkit-scrollbar {
@@ -404,12 +406,13 @@ html, body {
 
 .ingredientContainer, .preparationContainer {
     display: flex;
-    align-items: center;
+    align-items: start;
+    padding: 1em 0.6em;
 }
 
 .ingredientCheckPic, .preparationCheckPic {
     width: 6vw;
-    padding: 1em 0.6em;
+    padding-left: 0.6em;
 }
 
 /* תפריט */

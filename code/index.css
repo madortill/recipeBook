@@ -113,7 +113,8 @@ html, body {
 }
 
 .topNavTextIcon {
-    width: 6vw;
+    width: 9vw;
+    height: 5vh;
 }
 
 .tillLogo {
@@ -422,7 +423,7 @@ html, body {
     overflow-y: scroll;
     font-weight: 800;
     font-size: 1.7em;
-    height: 80vh;
+    height: 75vh;
 }
 
 .menuPage::-webkit-scrollbar {
@@ -471,6 +472,41 @@ html, body {
     padding: 0.3em 0.5em;
 }
 
+/* גלריה */
+.galleryScrollContainer {
+    position: absolute;
+    top: 10.5vh;
+    overflow-y: scroll;
+    height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.galleryScrollContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.galleryScrollDisplay {
+    height: 14vh;
+    width: 31vw;
+    margin: 0.3em 0;
+    position: relative;
+}
+
+.galleryScrollDisplayPic {
+    height: 14vh;
+    width: 31vw;
+}
+
+.galleryPicDisplay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.411);
+    z-index: 1;
+    top: 0;
+}
 
 /* כללי - חשוב שיהיה למטה */
 .hidden {

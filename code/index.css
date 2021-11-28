@@ -215,7 +215,7 @@ html, body {
 
 .backToMain {
     position: absolute;
-    bottom: 2vh;
+    bottom: 6vh;
     width: 10vw;
 }
 
@@ -316,7 +316,7 @@ html, body {
 
 .bottomNavBarPic {
     height: 5vh;
-    padding:  0 2em;
+    padding:  0 2.3em;
 }
 
 .bottomNavBarTopic {

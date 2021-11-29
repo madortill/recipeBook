@@ -2164,10 +2164,16 @@ const showPicDisplay = (event) => {
     });
 
     // בודק מה נלחץ ומשנה תמונה נוכחית בהתאם
-    if(event.currentTarget.classList[0] === "rightArrow" && Number(currentPicNum) !== 0) {
+    if(event.currentTarget.classList[0] === "rightArrow") {
         currentPicNum--;
-    } else if(event.currentTarget.classList[0] === "leftArrow"  && Number(currentPicNum) !== 83) {
+        if (Number(currentPicNum) === -1) {
+            currentPicNum = 83;
+        }
+    } else if(event.currentTarget.classList[0] === "leftArrow") {
         currentPicNum++;
+        if (Number(currentPicNum) === 84) {
+            currentPicNum = 0;
+        }
     } else if(event.currentTarget.classList[0] === "galleryScrollDisplay") {
         currentPicNum = event.currentTarget.classList[2];
     }

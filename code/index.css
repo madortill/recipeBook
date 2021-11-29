@@ -149,7 +149,7 @@ html, body {
 }
 
 .mainPageButton {
-    border-bottom: solid #0D635F 1.6em;
+    border-bottom: solid #0D635F 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,7 +157,7 @@ html, body {
 }
 
 .mainPageButton.recipe {
-    border-top: solid #0D635F 1.6em;
+    border-top: solid #0D635F 2em;
 }
 
 .textImg {
@@ -491,12 +491,12 @@ html, body {
     height: 14vh;
     width: 31vw;
     margin: 0.3em 0;
-    position: relative;
+    /* position: relative; */
 }
 
 .galleryScrollDisplayPic {
-    width: 31vw;
     height: 14vh;
+    width: 31vw;
 }
 
 .picDisplayContiner {
@@ -518,8 +518,8 @@ html, body {
 }
 
 .galleryDisplayPic {
-    width: 84vw;
     height: 35vh;
+    width: 84vw;
 }
 
 .galleryDisplayText {

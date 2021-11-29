@@ -214,7 +214,7 @@ html, body {
     width: 22vw;
 }
 
-.backToMain {
+.aboutPage .backToMain {
     position: absolute;
     bottom: 6vh;
     width: 10vw;
@@ -507,15 +507,6 @@ html, body {
     z-index: 2;
 }
 
-.dark {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.555);
-    top: 0;
-    z-index: 1;
-}
-
 .galleryDisplayPic {
     height: 35vh;
     width: 84vw;
@@ -539,6 +530,29 @@ html, body {
 .arrow {
     width: 12vw;
     padding: 0.3em;
+}
+
+/* סרטוני וידיאו וחומרי לימוד */
+.soonContainer {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.videosPage .backToMain {
+    width: 45vw;
+    display: block;
+    padding: 0.6em;
+}
+.learningPage .backToMain {
+    width: 45vw;
+    display: block;
+    padding: 0.6em;
 }
 
 /* כללי - חשוב שיהיה למטה */

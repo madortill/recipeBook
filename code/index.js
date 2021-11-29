@@ -1953,6 +1953,40 @@ let PAGES = {
             'באונטי-קוקוס' : `coconutBounty`,
         }
     },
+    // עמוד וידיאו
+    videosPage : {
+        topNavBar : {
+            backgroundColor : `#0D635F`,
+            img_button_menu : `3lines_white.svg`, // אודות / איקס / תפריט
+            img_SearchIcon : `search_white.svg`, 
+            div_topNavLine : ``,
+            img_topNavTextIcon : `white_videos.svg`,
+            div_topNavText_videos : `סרטוני הדרכה`,
+            img_bhdLogo : `בהד 6.png`,
+            img_tillLogo : `till_logo_white.svg`,
+        },
+        functions : [``], // פונקציות שצריכות לפעול
+        listeners : {
+            backToMain : "showPage",
+        }
+    },
+    // עמוד חומרי לימוד
+    learningPage : {
+        topNavBar : {
+            backgroundColor : `#0D635F`,
+            img_button_menu : `3lines_white.svg`, // אודות / איקס / תפריט
+            img_SearchIcon : `search_white.svg`, 
+            div_topNavLine : ``,
+            img_topNavTextIcon : `white_materials.svg`,
+            div_topNavText_learning : `חומרי לימוד`,
+            img_bhdLogo : `בהד 6.png`,
+            img_tillLogo : `till_logo_white.svg`,
+        },
+        functions : [``], // פונקציות שצריכות לפעול
+        listeners : {
+            backToMain : "showPage",
+        }
+    },
 }
 
 // varubles
@@ -1998,7 +2032,7 @@ const showPage = (event) => {
     // שם מאזינים אם צריך
     if (PAGES[strCurrentPage].listeners) {
         for (key of Object.keys(PAGES[strCurrentPage].listeners)) {
-            document.querySelector(`.${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
+            document.querySelector(`.${strCurrentPage} .${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
         }
     }
     // שומר קטגוריה נוכחית
@@ -2159,9 +2193,9 @@ const galleryPageShowTopics = () => {
 Description:  */
 const showPicDisplay = (event) => {
     // שם מאזין לרקע להעלמת התצוגה
-    document.querySelector(`.dark`).addEventListener("click", () => {
+    document.querySelector(`.galleryPage .darkScreen`).addEventListener("click", () => {
         document.querySelector(`.galleryPicDisplay`).classList.add("hidden");
-        document.querySelector(`.dark`).classList.add("hidden");
+        document.querySelector(`.galleryPage .darkScreen`).classList.add("hidden");
     });
 
     // בודק מה נלחץ ומשנה תמונה נוכחית בהתאם
@@ -2181,7 +2215,7 @@ const showPicDisplay = (event) => {
     // שומר שם של תמונה נוכחית
     currentPicName = Object.keys(PAGES[strCurrentPage].content)[currentPicNum];
     // מראה את תצוגת התמונה ומרוקן אותה
-    document.querySelector(`.dark`).classList.remove("hidden");
+    document.querySelector(`.galleryPage .darkScreen`).classList.remove("hidden");
     document.querySelector(`.galleryPicDisplay`).classList.remove("hidden");
     document.querySelector(`.galleryPicDisplay`).innerHTML = "";
     // יוצר את התצוגה ומכניס לדיב

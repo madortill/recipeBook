@@ -499,13 +499,47 @@ html, body {
     width: 31vw;
 }
 
-.galleryPicDisplay {
+.picDisplayContiner {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 84vw;
+    z-index: 2;
+}
+
+.dark {
     height: 100%;
     width: 100%;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.411);
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.555);
     top: 0;
+    z-index: 1;
+}
+
+.galleryDisplayPic {
+    height: 35vh;
+    width: 84vw;
+}
+
+.galleryDisplayText {
+    background-color: #E8E8E8;
+    text-align: center;
+    padding: 0.2em 0;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+.galleryDisplayArrows {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.3em;
+}
+
+.arrow {
+    width: 12vw;
+    padding: 0.3em;
 }
 
 /* כללי - חשוב שיהיה למטה */

@@ -1861,7 +1861,7 @@ let PAGES = {
             img_SearchIcon : `search_white.svg`, 
             div_topNavLine : ``,
             img_topNavTextIcon : `white_gallery.svg`,
-            div_topNavText_recipe : `תמונות`,
+            div_topNavText_gallery : `תמונות`,
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
@@ -1959,6 +1959,8 @@ let PAGES = {
 let strCurrentPage = "mainPage";
 let strFormerPage = "mainPage";
 let strCurrentRecipeTopic = "salads";
+let currentPicNum;
+let currentPicName;
 let bMenuPage = false;
 
 
@@ -2135,27 +2137,64 @@ const recipePageShowTopics = (event) => {
 --------------------------------------------------------------
 Description: change hyphen to space */
 const galleryPageShowTopics = () => {
+    let currentPic = 0;
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.galleryScrollContainer`).innerHTML = "";
     for(let key of Object.keys(PAGES[strCurrentPage].content)) {
         let recipeDisplay = El("div",
-        {attributes: {class: `galleryScrollDisplay ${key}`}, 
+        {attributes: {class: `galleryScrollDisplay ${key} ${currentPic}`}, 
         listeners : {click : showPicDisplay}},
             El("img",
             {attributes: {class: `galleryScrollDisplayPic`, 
             src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[key]}.jpeg`},}),
-            // El("div", {cls: `recipeDisplayText`}, addSpace(key))
         )
-        document.querySelector(`.galleryScrollContainer`).append(recipeDisplay)
+        document.querySelector(`.galleryScrollContainer`).append(recipeDisplay);
+        currentPic++;
     }
 }
-
 
 /* showPicDisplay
 --------------------------------------------------------------
 Description:  */
 const showPicDisplay = (event) => {
+    // שם מאזין לרקע להעלמת התצוגה
+    document.querySelector(`.dark`).addEventListener("click", () => {
+        document.querySelector(`.galleryPicDisplay`).classList.add("hidden");
+        document.querySelector(`.dark`).classList.add("hidden");
+    });
 
+    // בודק מה נלחץ ומשנה תמונה נוכחית בהתאם
+    if(event.currentTarget.classList[0] === "rightArrow" && currentPicNum !== 0) {
+        currentPicNum--;
+    } else if(event.currentTarget.classList[0] === "leftArrow"  && currentPicNum !== 83) {
+        currentPicNum++;
+    } else if(event.currentTarget.classList[0] === "galleryScrollDisplay") {
+        currentPicNum = event.currentTarget.classList[2];
+    }
+    // שומר שם של תמונה נוכחית
+    currentPicName = Object.keys(PAGES[strCurrentPage].content)[currentPicNum];
+    // מראה את תצוגת התמונה ומרוקן אותה
+    document.querySelector(`.dark`).classList.remove("hidden");
+    document.querySelector(`.galleryPicDisplay`).classList.remove("hidden");
+    document.querySelector(`.galleryPicDisplay`).innerHTML = "";
+    // יוצר את התצוגה ומכניס לדיב
+    let picDisplay = El("div", {cls : `picDisplayContiner`},
+        El("img", 
+        {attributes: {class: `galleryDisplayPic`, 
+        src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[currentPicName]}.jpeg`},}),
+        El("div", {cls: `galleryDisplayText`}, addSpace(currentPicName)),
+        El ("div", {cls: `galleryDisplayArrows`},
+            El("img", 
+            {attributes: {class: `rightArrow arrow`, 
+            src : `../assets/images/grapics/general/right_arrow.svg`},
+            listeners : {click : showPicDisplay}}),
+            El("img", 
+            {attributes: {class: `leftArrow arrow`, 
+            src : `../assets/images/grapics/general/left_arrow.svg`},
+            listeners : {click : showPicDisplay}}),
+        )
+    );
+    document.querySelector(`.galleryPicDisplay`).append(picDisplay);
 }
 
 /* onClickCheckBox

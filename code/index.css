@@ -149,7 +149,7 @@ html, body {
 }
 
 .mainPageButton {
-    border-bottom: solid #0D635F 2em;
+    border-bottom: solid #0D635F 1.6em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,7 +157,7 @@ html, body {
 }
 
 .mainPageButton.recipe {
-    border-top: solid #0D635F 2em;
+    border-top: solid #0D635F 1.6em;
 }
 
 .textImg {
@@ -373,7 +373,7 @@ html, body {
     position: absolute;
     top: 10vh;
     overflow-y: scroll;
-    height: 80vh;
+    height: 77vh;
     -webkit-user-select: text;
 }
 

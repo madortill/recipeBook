@@ -495,8 +495,8 @@ html, body {
 }
 
 .galleryScrollDisplayPic {
-    height: 14vh;
     width: 31vw;
+    height: 14vh;
 }
 
 .picDisplayContiner {
@@ -518,8 +518,8 @@ html, body {
 }
 
 .galleryDisplayPic {
-    height: 35vh;
     width: 84vw;
+    height: 35vh;
 }
 
 .galleryDisplayText {

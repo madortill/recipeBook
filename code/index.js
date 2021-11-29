@@ -2144,10 +2144,11 @@ const galleryPageShowTopics = () => {
         let recipeDisplay = El("div",
         {attributes: {class: `galleryScrollDisplay ${key} ${currentPic}`}, 
         listeners : {click : showPicDisplay}},
-            El("img",
-            {attributes: {class: `galleryScrollDisplayPic`, 
-            src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[key]}.jpeg`},}),
+            // El("img",
+            // {attributes: {class: `galleryScrollDisplayPic`, 
+            // src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[key]}.jpeg`},}),
         )
+        recipeDisplay.style.backgroundImage = `url(../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[key]}.jpeg)`
         document.querySelector(`.galleryScrollContainer`).append(recipeDisplay);
         currentPic++;
     }

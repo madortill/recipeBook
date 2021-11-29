@@ -73,8 +73,8 @@ let PAGES = {
             starters : ["מנות ראשונות", "green_starters", 0],
             sides : ["מנות ביניים", "green_sidedishes", -100],
             vegan : ["מנות טבעוניות", "green_vegan", -220],
-            mainCourse : ["מנות עיקריות", "green_maincourse", -300],
-            baking : ["קונדיטוריה", "green_baking", -300],
+            mainCourse : ["מנות עיקריות", "green_maincourse", -400],
+            baking : ["קונדיטוריה", "green_baking", -400],
         },  
         classes : [``],// מה שצריך להראות או להסתיר
         functions : [`recipePageShowTopics()`], // פונקציות שצריכות לפעול
@@ -1995,7 +1995,6 @@ let strFormerPage = "mainPage";
 let strCurrentRecipeTopic = "salads";
 let currentPicNum;
 let currentPicName;
-let bMenuPage = false;
 
 
 /* loading function
@@ -2151,6 +2150,14 @@ const recipePageShowTopics = (event) => {
     if(event) {
         strCurrentRecipeTopic = event.currentTarget.classList[1];
     }
+
+    document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];
+    // let arrTopic = [];
+    // for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
+    //     arrTopic.push(topics);
+    // }
+    // strCurrentRecipeTopic = arrTopic[0];
+
     document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.add("bold");
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
@@ -2262,7 +2269,6 @@ const onClickCheckBox = (event) => {
 --------------------------------------------------------------
 Description:  */
 const showMenu = () => {
-    bMenuPage = true;
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.menuPage`).innerHTML = "";
     for(let key of Object.keys(PAGES.menuPage.content)) {

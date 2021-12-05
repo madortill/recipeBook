@@ -82,6 +82,9 @@ let PAGES = {
                 "סלט-מלפפונים-ובצל" : {
                     pic: `cucamberSalad`,
                     description: `תיאור די קצר של המנה משפט בערך שאומר מה זה מלפפון ומה זה בצל נגיד.`,
+                    difficulty: `קל`,
+                    quantity: `20 מנות`,
+                    time: `40 דקות`,
                     ingredients : [
                         `מלפפון`,
                         `בצל סגול/לבן`,
@@ -2117,6 +2120,32 @@ const showRecipe = (event) => {
         src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].pic}.jpeg`}}),
         El("div", {cls : "recipeContentHeadline"}, addSpace(strCurrentRecipe)),
         El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].description),
+        El("div", {cls: "recipeInfoConteiner"},
+            El("div", {classes: ["headers", "difficulty"]},
+                El("div", {cls: "headerContainer"},
+                    El("img",{attributes: {class: `recipeInfoPics`, 
+                    src : `../assets/images/grapics/recipe/hardness_level.svg`}}),
+                    "רמת קושי:",
+                ),
+                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].difficulty)
+            ),
+            El("div", {classes: ["headers", "quantity"]},
+                El("div", {cls: "headerContainer"},
+                    El("img",{attributes: {class: `recipeInfoPics`, 
+                    src : `../assets/images/grapics/recipe/serving_size_icon.svg`}}),
+                    "כמות:",
+                ),
+                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].quantity)
+            ),
+            El("div", {cls: "headers"},
+                El("div", {cls: "headerContainer"},
+                    El("img",{attributes: {class: `recipeInfoPics`, 
+                    src : `../assets/images/grapics/recipe/timer.svg`}}),
+                    "זמן הכנה:",
+                ),
+                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].time)
+            ),
+        ),
         El("div", {cls : "ingredientsContainer"},
             El("div", {cls : "recipeContentIngredientHead"}, "מצרכים"),
         ),
@@ -2145,6 +2174,10 @@ const showRecipe = (event) => {
         );
         document.querySelector(`.preparationsContainer`).append(preparation);
     }
+    
+    document.querySelector(`.button_menu`).setAttribute("src", "../assets/images/grapics/general/right_arrow.svg");
+    document.querySelector(`.button_menu`).classList.remove("menu");
+    document.querySelector(`.button_menu`).classList.add("recipe");
 }
 
 /* showrecipePageTopics

@@ -1993,6 +1993,7 @@ let PAGES = {
 let strCurrentPage = "mainPage";
 let strFormerPage = "mainPage";
 let strCurrentRecipeTopic = "salads";
+let nCurrentRecipeTopicNumber = 0;
 let currentPicNum;
 let currentPicName;
 
@@ -2050,15 +2051,17 @@ const showPage = (event) => {
     }
     // מראה בר תחתון
     if (PAGES[strCurrentPage].bottomNavBar) {
+        let nNumberTheSymbols = 0; 
         document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
         for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {
             let bottomNavBarTopic = El("div", 
-            {attributes: {class: `bottomNavBarTopic ${key}`}, 
+            {attributes: {class: `bottomNavBarTopic ${key} ${nNumberTheSymbols}`}, 
             listeners : {click : eval(`${strCurrentPage}ShowTopics`)}},
             El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/recipe/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
             El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
             );
-            document.querySelector(`.${strCurrentPage} .bottomNavBar`).append(bottomNavBarTopic)
+            document.querySelector(`.${strCurrentPage} .bottomNavBar`).append(bottomNavBarTopic);
+            nNumberTheSymbols++;
         }
         document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
         document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];
@@ -2145,18 +2148,31 @@ const showRecipe = (event) => {
 --------------------------------------------------------------
 Description: change hyphen to space */
 const recipePageShowTopics = (event) => {
+    document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', recipePageShowTopics);
+    let arrTopic = [];
+    for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
+        arrTopic.push(topics);
+    }
+
+
     // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
     document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.remove("bold");
     if(event) {
-        strCurrentRecipeTopic = event.currentTarget.classList[1];
+        if (event.currentTarget.classList[0] === "bottomNavBarTopic") {
+            strCurrentRecipeTopic = event.currentTarget.classList[1];
+            nCurrentRecipeTopicNumber = Number(event.currentTarget.classList[2]);
+        } else {
+            if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
+                nCurrentRecipeTopicNumber--;
+            } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < 5) {
+                nCurrentRecipeTopicNumber++;
+            }
+            strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];
+        }
     }
 
     document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];
-    // let arrTopic = [];
-    // for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
-    //     arrTopic.push(topics);
-    // }
-    // strCurrentRecipeTopic = arrTopic[0];
+  
 
     document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.add("bold");
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה

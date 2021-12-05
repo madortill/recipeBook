@@ -2151,20 +2151,22 @@ const showRecipe = (event) => {
 --------------------------------------------------------------
 Description: change hyphen to space */
 const recipePageShowTopics = (event) => {
+    // שם מאזינים להחלקה ושומר את הקטגוריות במערך
     document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', recipePageShowTopics);
     let arrTopic = [];
     for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
         arrTopic.push(topics);
     }
 
-
     // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
     document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.remove("bold");
-    if(event) {
-        if (event.currentTarget.classList[0] === "bottomNavBarTopic") {
+    if(event) { // בודק אם נעשתה לחיצה או החלקה
+        if (event.currentTarget.classList[0] === "bottomNavBarTopic") { 
+            // בלחיצה שומר קטגוריה נוכחית ואת מספרה
             strCurrentRecipeTopic = event.currentTarget.classList[1];
             nCurrentRecipeTopicNumber = Number(event.currentTarget.classList[2]);
         } else {
+            // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
             if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
                 nCurrentRecipeTopicNumber--;
             } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
@@ -2172,8 +2174,8 @@ const recipePageShowTopics = (event) => {
             }
             strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];
         }
-    } else {
-        nCurrentRecipeTopicNumber = Numberdocument.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList[2];
+    } else { // שומר את מספר הקטגוריה אם באים מהתפריט או מההתחלה
+        nCurrentRecipeTopicNumber = Number(document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList[2]);
     }
 
     document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];

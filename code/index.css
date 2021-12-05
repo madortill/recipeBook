@@ -438,6 +438,7 @@ html, body {
 
 .recipeInfoText {
     color: black;
+    padding-top: 0.3em;
 }
 
 .quantity, .difficulty {

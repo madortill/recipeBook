@@ -419,16 +419,17 @@ html, body {
 .recipeInfoConteiner {
     display: flex;
     padding: 0.4em 0;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .headers {
     font-weight: 200;
     font-size: 1.1em;
     color: rgb(88, 88, 88);
-    text-align: right;
+    text-align: center;
     direction: rtl;
-    padding: 0 1.1em;
+    width: 35vw;
+    padding: 0 0.1em;
 }
 
 .recipeInfoPics {
@@ -443,11 +444,17 @@ html, body {
 
 .quantity, .difficulty {
     border-left: solid rgb(158, 157, 157) 0.13em;
+    width: 31vw;
+}
+
+.quantity {
+    width: 28vw;
 }
 
 .headerContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 /* תפריט */

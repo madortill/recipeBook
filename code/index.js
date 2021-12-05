@@ -76,7 +76,6 @@ let PAGES = {
             mainCourse : ["מנות עיקריות", "green_maincourse", -400],
             baking : ["קונדיטוריה", "green_baking", -400],
         },  
-        classes : [``],// מה שצריך להראות או להסתיר
         functions : [`recipePageShowTopics()`], // פונקציות שצריכות לפעול
         content : {
             salads : { // תת נושא
@@ -1997,6 +1996,10 @@ let nCurrentRecipeTopicNumber = 0;
 let currentPicNum;
 let currentPicName;
 
+// consts
+const NUMBER_OF_RECIPE_TOPICS = 5;
+const NUMBER_OF_PICTUERS = 83;
+
 
 /* loading function
 --------------------------------------------------------------
@@ -2164,11 +2167,13 @@ const recipePageShowTopics = (event) => {
         } else {
             if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
                 nCurrentRecipeTopicNumber--;
-            } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < 5) {
+            } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
                 nCurrentRecipeTopicNumber++;
             }
             strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];
         }
+    } else {
+        nCurrentRecipeTopicNumber = Numberdocument.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList[2];
     }
 
     document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];
@@ -2225,11 +2230,11 @@ const showPicDisplay = (event) => {
     if(event.currentTarget.classList[0] === "rightArrow") {
         currentPicNum--;
         if (Number(currentPicNum) === -1) {
-            currentPicNum = 83;
+            currentPicNum = NUMBER_OF_PICTUERS;
         }
     } else if(event.currentTarget.classList[0] === "leftArrow") {
         currentPicNum++;
-        if (Number(currentPicNum) === 84) {
+        if (Number(currentPicNum) === NUMBER_OF_PICTUERS + 1) {
             currentPicNum = 0;
         }
     } else if(event.currentTarget.classList[0] === "galleryScrollDisplay") {

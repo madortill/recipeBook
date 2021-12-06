@@ -2120,7 +2120,7 @@ const showRecipe = (event) => {
         src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].pic}.jpeg`}}),
         El("div", {cls : "recipeContentHeadline"}, addSpace(strCurrentRecipe)),
         El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].description),
-        El("div", {cls: "recipeInfoConteiner"},
+        El("div", {cls: "recipeInfoConteiner"}, // מידע על המנה
             El("div", {classes: ["headers", "difficulty"]},
                 El("div", {cls: "headerContainer"},
                     El("img",{attributes: {class: `recipeInfoPics`, 

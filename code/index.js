@@ -2193,6 +2193,7 @@ const recipePageShowTopics = (event) => {
 
     // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
     document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.remove("bold");
+    document.querySelector(`.recipePage .${strCurrentRecipeTopic} .bottomNavBarPic`).style.height = "5vh";
     if(event) { // בודק אם נעשתה לחיצה או החלקה
         if (event.currentTarget.classList[0] === "bottomNavBarTopic") { 
             // בלחיצה שומר קטגוריה נוכחית ואת מספרה
@@ -2217,9 +2218,9 @@ const recipePageShowTopics = (event) => {
     }
 
     document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];
-  
 
     document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.add("bold");
+    document.querySelector(`.recipePage .${strCurrentRecipeTopic} .bottomNavBarPic`).style.height = "6vh";
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
     document.querySelector(`.recipesScrollContainer`).scrollTop = 0;

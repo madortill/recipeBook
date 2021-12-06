@@ -279,10 +279,10 @@ html, body {
 .dropDownItem {
     background-color: #E8E8E8;
     width: 74vw;
-    height: 4.5vh;
+    height: 5.5vh;
     border-radius: 0.4em;
     margin-top: 0.3em;
-    padding-top: 0.5em;
+    padding-top: 0.8em;
     text-align: center;
 }
 
@@ -376,6 +376,7 @@ html, body {
     overflow-y: scroll;
     height: 77vh;
     -webkit-user-select: text;
+    font-size: 1.2em;
 }
 
 .recipeContent::-webkit-scrollbar {
@@ -384,7 +385,7 @@ html, body {
 
 .recipeContentHeadline {
     font-weight: 800;
-    font-size: 1.9em;
+    font-size: 1.6em;
     padding: 0.2em 0.4em;
 }
 
@@ -395,7 +396,6 @@ html, body {
 .recipeContentDescription {
     font-weight: 200;
     padding: 0 0.9em 0.5em;
-    font-size: 1.1em;
     border-bottom: solid rgb(158, 157, 157) 0.13em;
 }
 
@@ -425,7 +425,6 @@ html, body {
 
 .headers {
     font-weight: 200;
-    font-size: 1.1em;
     color: rgb(88, 88, 88);
     text-align: center;
     direction: rtl;

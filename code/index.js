@@ -72,9 +72,9 @@ let PAGES = {
             salads : ["סלטים", "green_salads", 0],
             starters : ["מנות ראשונות", "green_starters", 0],
             sides : ["מנות ביניים", "green_sidedishes", -100],
-            vegan : ["מנות טבעוניות", "green_vegan", -220],
-            mainCourse : ["מנות עיקריות", "green_maincourse", -400],
-            baking : ["קונדיטוריה", "green_baking", -400],
+            vegan : ["מנות טבעוניות", "green_vegan", -245],
+            mainCourse : ["מנות עיקריות", "green_maincourse", -450],
+            baking : ["קונדיטוריה", "green_baking", -450],
         },  
         functions : [`recipePageShowTopics()`], // פונקציות שצריכות לפעול
         content : {

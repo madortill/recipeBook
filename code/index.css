@@ -279,7 +279,7 @@ html, body {
 .dropDownItem {
     background-color: #E8E8E8;
     width: 74vw;
-    height: 5.5vh;
+    height: 6.5vh;
     border-radius: 0.4em;
     margin-top: 0.3em;
     padding-top: 0.8em;
@@ -338,6 +338,7 @@ html, body {
     top: 12vh;
     overflow-y: scroll;
     height: 67vh;
+    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -401,7 +402,7 @@ html, body {
 
 .recipeContentIngredientHead {
     font-weight: 800;
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 0.2em 0.4em;
     border-top: solid rgb(158, 157, 157) 0.09em;
 }
@@ -513,6 +514,12 @@ html, body {
     padding: 0.3em 0.5em;
 }
 
+.backToHome {
+    width: 6vw;
+    left: 64vw;
+    position: absolute;
+}
+
 /* גלריה */
 .galleryScrollContainer {
     position: absolute;
@@ -574,6 +581,14 @@ html, body {
     padding: 0.3em;
 }
 
+.galleryToRecipe {
+    width: 38vw;
+    position: absolute;
+    left: 50%;
+    top: -18%;
+    transform: translateX(-50%);
+}
+
 /* סרטוני וידיאו וחומרי לימוד */
 .soonContainer {
     position: absolute;
@@ -606,16 +621,18 @@ html, body {
     filter: grayscale(100);
 }
 
-@keyframes slideIn {
-    100% { transform: translateX(0vw); }
+/* @keyframes slideIn {
+    100% {
+         transform: translateX(0vw);
+    }
 }
 
 .recipesScrollContainer.slideInLeft {
-    transform: translateX(-100vw);
-    animation: slideIn 0.5s forwards;
+    transform: translateX(100vw);
+    animation: slideIn 0.5s;
 }
 
 .recipesScrollContainer.slideInRight {
-    transform: translateX(100vw);
-    animation: slideIn 0.5s forwards;
-}
+    transform: translateX(-100vw);
+    animation: slideIn 0.5s;
+} */

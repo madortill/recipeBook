@@ -30,6 +30,7 @@ let PAGES = {
             img_button_x : `x_nobackground.svg`, // אודות / איקס / תפריט
             img_SearchIcon : `green_search.svg`, 
             div_topNavLineGray : ``,
+            img_home : `home_no_circle.svg`, 
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_black.svg`,
         },
@@ -2035,12 +2036,8 @@ const showPage = (event) => {
         strCurrentPage = strFormerPage;
     }
     document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
-    // שם מאזינים אם צריך
-    if (PAGES[strCurrentPage].listeners) {
-        for (key of Object.keys(PAGES[strCurrentPage].listeners)) {
-            document.querySelector(`.${strCurrentPage} .${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
-        }
-    }
+    // מראה תפריט עליון
+    showNavBar();
     // שומר קטגוריה נוכחית
     if (event.currentTarget.classList[0] === "menuDropDownItemContainer") {
         switch (strCurrentPage) {
@@ -2078,9 +2075,12 @@ const showPage = (event) => {
             eval(PAGES[strCurrentPage].functions[i]);
         }
     }
-
-    // מראה תפריט עליון
-    showNavBar();
+    // שם מאזינים אם צריך
+    if (PAGES[strCurrentPage].listeners) {
+        for (key of Object.keys(PAGES[strCurrentPage].listeners)) {
+            document.querySelector(`.${strCurrentPage} .${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
+        }
+    }
     if(document.querySelector(`.recipeContent`)) {
         let recipeContent = document.querySelector(`.recipeContent`);
         document.querySelector(`.recipePage`).removeChild(recipeContent);
@@ -2097,7 +2097,7 @@ const showRecipe = (event) => {
         strCurrentRecipeTopic = event.currentTarget.classList[2];
     }
     // אם באים מחיפוש
-    if (document.querySelector('.searchScreen').classList[2] === undefined) {
+    if (document.querySelector('.searchScreen').classList[2] === undefined || strCurrentPage === "galleryPage") {
         document.querySelector('.searchScreen').classList.add("hidden");
         // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
         document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
@@ -2106,7 +2106,7 @@ const showRecipe = (event) => {
         // מראה תפריט עליון
         showNavBar();
     }
-    // עוד לא ברור עם לעשות דיספלי נון או למחוק תוכן!!!!!
+    // מרוקן דיבים
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
     document.querySelector(`.bottomNavBar`).innerHTML = "";
     if(document.querySelector(`.recipeContent`)) {
@@ -2203,14 +2203,9 @@ const recipePageShowTopics = (event) => {
             // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
             if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
                 nCurrentRecipeTopicNumber--;
-                // setTimeout(() => { document.querySelector(`.recipesScrollContainer`).classList.add("slideInLeft"); }, 10);
-                setTimeout(() => { document.querySelector(`.recipesScrollContainer`).classList.add("slideInRight"); }, 10);
             } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
                 nCurrentRecipeTopicNumber++;
-                setTimeout(() => { document.querySelector(`.recipesScrollContainer`).classList.add("slideInRight"); }, 10);
             }
-            document.querySelector(`.recipesScrollContainer`).classList.remove("slideInRight");
-            // document.querySelector(`.recipesScrollContainer`).classList.remove("slideInLeft");
             strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];
         }
     } else { // שומר את מספר הקטגוריה אם באים מהתפריט או מההתחלה
@@ -2295,6 +2290,9 @@ const showPicDisplay = (event) => {
         {attributes: {class: `galleryDisplayPic`, 
         src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[currentPicName]}.jpeg`},}),
         El("div", {cls: `galleryDisplayText`}, addSpace(currentPicName)),
+        El("img", {attributes: {class: `galleryToRecipe ${currentPicName}`, 
+        src : `../assets/images/grapics/general/lamatkon_button.svg`},
+        listeners : {click : showRecipe}}),
         El ("div", {cls: `galleryDisplayArrows`},
             El("img", 
             {attributes: {class: `rightArrow arrow`, 
@@ -2437,6 +2435,11 @@ const showNavBar = () => {
                 navBarItem = El(key.slice(0,3), 
                 { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: key.slice(4)},
                 listeners: {click : onClickSearch}});
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            }else if (key === "img_home"){
+                navBarItem = El(key.slice(0,3), 
+                { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: `${key.slice(4)} backToHome main`},
+                listeners: {click : showPage}});
                 document.querySelector(`.topNavBar`).append(navBarItem);
             }else { // סמלים
                 navBarItem = El(key.slice(0,3), 

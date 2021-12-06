@@ -2202,9 +2202,14 @@ const recipePageShowTopics = (event) => {
             // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
             if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
                 nCurrentRecipeTopicNumber--;
+                // setTimeout(() => { document.querySelector(`.recipesScrollContainer`).classList.add("slideInLeft"); }, 10);
+                setTimeout(() => { document.querySelector(`.recipesScrollContainer`).classList.add("slideInRight"); }, 10);
             } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
                 nCurrentRecipeTopicNumber++;
+                setTimeout(() => { document.querySelector(`.recipesScrollContainer`).classList.add("slideInRight"); }, 10);
             }
+            document.querySelector(`.recipesScrollContainer`).classList.remove("slideInRight");
+            // document.querySelector(`.recipesScrollContainer`).classList.remove("slideInLeft");
             strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];
         }
     } else { // שומר את מספר הקטגוריה אם באים מהתפריט או מההתחלה
@@ -2217,17 +2222,19 @@ const recipePageShowTopics = (event) => {
     document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.add("bold");
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
+    document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
     for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentRecipeTopic])) {
         let recipeDisplay = El("div",
         {attributes: {class: `recipeDisplay ${key}`}, 
         listeners : {click : showRecipe}},
-            El("img",
-            {attributes: {class: `recipeDisplayPic`, 
-            src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].content[strCurrentRecipeTopic][key].pic}.jpeg`},}),
-            El("div", {cls: `recipeDisplayText`}, addSpace(key))
+        El("img",
+        {attributes: {class: `recipeDisplayPic`, 
+        src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].content[strCurrentRecipeTopic][key].pic}.jpeg`},}),
+        El("div", {cls: `recipeDisplayText`}, addSpace(key))
         )
         document.querySelector(`.recipesScrollContainer`).append(recipeDisplay)
     }
+
 }
 
 /* galleryPageShowTopics

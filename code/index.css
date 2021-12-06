@@ -606,3 +606,17 @@ html, body {
 .gray {
     filter: grayscale(100);
 }
+
+@keyframes slideIn {
+    100% { transform: translateX(0vw); }
+}
+
+.recipesScrollContainer.slideInLeft {
+    transform: translateX(-100vw);
+    animation: slideIn 0.5s forwards;
+}
+
+.recipesScrollContainer.slideInRight {
+    transform: translateX(100vw);
+    animation: slideIn 0.5s forwards;
+}

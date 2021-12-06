@@ -44,10 +44,10 @@ let PAGES = {
                 baking : ["קונדיטוריה", "black_baking"],
             }],
             learning : ["חומרי לימוד","black_materials", { // תפריט נפתח
-                subTopic : ["שם הקטגוריה", "black_starters"],
+                subTopic : ["חומרי לימוד", "black_materials"],
             }],
             gallery : ["תמונות","black_gallery", { // תפריט נפתח
-                gallerys : ["גלריה", "black_starters"],
+                gallerys : ["גלריה", "black_gallery"],
             }],
             videos : ["סרטוני הדרכה","black_videos", { // תפריט נפתח
                 recipes : ["מתכונים", "black_cookbook"],

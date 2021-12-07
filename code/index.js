@@ -2175,9 +2175,14 @@ const showRecipe = (event) => {
         document.querySelector(`.preparationsContainer`).append(preparation);
     }
     
+    // כפתור חזור
     document.querySelector(`.button_menu`).setAttribute("src", "../assets/images/grapics/general/right_arrow.svg");
     document.querySelector(`.button_menu`).classList.remove("menu");
-    document.querySelector(`.button_menu`).classList.add("recipe");
+    if (event.currentTarget.classList[0] === "galleryToRecipe") {
+        document.querySelector(`.button_menu`).classList.add("gallery");
+    } else {
+        document.querySelector(`.button_menu`).classList.add("recipe");
+    }
 }
 
 /* showrecipePageTopics

@@ -1999,7 +1999,6 @@ let strCurrentRecipeTopic = "salads";
 let nCurrentRecipeTopicNumber = 0;
 let currentPicNum;
 let currentPicName;
-var elem = document.querySelector("html");
 
 // consts
 const NUMBER_OF_RECIPE_TOPICS = 5;
@@ -2018,25 +2017,10 @@ window.addEventListener(`load`, () => {
     showNavBar();
 });
 
-function openFullscreen() {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullscreen) { /* Firefox */
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE/Edge */
-      elem.msRequestFullscreen();
-    }
-}
-
-
-
 /* showPage
 --------------------------------------------------------------
 Description:  */
 const showPage = (event) => {
-    openFullscreen();
     // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
     document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
     if (event.currentTarget.classList[1] !== "x") {   // מטפל במקרה של תפריט

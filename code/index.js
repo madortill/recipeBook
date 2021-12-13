@@ -1999,7 +1999,6 @@ let strCurrentRecipeTopic = "salads";
 let nCurrentRecipeTopicNumber = 0;
 let currentPicNum;
 let currentPicName;
-var elem = document.querySelector("html");
 
 // consts
 const NUMBER_OF_RECIPE_TOPICS = 5;
@@ -2016,22 +2015,7 @@ window.addEventListener(`load`, () => {
         arrMainPageButtons[i].addEventListener('click', showPage);
     };
     showNavBar();
-    openFullscreen();
 });
-
-function openFullscreen() {
-    // if (elem.requestFullscreen) {
-    //   elem.requestFullscreen();
-    // } else
-     if (elem.mozRequestFullscreen) { /* Firefox */
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE/Edge */
-      elem.msRequestFullscreen();
-    }
-}
-
 
 
 /* showPage

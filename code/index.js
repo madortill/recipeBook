@@ -769,7 +769,7 @@ let PAGES = {
                     ],
                 },
                 "מילוי-לבלינצ'ס-גבינה-פרווה" :  {
-                    pic: `blinches`,
+                    pic: `cheeseFilling`,
                     description: ``,
                     ingredients : [
                         `מלית גבינה פרווה טבעונית של תנובה 500 גרם `,
@@ -782,7 +782,7 @@ let PAGES = {
                     ],
                 },
                 "מילוי-לבלינצ'ס-תפוחים" :  {
-                    pic: `blinches`,
+                    pic: `appleFilling`,
                     description: ``,
                     ingredients : [
                         `6 תפוחי עץ גרני סמית חתוכים לקוביות`,
@@ -1563,7 +1563,7 @@ let PAGES = {
             }, 
             baking : { // תת נושא
                 'בצק-עלים' :  {
-                    pic: `tahinaSalad`,
+                    pic: `phillo`,
                     description: ``,
                     ingredients : [
                         `500 גר' קמח`,
@@ -1584,7 +1584,7 @@ let PAGES = {
                     ],
                 },
                 'בצק-פריך' :  {
-                    pic: `tahinaSalad`,
+                    pic: `parich`,
                     description: ``,
                     ingredients : [
                         `600 גר' מרגרינה`,
@@ -1644,7 +1644,7 @@ let PAGES = {
                     ],
                 },
                 'קראמבל' :  {
-                    pic: `tahinaSalad`,
+                    pic: `crambele`,
                     description: ``,
                     ingredients : [
                         `200 גר' סוכר `,
@@ -1677,7 +1677,7 @@ let PAGES = {
                     ],
                 },
                 'מרנג' :  {
-                    pic: `tahinaSalad`,
+                    pic: `marenge`,
                     description: `מתאים לקרמבו/ פאי לימון/ נשיקות/ פבלובה וכו'`,
                     ingredients : [
                         `חצי ליטר חלבון `,
@@ -1902,8 +1902,8 @@ let PAGES = {
             "חביתת-ירק" : [`beans`, "starters"],
             "פנקייק" : [`pancake`, "starters"],
             "בלינצ'ס" : [`blinches`, "starters"],
-            "מילוי-לבלינצ'ס-גבינה-פרווה" : [`blinches`, "starters"],
-            "מילוי-לבלינצ'ס-תפוחים" : [`blinches`, "starters"],
+            "מילוי-לבלינצ'ס-גבינה-פרווה" : [`cheeseFilling`, "starters"],
+            "מילוי-לבלינצ'ס-תפוחים" : [`appleFilling`, "starters"],
             "מילוי-לבלינצ'ס-בקלוואה" : [`blinches`, "starters"],
             "בצק-לפיצה" : [`pizza`, "starters"],
             "פוקאצ'ה" : [`fukatcha`, "starters"],
@@ -1940,13 +1940,13 @@ let PAGES = {
             'המבורגר' : [`humburger`, "mainCourse"],
             'פילה-אמנון-בסגנון-מזרחי' :[ `amnonFish`, "mainCourse"],
             'דג-פילה-לברק/אמנון' : [`lavrekFish`, "mainCourse"],
-            'בצק-עלים' : [`tahinaSalad`, "baking"],
-            'בצק-פריך' : [`tahinaSalad`, "baking"],
+            'בצק-עלים' : [`phillo`, "baking"],
+            'בצק-פריך' : [`parich`, "baking"],
             'בראוניז-שוקולד' : [`brownize`, "baking"],
             "ספינג'" : [`spinge`, "baking"],
-            'קראמבל' : [`tahinaSalad`, "baking"],
+            'קראמבל' : [`crambele`, "baking"],
             'פאי-לימון' : [`lrmonPie`, "baking"],
-            'מרנג' : [`tahinaSalad`, "baking"],
+            'מרנג' : [`marenge`, "baking"],
             'עוגת-תפוזים' : [`orangeCake`, "baking"],
             'עוגת-שיש' : [`marbelCake`, "baking"],
             'עוגת-שוקולד' : [`choclateCake`, "baking"],
@@ -2200,14 +2200,17 @@ const recipePageShowTopics = (event) => {
     document.querySelector(`.recipePage .${strCurrentRecipeTopic} .bottomNavBarPic`).style.height = "5vh";
     if(event) { // בודק אם נעשתה לחיצה או החלקה
         if (event.currentTarget.classList[0] === "bottomNavBarTopic") { 
+            document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
             // בלחיצה שומר קטגוריה נוכחית ואת מספרה
             strCurrentRecipeTopic = event.currentTarget.classList[1];
             nCurrentRecipeTopicNumber = Number(event.currentTarget.classList[2]);
         } else {
             // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
             if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
+                document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
                 nCurrentRecipeTopicNumber--;
             } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
+                document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
                 nCurrentRecipeTopicNumber++;
             }
             strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];
@@ -2222,7 +2225,7 @@ const recipePageShowTopics = (event) => {
     document.querySelector(`.recipePage .${strCurrentRecipeTopic} .bottomNavBarPic`).style.height = "6vh";
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
-    document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
+
     for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentRecipeTopic])) {
         let recipeDisplay = El("div",
         {attributes: {class: `recipeDisplay ${key}`}, 

@@ -2207,10 +2207,10 @@ const recipePageShowTopics = (event) => {
         } else {
             // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
             if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
-                document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
+                // document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
                 nCurrentRecipeTopicNumber--;
             } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
-                document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
+                // document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
                 nCurrentRecipeTopicNumber++;
             }
             strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];

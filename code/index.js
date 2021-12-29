@@ -2015,6 +2015,7 @@ window.addEventListener(`load`, () => {
         arrMainPageButtons[i].addEventListener('click', showPage);
     };
     showNavBar();
+    document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', recipePageShowTopics);
 });
 
 /* showPage
@@ -2189,7 +2190,7 @@ const showRecipe = (event) => {
 Description: change hyphen to space */
 const recipePageShowTopics = (event) => {
     // שם מאזינים להחלקה ושומר את הקטגוריות במערך
-    document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', recipePageShowTopics);
+    // document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', recipePageShowTopics);
     let arrTopic = [];
     for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
         arrTopic.push(topics);
@@ -2207,10 +2208,10 @@ const recipePageShowTopics = (event) => {
         } else {
             // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
             if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
-                // document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
+                document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
                 nCurrentRecipeTopicNumber--;
             } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
-                // document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
+                document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
                 nCurrentRecipeTopicNumber++;
             }
             strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];

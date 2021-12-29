@@ -2190,7 +2190,6 @@ const showRecipe = (event) => {
 Description: change hyphen to space */
 const recipePageShowTopics = (event) => {
     // שם מאזינים להחלקה ושומר את הקטגוריות במערך
-    // document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', recipePageShowTopics);
     let arrTopic = [];
     for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
         arrTopic.push(topics);

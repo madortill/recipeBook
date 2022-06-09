@@ -67,12 +67,10 @@ html, body {
 /* ניווט עליון */
 .topNavBar {
     height: 10vh;
-    width: 53.5vw;
+    width: 100%;
     background: #0D635F;
     position: fixed;
     top: 0;
-    padding-left: 21.5vw;
-    padding-right: 25vw;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -80,36 +78,29 @@ html, body {
 
 .topNavText {
     color: white;
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: 800;
+    width: fit-content;
 }
 
 .topNavLine {
     background-color: #E8E8E8;
-    height: 8vh;
-    width: 0.4vw;
-    position: absolute;
-    right: 26vw;
+    height: 7vh;
+    width: 0.55vw;
 }
 
 .topNavLineGray {
     background-color: rgb(158, 157, 157);
-    height: 8vh;
-    width: 0.4vw;
-    position: absolute;
-    right: 26vw;
+    height: 7vh;
+    width: 0.55vw;
 }
 
 .bhdLogo {
     height: 4vh;
-    position: absolute;
-    left: 15vw;
 }
 
 .SearchIcon {
     width: 5vw;
-    position: absolute;
-    right: 17vw;
 }
 
 .topNavTextIcon {
@@ -119,26 +110,10 @@ html, body {
 
 .tillLogo {
     width: 10vw;
-    position: absolute;
-    left: 3vw;
 }
 
-.button_about {
+.button_about, .button_menu, .button_x {
     width: 8vw;
-    position: absolute;
-    right: 3vw;
-}
-
-.button_menu {
-    width: 8vw;
-    position: absolute;
-    right: 3vw;
-}
-
-.button_x {
-    width: 8vw;
-    position: absolute;
-    right: 3vw;
 }
 
 /* עמוד ראשי */
@@ -422,6 +397,7 @@ html, body {
     display: flex;
     padding: 0.4em 0;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .headers {
@@ -429,7 +405,8 @@ html, body {
     color: rgb(88, 88, 88);
     text-align: center;
     direction: rtl;
-    width: 35vw;
+    display: flex;
+    align-items: center;
     padding: 0 0.1em;
 }
 
@@ -440,16 +417,11 @@ html, body {
 
 .recipeInfoText {
     color: black;
-    padding-top: 0.3em;
+    padding: 0.3em;
 }
 
 .quantity, .difficulty {
     border-left: solid rgb(158, 157, 157) 0.13em;
-    width: 31vw;
-}
-
-.quantity {
-    width: 28vw;
 }
 
 .headerContainer {
@@ -516,8 +488,8 @@ html, body {
 
 .backToHome {
     width: 6vw;
-    left: 64vw;
-    position: absolute;
+    /* left: 64vw; */
+    /* position: absolute; */
 }
 
 /* גלריה */

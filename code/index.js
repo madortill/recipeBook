@@ -48,7 +48,8 @@ let PAGES = {
                 subTopic : ["חומרי לימוד", "black_materials"],
             }],
             gallery : ["תמונות","black_gallery", { // תפריט נפתח
-                gallerys : ["גלריה", "black_gallery"],
+                recipes : ["מתכונים", "black_cookbook"],
+                events : ["אירועים", "black_events"],
             }],
             videos : ["סרטוני הדרכה","black_videos", { // תפריט נפתח
                 recipes : ["מתכונים", "black_cookbook"],
@@ -77,7 +78,7 @@ let PAGES = {
             mainCourse : ["מנות עיקריות", "green_maincourse", -450],
             baking : ["קונדיטוריה", "green_baking", -450],
         },  
-        functions : [`recipePageShowTopics()`], // פונקציות שצריכות לפעול
+        functions : [`showTopics()`], // פונקציות שצריכות לפעול
         content : {
             salads : { // תת נושא
                 "סלט-מלפפונים-ובצל" : {
@@ -1989,92 +1990,99 @@ let PAGES = {
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
-        functions : [`galleryPageShowTopics()`], // פונקציות שצריכות לפעול
+        bottomNavBar : { // סמלים של הקטגוריות של המתכונים
+            recipe : ["מתכונים", "green_cookbook", 0],
+            events : ["אירועים", "green_events", 0],
+        },  
+        functions : [`showTopics()`], // פונקציות שצריכות לפעול
         content : {
-            "סלט-מלפפונים-ובצל" : [`cucamberSalad`, "salads"],
-            "סלט-טחינה" : [`tahinaSalad`, "salads"],
-            "סלט-קולסלאו" : [`kolslowSalad`, "salads"],
-            "סלט-ירק" : [`greenSalad`, "salads"],
-            "סלט-גזר-אסיאתי" : [`carrotSalad`, "salads"],
-            "סלט-קרפצ'יו-סלק" : [`beetSalad`, "salads"],
-            "סלט-משוויה" : [`mashviaSalad`, "salads"],
-            "סלט-חציל-קלוי" : [`eggPlantSalad`, "salads"],
-            "סלט-בטטה-בצ'ילי-מתוק" : [`sweetPotatoSalad`, "salads"],
-            "סלט-מטבוחה" : [`matbochaSalad`, "salads"],
-            "סלט-חמוצים" : [`kimchiSalad`, "salads"],
-            "סלט-חומוס" : [`homusSalad`, "salads"],
-            "מרק-אפונה" : [`pees`, "starters"],
-            "אנטיפסטי" : [`antiPasti`, "starters"],
-            "מרק-תירס" : [`corn`, "starters"],
-            "מרק-בצל" : [`onion`, "starters"],
-            "מרק-שעועית-איטלקי" : [`beans`, "starters"],
-            "מרק-עדשים-איטלקי" : [`latel`, "starters"],
-            "מרק-ירקות" : [`vegtabels`, "starters"],
-            "מרק-סולת" : [`solet`, "starters"],
-            "מרק-כתום" : [`orange`, "starters"],
-            "מרק-חרירה-מרוקאי" : [`hrira`, "starters"],
-            "פלפל-ממולא" : [`stafedPeper`, "starters"],
-            "ארנצ'יני" : [`arenchini`, "starters"],
-            "טורטייה-במילוי-ירקות-מוקפצים" : [`stafedTortia`, "starters"],
-            'אצבעות-בורקס-תפו"א-/-בטטה' : [`borecas`, "starters"],
-            "מאפה-פילו-עם-תפוחי-אדמה-ופטריות" : [`potatoMashroomPastry`, "starters"],
-            "שקשוקה" : [`shaksuka`, "starters"],
-            "שקשוקה-בלקנית-עם-חצילים-מטוגנים" : [`balkanicShakshuka`, "starters"],
-            "חביתת-ירק" : [`beans`, "starters"],
-            "פנקייק" : [`pancake`, "starters"],
-            "בלינצ'ס" : [`blinches`, "starters"],
-            "מילוי-לבלינצ'ס-גבינה-פרווה" : [`cheeseFilling`, "starters"],
-            "מילוי-לבלינצ'ס-תפוחים" : [`appleFilling`, "starters"],
-            "מילוי-לבלינצ'ס-בקלוואה" : [`blinches`, "starters"],
-            "בצק-לפיצה" : [`pizza`, "starters"],
-            "פוקאצ'ה" : [`fukatcha`, "starters"],
-            "בצק-שמרים" : [`dough`, "starters"],
-            "חלות/-לחמניות" : [`buns`, "starters"],
-            "אורז" : [`rice`, "sides"],
-            "מג'דרה" : [`magadra`, "sides"],
-            "בורגול" : [`burgul`, "sides"],
-            "פריקי" : [`priki`, "sides"],
-            "פסטה-איטלקית" : [`pasta`, "sides"],
-            "ספגטי-ברוטב-ארביאטה" : [`spagty`, "sides"],
-            "פסטה-נפוליטנה" : [`napolitana`, "sides"],
-            "תפוח-אדמה-ירח" : [`potatoSlices`, "sides"],
-            "תפוח-אדמה-מניפה" : [`potatofan`, "sides"],
-            'תפו"א-מדורה' : [`campFirePotato`, "sides"],
-            'תפו"א-ובטטה-"פוטטו"' : [`potatoAndSweetPotato`, "sides"],
-            "פירה" : [`mashedPotato`, "sides"],
-            'ירקות-מוקפצים' : [`chiniseVeg`, "vegan"],
-            'בטטה-צלויה-בקרם-קוקוס' : [`sweetPotato`, "vegan"],
-            'המבורגר-עדשים-וסויה-טחון' : [`lentelBurger`, "vegan"],
-            'קרם-חציל-עם-גרגירי-חומוס' : [`eggPlantHumus`, "vegan"],
-            'סיגר-פלאפל' :[ `plapelCigar`, "vegan"],
-            'טורטייה-טבעונית' : [`tortilaSoy`, "vegan"],
-            'רוסטביף-דלעת,-דלורית-ובטטה' : [`skwashSweetPotato`, "vegan"],
-            'חזה-עוף-ממולא' : [`stafedChickenBreast`, "mainCourse"],
-            'קציצות-קבב' : [`kabab`, "mainCourse"],
-            'קדירת-עוף-עם-ירקות-ושומר' : [`chickenStue`, "mainCourse"],
-            'שניצל-וינאי' : [`snitzel`, "mainCourse"],
-            'בשר-ברוטב-צלי' : [`beefSlices`, "mainCourse"],
-            'בשר-צלי-אסאדו' : [`beefstue`, "mainCourse"],
-            'סטייק-פרגית-ברוטב-טריאקי' : [`pargitTariaki`, "mainCourse"],
-            'סטייק-פרגית-בשום-וסילאן' : [`pargitGarlic`, "mainCourse"],
-            'עראיס' : [`arais`, "mainCourse"],
-            'המבורגר' : [`humburger`, "mainCourse"],
-            'פילה-אמנון-בסגנון-מזרחי' :[ `amnonFish`, "mainCourse"],
-            'דג-פילה-לברק/אמנון' : [`lavrekFish`, "mainCourse"],
-            'בצק-עלים' : [`phillo`, "baking"],
-            'בצק-פריך' : [`parich`, "baking"],
-            'בראוניז-שוקולד' : [`brownize`, "baking"],
-            "ספינג'" : [`spinge`, "baking"],
-            'קראמבל' : [`crambele`, "baking"],
-            'פאי-לימון' : [`lrmonPie`, "baking"],
-            'מרנג' : [`marenge`, "baking"],
-            'עוגת-תפוזים' : [`orangeCake`, "baking"],
-            'עוגת-שיש' : [`marbelCake`, "baking"],
-            'עוגת-שוקולד' : [`choclateCake`, "baking"],
-            'עוגת-שמרים' : [`yeastCake`, "baking"],
-            'פילו-במילוי-תפוחים' : [`applePastry`, "baking"],
-            'סופלה' : [`sufle`, "baking"],
-            'באונטי-קוקוס' : [`coconutBounty`, "baking"],
+            recipe: {
+                "סלט-מלפפונים-ובצל" : [`cucamberSalad`, "salads"],
+                "סלט-טחינה" : [`tahinaSalad`, "salads"],
+                "סלט-קולסלאו" : [`kolslowSalad`, "salads"],
+                "סלט-ירק" : [`greenSalad`, "salads"],
+                "סלט-גזר-אסיאתי" : [`carrotSalad`, "salads"],
+                "סלט-קרפצ'יו-סלק" : [`beetSalad`, "salads"],
+                "סלט-משוויה" : [`mashviaSalad`, "salads"],
+                "סלט-חציל-קלוי" : [`eggPlantSalad`, "salads"],
+                "סלט-בטטה-בצ'ילי-מתוק" : [`sweetPotatoSalad`, "salads"],
+                "סלט-מטבוחה" : [`matbochaSalad`, "salads"],
+                "סלט-חמוצים" : [`kimchiSalad`, "salads"],
+                "סלט-חומוס" : [`homusSalad`, "salads"],
+                "מרק-אפונה" : [`pees`, "starters"],
+                "אנטיפסטי" : [`antiPasti`, "starters"],
+                "מרק-תירס" : [`corn`, "starters"],
+                "מרק-בצל" : [`onion`, "starters"],
+                "מרק-שעועית-איטלקי" : [`beans`, "starters"],
+                "מרק-עדשים-איטלקי" : [`latel`, "starters"],
+                "מרק-ירקות" : [`vegtabels`, "starters"],
+                "מרק-סולת" : [`solet`, "starters"],
+                "מרק-כתום" : [`orange`, "starters"],
+                "מרק-חרירה-מרוקאי" : [`hrira`, "starters"],
+                "פלפל-ממולא" : [`stafedPeper`, "starters"],
+                "ארנצ'יני" : [`arenchini`, "starters"],
+                "טורטייה-במילוי-ירקות-מוקפצים" : [`stafedTortia`, "starters"],
+                'אצבעות-בורקס-תפו"א-/-בטטה' : [`borecas`, "starters"],
+                "מאפה-פילו-עם-תפוחי-אדמה-ופטריות" : [`potatoMashroomPastry`, "starters"],
+                "שקשוקה" : [`shaksuka`, "starters"],
+                "שקשוקה-בלקנית-עם-חצילים-מטוגנים" : [`balkanicShakshuka`, "starters"],
+                "חביתת-ירק" : [`beans`, "starters"],
+                "פנקייק" : [`pancake`, "starters"],
+                "בלינצ'ס" : [`blinches`, "starters"],
+                "מילוי-לבלינצ'ס-גבינה-פרווה" : [`cheeseFilling`, "starters"],
+                "מילוי-לבלינצ'ס-תפוחים" : [`appleFilling`, "starters"],
+                "מילוי-לבלינצ'ס-בקלוואה" : [`blinches`, "starters"],
+                "בצק-לפיצה" : [`pizza`, "starters"],
+                "פוקאצ'ה" : [`fukatcha`, "starters"],
+                "בצק-שמרים" : [`dough`, "starters"],
+                "חלות/-לחמניות" : [`buns`, "starters"],
+                "אורז" : [`rice`, "sides"],
+                "מג'דרה" : [`magadra`, "sides"],
+                "בורגול" : [`burgul`, "sides"],
+                "פריקי" : [`priki`, "sides"],
+                "פסטה-איטלקית" : [`pasta`, "sides"],
+                "ספגטי-ברוטב-ארביאטה" : [`spagty`, "sides"],
+                "פסטה-נפוליטנה" : [`napolitana`, "sides"],
+                "תפוח-אדמה-ירח" : [`potatoSlices`, "sides"],
+                "תפוח-אדמה-מניפה" : [`potatofan`, "sides"],
+                'תפו"א-מדורה' : [`campFirePotato`, "sides"],
+                'תפו"א-ובטטה-"פוטטו"' : [`potatoAndSweetPotato`, "sides"],
+                "פירה" : [`mashedPotato`, "sides"],
+                'ירקות-מוקפצים' : [`chiniseVeg`, "vegan"],
+                'בטטה-צלויה-בקרם-קוקוס' : [`sweetPotato`, "vegan"],
+                'המבורגר-עדשים-וסויה-טחון' : [`lentelBurger`, "vegan"],
+                'קרם-חציל-עם-גרגירי-חומוס' : [`eggPlantHumus`, "vegan"],
+                'סיגר-פלאפל' :[ `plapelCigar`, "vegan"],
+                'טורטייה-טבעונית' : [`tortilaSoy`, "vegan"],
+                'רוסטביף-דלעת,-דלורית-ובטטה' : [`skwashSweetPotato`, "vegan"],
+                'חזה-עוף-ממולא' : [`stafedChickenBreast`, "mainCourse"],
+                'קציצות-קבב' : [`kabab`, "mainCourse"],
+                'קדירת-עוף-עם-ירקות-ושומר' : [`chickenStue`, "mainCourse"],
+                'שניצל-וינאי' : [`snitzel`, "mainCourse"],
+                'בשר-ברוטב-צלי' : [`beefSlices`, "mainCourse"],
+                'בשר-צלי-אסאדו' : [`beefstue`, "mainCourse"],
+                'סטייק-פרגית-ברוטב-טריאקי' : [`pargitTariaki`, "mainCourse"],
+                'סטייק-פרגית-בשום-וסילאן' : [`pargitGarlic`, "mainCourse"],
+                'עראיס' : [`arais`, "mainCourse"],
+                'המבורגר' : [`humburger`, "mainCourse"],
+                'פילה-אמנון-בסגנון-מזרחי' :[ `amnonFish`, "mainCourse"],
+                'דג-פילה-לברק/אמנון' : [`lavrekFish`, "mainCourse"],
+                'בצק-עלים' : [`phillo`, "baking"],
+                'בצק-פריך' : [`parich`, "baking"],
+                'בראוניז-שוקולד' : [`brownize`, "baking"],
+                "ספינג'" : [`spinge`, "baking"],
+                'קראמבל' : [`crambele`, "baking"],
+                'פאי-לימון' : [`lrmonPie`, "baking"],
+                'מרנג' : [`marenge`, "baking"],
+                'עוגת-תפוזים' : [`orangeCake`, "baking"],
+                'עוגת-שיש' : [`marbelCake`, "baking"],
+                'עוגת-שוקולד' : [`choclateCake`, "baking"],
+                'עוגת-שמרים' : [`yeastCake`, "baking"],
+                'פילו-במילוי-תפוחים' : [`applePastry`, "baking"],
+                'סופלה' : [`sufle`, "baking"],
+                'באונטי-קוקוס' : [`coconutBounty`, "baking"],
+            },
+            events: {}
         }
     },
     // עמוד וידיאו
@@ -2092,9 +2100,9 @@ let PAGES = {
         bottomNavBar : { // סמלים של הקטגוריות של המתכונים
             recipe : ["מתכונים", "green_cookbook", 0],
             safty : ["בטיחות", "green_protection", 0],
-            health : ['ברה"צ', "green_protection", -100],
+            health : ['ברה"צ', "green_health", -100],
         },  
-        functions : [`videosPageShowTopics()`], // פונקציות שצריכות לפעול
+        functions : [`showTopics()`], // פונקציות שצריכות לפעול
         content: {
             recipe : {
                 "שקשוקה": "https://www.youtube.com/embed/Yra-RfiiYLw",
@@ -2134,12 +2142,12 @@ let strCurrentPage = "mainPage";
 let strFormerPage = "mainPage";
 let strCurrentTopic_recipePage = "salads";
 let strCurrentTopic_videosPage = "recipe";
-let nCurrentRecipeTopicNumber = 0;
+let strCurrentTopic_galleryPage = "recipe";
+let nCurrentTopicNumber = 0;
 let currentPicNum;
 let currentPicName;
 
 // consts
-const NUMBER_OF_RECIPE_TOPICS = 5;
 const NUMBER_OF_PICTUERS = 83;
 
 
@@ -2153,7 +2161,8 @@ window.addEventListener(`load`, () => {
         arrMainPageButtons[i].addEventListener('click', showPage);
     };
     showNavBar();
-    document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', recipePageShowTopics);
+    document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', showTopics);
+    document.querySelector(`.videosScrollContainer`).addEventListener('swiped', showTopics);
 });
 
 /* showPage
@@ -2189,6 +2198,11 @@ const showPage = (event) => {
                 strCurrentTopic_videosPage = event.currentTarget.classList[1];
                 break;
             }
+            case "galleryPage":
+            {
+                strCurrentTopic_galleryPage = event.currentTarget.classList[1];
+                break;
+            }
             default:
             { 
                 break;
@@ -2202,7 +2216,7 @@ const showPage = (event) => {
         for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {
             let bottomNavBarTopic = El("div", 
             {attributes: {class: `bottomNavBarTopic ${key} ${nNumberTheSymbols}`}, 
-            listeners : {click : eval(`${strCurrentPage}ShowTopics`)}},
+            listeners : {click : showTopics}},
             El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/bottomNavBar/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
             El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
             );
@@ -2210,6 +2224,7 @@ const showPage = (event) => {
             nNumberTheSymbols++;
         }
         document.querySelector(`.${strCurrentPage} .bottomNavBar .${eval(`strCurrentTopic_${strCurrentPage}`)}`).classList.add("bold");
+        document.querySelector(`.bottomNavBar`).scrollLeft = 0;
         document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[eval(`strCurrentTopic_${strCurrentPage}`)][2];
     }
     // קורא לפונקציות אם צריך
@@ -2264,14 +2279,6 @@ const showRecipe = (event) => {
         El("div", {cls : "recipeContentHeadline"}, addSpace(strCurrentRecipe)),
         El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].description),
         El("div", {cls: "recipeInfoConteiner"}, // מידע על המנה
-            // El("div", {classes: ["headers", "difficulty"]},
-            //     El("div", {cls: "headerContainer"},
-            //         El("img",{attributes: {class: `recipeInfoPics`, 
-            //         src : `../assets/images/grapics/recipe/hardness_level.svg`}}),
-            //         "רמת קושי:",
-            //     ),
-            //     El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].difficulty)
-            // ),
             El("div", {classes: ["headers", "quantity"]},
                 El("div", {cls: "headerContainer"},
                     El("img",{attributes: {class: `recipeInfoPics`, 
@@ -2328,44 +2335,55 @@ const showRecipe = (event) => {
     }
 }
 
-/* showrecipePageTopics
+/* showTopics
 --------------------------------------------------------------
 Description: change hyphen to space */
-const recipePageShowTopics = (event) => {
+const showTopics = (event) => {
     // שם מאזינים להחלקה ושומר את הקטגוריות במערך
     let arrTopic = [];
     for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
         arrTopic.push(topics);
     }
 
+    let currTopic = eval(`strCurrentTopic_${strCurrentPage}`)
+
     // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
-    document.querySelector(`.recipePage .${strCurrentTopic_recipePage}`).classList.remove("bold");
-    document.querySelector(`.recipePage .${strCurrentTopic_recipePage} .bottomNavBarPic`).style.height = "5vh";
+    document.querySelector(`.${strCurrentPage} .${currTopic}`).classList.remove("bold");
+    document.querySelector(`.${strCurrentPage} .${currTopic} .bottomNavBarPic`).style.height = "5vh";
     if(event) { // בודק אם נעשתה לחיצה או החלקה
         if (event.currentTarget.classList[0] === "bottomNavBarTopic") { 
             document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
             // בלחיצה שומר קטגוריה נוכחית ואת מספרה
-            strCurrentTopic_recipePage = event.currentTarget.classList[1];
-            nCurrentRecipeTopicNumber = Number(event.currentTarget.classList[2]);
+            currTopic = event.currentTarget.classList[1];
+            nCurrentTopicNumber = Number(event.currentTarget.classList[2]);
         } else {
             // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
-            if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
+            if(event.detail.dir === "left" && nCurrentTopicNumber > 0) {
                 document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
-                nCurrentRecipeTopicNumber--;
-            } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
+                nCurrentTopicNumber--;
+            } else if (event.detail.dir === "right" && nCurrentTopicNumber < Object.keys(PAGES.recipePage.bottomNavBar).length -1) {
                 document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
-                nCurrentRecipeTopicNumber++;
+                nCurrentTopicNumber++;
             }
-            strCurrentTopic_recipePage = arrTopic[nCurrentRecipeTopicNumber];
+            currTopic = arrTopic[nCurrentTopicNumber];
         }
     } else { // שומר את מספר הקטגוריה אם באים מהתפריט או מההתחלה
-        nCurrentRecipeTopicNumber = Number(document.querySelector(`.recipePage .${strCurrentTopic_recipePage}`).classList[2]);
+        nCurrentTopicNumber = Number(document.querySelector(`.${strCurrentPage} .${currTopic}`).classList[2]);
     }
 
-    document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentTopic_recipePage][2];
+    document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[currTopic][2];
 
-    document.querySelector(`.recipePage .${strCurrentTopic_recipePage}`).classList.add("bold");
-    document.querySelector(`.recipePage .${strCurrentTopic_recipePage} .bottomNavBarPic`).style.height = "6vh";
+    document.querySelector(`.${strCurrentPage} .${currTopic}`).classList.add("bold");
+    document.querySelector(`.${strCurrentPage} .${currTopic} .bottomNavBarPic`).style.height = "6vh";
+    
+    eval(`createTopic_${strCurrentPage}(currTopic)`);
+}
+
+/* createTopic_recipePage
+--------------------------------------------------------------
+Description: */
+const createTopic_recipePage = (currTopic) => {
+    strCurrentTopic_recipePage = currTopic
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
 
@@ -2380,58 +2398,21 @@ const recipePageShowTopics = (event) => {
         )
         document.querySelector(`.recipesScrollContainer`).append(recipeDisplay)
     }
-
 }
 
-/* videosPageShowTopics
+
+/* createTopic_videosPage
 --------------------------------------------------------------
 Description: */
-const videosPageShowTopics = (event) => {
-    // שם מאזינים להחלקה ושומר את הקטגוריות במערך
-    let arrTopic = [];
-    for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
-        arrTopic.push(topics);
-    }
-
-    // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
-    document.querySelector(`.videosPage .${strCurrentTopic_videosPage}`).classList.remove("bold");
-    document.querySelector(`.videosPage .${strCurrentTopic_videosPage} .bottomNavBarPic`).style.height = "5vh";
-    if(event) { // בודק אם נעשתה לחיצה או החלקה
-        if (event.currentTarget.classList[0] === "bottomNavBarTopic") { 
-            document.querySelector(`.videosScrollContainer`).scrollTop = 0;
-            // בלחיצה שומר קטגוריה נוכחית ואת מספרה
-            strCurrentTopic_videosPage = event.currentTarget.classList[1];
-            nCurrentRecipeTopicNumber = Number(event.currentTarget.classList[2]);
-        } else {
-            // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
-            if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
-                document.querySelector(`.videosScrollContainer`).scrollTop = 0;
-                nCurrentRecipeTopicNumber--;
-            } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
-                document.querySelector(`.videosScrollContainer`).scrollTop = 0;
-                nCurrentRecipeTopicNumber++;
-            }
-            strCurrentTopic_videosPage = arrTopic[nCurrentRecipeTopicNumber];
-        }
-    } else { // שומר את מספר הקטגוריה אם באים מהתפריט או מההתחלה
-        nCurrentRecipeTopicNumber = Number(document.querySelector(`.videosPage .${strCurrentTopic_videosPage}`).classList[2]);
-    }
-
-    document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentTopic_videosPage][2];
-
-    document.querySelector(`.videosPage .${strCurrentTopic_videosPage}`).classList.add("bold");
-    document.querySelector(`.videosPage .${strCurrentTopic_videosPage} .bottomNavBarPic`).style.height = "6vh";
+const createTopic_videosPage = (currTopic) => {
+    strCurrentTopic_videosPage = currTopic
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.videosScrollContainer`).innerHTML = "";
 
     for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage])) {
         let recipeDisplay =
-        // <div class="sub-titles"></div>
-        // <iframe picture-in-picture" allowfullscreen></iframe>
-        // <div class="content"></div>
         El("div",
-            {classes: [`youtubeVideoContainer`, key],
-            listeners : {click : showRecipe}},
+            {classes: [`youtubeVideoContainer`, key],},
             El("iframe", {attributes:
                 {class: "youtubeVideo",
                 src: PAGES[strCurrentPage].content[strCurrentTopic_videosPage][key],
@@ -2444,22 +2425,20 @@ const videosPageShowTopics = (event) => {
     }
 }
 
-/* galleryPageShowTopics
+/* createTopic_galleryPage
 --------------------------------------------------------------
 Description: change hyphen to space */
-const galleryPageShowTopics = () => {
+const createTopic_galleryPage = (currTopic) => {
+    strCurrentTopic_galleryPage = currTopic
     let currentPic = 0;
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.galleryScrollContainer`).innerHTML = "";
-    for(let key of Object.keys(PAGES[strCurrentPage].content)) {
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_galleryPage])) {
         let recipeDisplay = El("div",
         {attributes: {class: `galleryScrollDisplay ${key} ${currentPic}`}, 
         listeners : {click : showPicDisplay}},
-            // El("img",
-            // {attributes: {class: `galleryScrollDisplayPic`, 
-            // src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[key]}.jpeg`},}),
         )
-        recipeDisplay.style.backgroundImage = `url(../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[key][0]}.jpeg)`
+        recipeDisplay.style.backgroundImage = `url(../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][key][0]}.jpeg)`
         document.querySelector(`.galleryScrollContainer`).append(recipeDisplay);
         currentPic++;
     }
@@ -2469,6 +2448,8 @@ const galleryPageShowTopics = () => {
 --------------------------------------------------------------
 Description:  */
 const showPicDisplay = (event) => {
+    const NUMBER_OF_PICTUERS = Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_galleryPage]).length - 1;
+
     // שם מאזין לרקע להעלמת התצוגה
     document.querySelector(`.galleryPage .darkScreen`).addEventListener("click", () => {
         document.querySelector(`.galleryPicDisplay`).classList.add("hidden");
@@ -2490,7 +2471,7 @@ const showPicDisplay = (event) => {
         currentPicNum = event.currentTarget.classList[2];
     }
     // שומר שם של תמונה נוכחית
-    currentPicName = Object.keys(PAGES[strCurrentPage].content)[currentPicNum];
+    currentPicName = Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_galleryPage])[currentPicNum];
     // מראה את תצוגת התמונה ומרוקן אותה
     document.querySelector(`.galleryPage .darkScreen`).classList.remove("hidden");
     document.querySelector(`.galleryPicDisplay`).classList.remove("hidden");
@@ -2499,11 +2480,9 @@ const showPicDisplay = (event) => {
     let picDisplay = El("div", {cls : `picDisplayContiner`},
         El("img", 
         {attributes: {class: `galleryDisplayPic`, 
-        src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[currentPicName][0]}.jpeg`},}),
+        src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][0]}.jpeg`},}),
         El("div", {cls: `galleryDisplayText`}, addSpace(currentPicName)),
-        El("img", {attributes: {class: `galleryToRecipe ${currentPicName} ${PAGES[strCurrentPage].content[currentPicName][1]}`, 
-        src : `../assets/images/grapics/general/lamatkon_button.svg`},
-        listeners : {click : showRecipe}}),
+        El("div", {cls: "toRecipeButton"}),
         El ("div", {cls: `galleryDisplayArrows`},
             El("img", 
             {attributes: {class: `rightArrow arrow`, 
@@ -2516,6 +2495,12 @@ const showPicDisplay = (event) => {
         )
     );
     document.querySelector(`.galleryPicDisplay`).append(picDisplay);
+    if(strCurrentTopic_galleryPage === "recipe"){
+        let toRecipe = El("img", {attributes: {class: `galleryToRecipe ${currentPicName} ${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][1]}`, 
+        src : `../assets/images/grapics/general/lamatkon_button.svg`},
+        listeners : {click : showRecipe}})
+        document.querySelector(`.toRecipeButton`).append(toRecipe);
+    }
 }
 
 /* onClickCheckBox

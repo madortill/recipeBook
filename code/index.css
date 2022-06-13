@@ -628,6 +628,9 @@ html, body {
     border: none;
 }
 
+.videosPage .bottomNavBar, .galleryPage .bottomNavBar {
+    justify-content: space-evenly;
+} 
 /* כללי - חשוב שיהיה למטה */
 .hidden {
     display: none;

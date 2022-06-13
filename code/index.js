@@ -2089,10 +2089,26 @@ let PAGES = {
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
-        functions : [``], // פונקציות שצריכות לפעול
-        listeners : {
-            backToMain : "showPage",
-        }
+        bottomNavBar : { // סמלים של הקטגוריות של המתכונים
+            recipe : ["מתכונים", "green_cookbook", 0],
+            safty : ["בטיחות", "green_protection", 0],
+            health : ['ברה"צ', "green_protection", -100],
+        },  
+        functions : [`videosPageShowTopics()`], // פונקציות שצריכות לפעול
+        content: {
+            recipe : {
+                "שקשוקה": "https://www.youtube.com/embed/Yra-RfiiYLw",
+                "חומוס": "https://www.youtube.com/embed/btS4XWfj6Ic",
+                "בורקס": "https://www.youtube.com/embed/rH6MQdZtIbw",
+                "טוניסאי": "https://www.youtube.com/embed/6AV9ZQKV2ew",
+                "סביח": "https://www.youtube.com/embed/SbFLDK9A3-o",
+                "שווארמה": "https://www.youtube.com/embed/fqppIe72NKk",
+                "פרגיות": "https://www.youtube.com/embed/1QukGWt0iHE",
+                "המבורגר": "https://www.youtube.com/embed/WwgozwzvcU8",
+            },
+            safty : {},
+            health : {},
+        },
     },
     // עמוד חומרי לימוד
     learningPage : {
@@ -2116,7 +2132,8 @@ let PAGES = {
 // varubles
 let strCurrentPage = "mainPage";
 let strFormerPage = "mainPage";
-let strCurrentRecipeTopic = "salads";
+let strCurrentTopic_recipePage = "salads";
+let strCurrentTopic_videosPage = "recipe";
 let nCurrentRecipeTopicNumber = 0;
 let currentPicNum;
 let currentPicName;
@@ -2164,7 +2181,12 @@ const showPage = (event) => {
         switch (strCurrentPage) {
             case "recipePage":
             {
-                strCurrentRecipeTopic = event.currentTarget.classList[1];
+                strCurrentTopic_recipePage = event.currentTarget.classList[1];
+                break;
+            }
+            case "videosPage":
+            {
+                strCurrentTopic_videosPage = event.currentTarget.classList[1];
                 break;
             }
             default:
@@ -2181,14 +2203,14 @@ const showPage = (event) => {
             let bottomNavBarTopic = El("div", 
             {attributes: {class: `bottomNavBarTopic ${key} ${nNumberTheSymbols}`}, 
             listeners : {click : eval(`${strCurrentPage}ShowTopics`)}},
-            El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/recipe/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
+            El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/bottomNavBar/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
             El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
             );
             document.querySelector(`.${strCurrentPage} .bottomNavBar`).append(bottomNavBarTopic);
             nNumberTheSymbols++;
         }
-        document.querySelector(`.${strCurrentRecipeTopic}`).classList.add("bold");
-        document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];
+        document.querySelector(`.${strCurrentPage} .bottomNavBar .${eval(`strCurrentTopic_${strCurrentPage}`)}`).classList.add("bold");
+        document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[eval(`strCurrentTopic_${strCurrentPage}`)][2];
     }
     // קורא לפונקציות אם צריך
     if (PAGES[strCurrentPage].functions) {
@@ -2215,7 +2237,7 @@ const showRecipe = (event) => {
     // שומר מתכון וקטגוריה נוכחיים
     let strCurrentRecipe = event.currentTarget.classList[1];
     if(event.currentTarget.classList[2]) {
-        strCurrentRecipeTopic = event.currentTarget.classList[2];
+        strCurrentTopic_recipePage = event.currentTarget.classList[2];
     }
     // אם באים מחיפוש
     if (document.querySelector('.searchScreen').classList[2] === undefined || strCurrentPage === "galleryPage") {
@@ -2238,9 +2260,9 @@ const showRecipe = (event) => {
     let recipeContent = El("div", {cls : "recipeContent"},
         El("img", 
         {attributes: {class: `recipeContentPic`, 
-        src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].pic}.jpeg`}}),
+        src : `../assets/images/foodImages/${strCurrentTopic_recipePage}/${PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].pic}.jpeg`}}),
         El("div", {cls : "recipeContentHeadline"}, addSpace(strCurrentRecipe)),
-        El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].description),
+        El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].description),
         El("div", {cls: "recipeInfoConteiner"}, // מידע על המנה
             // El("div", {classes: ["headers", "difficulty"]},
             //     El("div", {cls: "headerContainer"},
@@ -2248,7 +2270,7 @@ const showRecipe = (event) => {
             //         src : `../assets/images/grapics/recipe/hardness_level.svg`}}),
             //         "רמת קושי:",
             //     ),
-            //     El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].difficulty)
+            //     El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].difficulty)
             // ),
             El("div", {classes: ["headers", "quantity"]},
                 El("div", {cls: "headerContainer"},
@@ -2256,7 +2278,7 @@ const showRecipe = (event) => {
                     src : `../assets/images/grapics/recipe/serving_size_icon.svg`}}),
                     "כמות:",
                 ),
-                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].quantity)
+                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].quantity)
             ),
             El("div", {cls: "headers"},
                 El("div", {cls: "headerContainer"},
@@ -2264,7 +2286,7 @@ const showRecipe = (event) => {
                     src : `../assets/images/grapics/recipe/timer.svg`}}),
                     "זמן הכנה:",
                 ),
-                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].time)
+                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].time)
             ),
         ),
         El("div", {cls : "ingredientsContainer"},
@@ -2276,22 +2298,22 @@ const showRecipe = (event) => {
     );
     document.querySelector(`.recipePage`).append(recipeContent);
     // מכניס מצרכים
-    for (let i = 0; i < PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].ingredients.length; i++ ) {
+    for (let i = 0; i < PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].ingredients.length; i++ ) {
         let ingredient = El("div", {cls : "ingredientContainer"},
         El("img",{attributes: {class: `ingredientCheckPic ingredientCheckPic${i}`, 
         src : `../assets/images/grapics/recipe/checkbox_blank.svg`},
         listeners : {click: onClickCheckBox}}),
-        PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].ingredients[i]
+        PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].ingredients[i]
         );
         document.querySelector(`.ingredientsContainer`).append(ingredient);
     }
     // מכניס אופן הכנה
-    for (let i = 0; i < PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].preparation.length; i++ ) {
+    for (let i = 0; i < PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].preparation.length; i++ ) {
         let preparation = El("div", {cls : "preparationContainer"},
         El("img",{attributes: {class: `preparationCheckPic preparationCheckPic${i} gray`, 
         src : `../assets/images/grapics/recipe/round_checkbox.svg`},
         listeners : {click: onClickCheckBox}}),
-        PAGES[strCurrentPage].content[strCurrentRecipeTopic][strCurrentRecipe].preparation[i]
+        PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].preparation[i]
         );
         document.querySelector(`.preparationsContainer`).append(preparation);
     }
@@ -2317,13 +2339,13 @@ const recipePageShowTopics = (event) => {
     }
 
     // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
-    document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.remove("bold");
-    document.querySelector(`.recipePage .${strCurrentRecipeTopic} .bottomNavBarPic`).style.height = "5vh";
+    document.querySelector(`.recipePage .${strCurrentTopic_recipePage}`).classList.remove("bold");
+    document.querySelector(`.recipePage .${strCurrentTopic_recipePage} .bottomNavBarPic`).style.height = "5vh";
     if(event) { // בודק אם נעשתה לחיצה או החלקה
         if (event.currentTarget.classList[0] === "bottomNavBarTopic") { 
             document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
             // בלחיצה שומר קטגוריה נוכחית ואת מספרה
-            strCurrentRecipeTopic = event.currentTarget.classList[1];
+            strCurrentTopic_recipePage = event.currentTarget.classList[1];
             nCurrentRecipeTopicNumber = Number(event.currentTarget.classList[2]);
         } else {
             // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
@@ -2334,31 +2356,92 @@ const recipePageShowTopics = (event) => {
                 document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
                 nCurrentRecipeTopicNumber++;
             }
-            strCurrentRecipeTopic = arrTopic[nCurrentRecipeTopicNumber];
+            strCurrentTopic_recipePage = arrTopic[nCurrentRecipeTopicNumber];
         }
     } else { // שומר את מספר הקטגוריה אם באים מהתפריט או מההתחלה
-        nCurrentRecipeTopicNumber = Number(document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList[2]);
+        nCurrentRecipeTopicNumber = Number(document.querySelector(`.recipePage .${strCurrentTopic_recipePage}`).classList[2]);
     }
 
-    document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentRecipeTopic][2];
+    document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentTopic_recipePage][2];
 
-    document.querySelector(`.recipePage .${strCurrentRecipeTopic}`).classList.add("bold");
-    document.querySelector(`.recipePage .${strCurrentRecipeTopic} .bottomNavBarPic`).style.height = "6vh";
+    document.querySelector(`.recipePage .${strCurrentTopic_recipePage}`).classList.add("bold");
+    document.querySelector(`.recipePage .${strCurrentTopic_recipePage} .bottomNavBarPic`).style.height = "6vh";
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
 
-    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentRecipeTopic])) {
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_recipePage])) {
         let recipeDisplay = El("div",
         {attributes: {class: `recipeDisplay ${key}`}, 
         listeners : {click : showRecipe}},
         El("img",
         {attributes: {class: `recipeDisplayPic`, 
-        src : `../assets/images/foodImages/${strCurrentRecipeTopic}/${PAGES[strCurrentPage].content[strCurrentRecipeTopic][key].pic}.jpeg`},}),
+        src : `../assets/images/foodImages/${strCurrentTopic_recipePage}/${PAGES[strCurrentPage].content[strCurrentTopic_recipePage][key].pic}.jpeg`},}),
         El("div", {cls: `recipeDisplayText`}, addSpace(key))
         )
         document.querySelector(`.recipesScrollContainer`).append(recipeDisplay)
     }
 
+}
+
+/* videosPageShowTopics
+--------------------------------------------------------------
+Description: */
+const videosPageShowTopics = (event) => {
+    // שם מאזינים להחלקה ושומר את הקטגוריות במערך
+    let arrTopic = [];
+    for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
+        arrTopic.push(topics);
+    }
+
+    // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
+    document.querySelector(`.videosPage .${strCurrentTopic_videosPage}`).classList.remove("bold");
+    document.querySelector(`.videosPage .${strCurrentTopic_videosPage} .bottomNavBarPic`).style.height = "5vh";
+    if(event) { // בודק אם נעשתה לחיצה או החלקה
+        if (event.currentTarget.classList[0] === "bottomNavBarTopic") { 
+            document.querySelector(`.videosScrollContainer`).scrollTop = 0;
+            // בלחיצה שומר קטגוריה נוכחית ואת מספרה
+            strCurrentTopic_videosPage = event.currentTarget.classList[1];
+            nCurrentRecipeTopicNumber = Number(event.currentTarget.classList[2]);
+        } else {
+            // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
+            if(event.detail.dir === "left" && nCurrentRecipeTopicNumber > 0) {
+                document.querySelector(`.videosScrollContainer`).scrollTop = 0;
+                nCurrentRecipeTopicNumber--;
+            } else if (event.detail.dir === "right" && nCurrentRecipeTopicNumber < NUMBER_OF_RECIPE_TOPICS) {
+                document.querySelector(`.videosScrollContainer`).scrollTop = 0;
+                nCurrentRecipeTopicNumber++;
+            }
+            strCurrentTopic_videosPage = arrTopic[nCurrentRecipeTopicNumber];
+        }
+    } else { // שומר את מספר הקטגוריה אם באים מהתפריט או מההתחלה
+        nCurrentRecipeTopicNumber = Number(document.querySelector(`.videosPage .${strCurrentTopic_videosPage}`).classList[2]);
+    }
+
+    document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[strCurrentTopic_videosPage][2];
+
+    document.querySelector(`.videosPage .${strCurrentTopic_videosPage}`).classList.add("bold");
+    document.querySelector(`.videosPage .${strCurrentTopic_videosPage} .bottomNavBarPic`).style.height = "6vh";
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.videosScrollContainer`).innerHTML = "";
+
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage])) {
+        let recipeDisplay =
+        // <div class="sub-titles"></div>
+        // <iframe picture-in-picture" allowfullscreen></iframe>
+        // <div class="content"></div>
+        El("div",
+            {classes: [`youtubeVideoContainer`, key],
+            listeners : {click : showRecipe}},
+            El("iframe", {attributes:
+                {class: "youtubeVideo",
+                src: PAGES[strCurrentPage].content[strCurrentTopic_videosPage][key],
+                allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                allowfullscreen: true,
+            }}),
+            El("div", {cls: `videosDisplayText`}, addSpace(key))
+        )
+        document.querySelector(`.videosScrollContainer`).append(recipeDisplay)
+    }
 }
 
 /* galleryPageShowTopics

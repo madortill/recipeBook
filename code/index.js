@@ -45,7 +45,9 @@ let PAGES = {
                 baking : ["קונדיטוריה", "black_baking"],
             }],
             learning : ["חומרי לימוד","black_materials", { // תפריט נפתח
-                subTopic : ["חומרי לימוד", "black_materials"],
+                subject1 : ["קטוגריה 1", "black_book"],
+                subject2 : ["קטוגריה 2", "black_book"],
+                subject3 : ["קטוגריה 3", "black_book"],
             }],
             gallery : ["תמונות","black_gallery", { // תפריט נפתח
                 recipes : ["מתכונים", "black_cookbook"],
@@ -2130,10 +2132,45 @@ let PAGES = {
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
-        functions : [``], // פונקציות שצריכות לפעול
-        listeners : {
-            backToMain : "showPage",
-        }
+        bottomNavBar : { // סמלים של הקטגוריות של המתכונים
+            subject1 : ["קטגוריה 1", "green_book", 0],
+            subject2 : ["קטגוריה 2", "green_book", 0],
+            subject3 : ["קטגוריה 3", "green_book", -100],
+            // vegan : ["מנות טבעוניות", "green_vegan", -245],
+            // mainCourse : ["מנות עיקריות", "green_maincourse", -450],
+            // baking : ["קונדיטוריה", "green_baking", -450],
+        },  
+        functions : [`showTopics()`], // פונקציות שצריכות לפעול
+        content: {
+            subject1 : {
+                "תת-נושא-1":{
+                    content: "יאיי מלא תוכן לתת נושא"
+                },
+                "תת-נושא-2":{
+                    content: "יאיי מלא תוכן לתת נושא"
+                },
+                "תת-נושא-3":{
+                    content: "יאיי מלא תוכן לתת נושא"
+                },
+                "תת-נושא-4":{
+                    content: "יאיי מלא תוכן לתת נושא"
+                },
+                "תת-נושא-5":{
+                    content: "יאיי מלא תוכן לתת נושא"
+                },
+                "תת-נושא-6":{
+                    content: "יאיי מלא תוכן לתת נושא"
+                },
+                "תת-נושא-7":{
+                    content: "יאיי מלא תוכן לתת נושא"
+                },
+                "תת-נושא-8":{
+                    content: "יאיי מלא תוכן לתת נושא"
+                },
+            },
+            subject2 : {},
+            subject3 : {},
+        },
     },
 }
 
@@ -2143,6 +2180,7 @@ let strFormerPage = "mainPage";
 let strCurrentTopic_recipePage = "salads";
 let strCurrentTopic_videosPage = "recipe";
 let strCurrentTopic_galleryPage = "recipe";
+let strCurrentTopic_learningPage = "subject1";
 let nCurrentTopicNumber = 0;
 let currentPicNum;
 let currentPicName;
@@ -2266,7 +2304,7 @@ const showRecipe = (event) => {
     }
     // מרוקן דיבים
     document.querySelector(`.recipesScrollContainer`).innerHTML = "";
-    document.querySelector(`.bottomNavBar`).innerHTML = "";
+    document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
     if(document.querySelector(`.recipeContent`)) {
         let recipeContent = document.querySelector(`.recipeContent`);
         document.querySelector(`.recipePage`).removeChild(recipeContent);
@@ -2398,6 +2436,41 @@ const createTopic_recipePage = (currTopic) => {
         )
         document.querySelector(`.recipesScrollContainer`).append(recipeDisplay)
     }
+}
+
+/* createTopic_learningPage
+--------------------------------------------------------------
+Description: */
+const createTopic_learningPage = (currTopic) => {
+    strCurrentTopic_learningPage = currTopic
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.learningScrollContainer`).innerHTML = "";
+
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_learningPage])) {
+        let recipeDisplay = El("div",
+            {attributes: {class: `learningDisplay ${key}`}, 
+            listeners : {click : showLearningContent}},
+            El("div", {cls: `learningDisplayText`}, addSpace(key))
+        )
+        document.querySelector(`.learningScrollContainer`).append(recipeDisplay)
+    }
+}
+
+/* showLearningContent
+--------------------------------------------------------------
+Description: */
+const showLearningContent = (event) => {
+    let subjectTitle = event.currentTarget.classList[1];
+    let subjectContent = PAGES[strCurrentPage].content[strCurrentTopic_learningPage][subjectTitle].content;
+    console.log(subjectContent);
+
+    // כפתור חזור
+    document.querySelector(`.button_menu`).setAttribute("src", "../assets/images/grapics/general/right_arrow.svg");
+    document.querySelector(`.button_menu`).classList.remove("menu");
+    document.querySelector(`.button_menu`).classList.add("learning");
+
+    document.querySelector(`.learningScrollContainer`).innerHTML = "";
+    document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
 }
 
 

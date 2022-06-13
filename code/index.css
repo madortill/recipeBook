@@ -562,29 +562,6 @@ html, body {
     transform: translateX(-50%);
 }
 
-/* סרטוני וידיאו וחומרי לימוד */
-.soonContainer {
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    font-size: 2em;
-    font-weight: 800;
-}
-
-.videosPage .backToMain {
-    width: 45vw;
-    display: block;
-    padding: 0.6em;
-}
-.learningPage .backToMain {
-    width: 45vw;
-    display: block;
-    padding: 0.6em;
-}
-
 /* video page */
 .videosScrollContainer {
     position: absolute;
@@ -631,6 +608,36 @@ html, body {
 .videosPage .bottomNavBar, .galleryPage .bottomNavBar {
     justify-content: space-evenly;
 } 
+
+/* learningPage */
+.learningScrollContainer {
+    position: absolute;
+    top: 12vh;
+    overflow-y: scroll;
+    height: 67vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+
+.learningScrollContainer::-webkit-scrollbar {
+    display: none;
+}
+
+
+.learningDisplayText {
+    color: white;
+    width: 40vw;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.527);
+    font-weight: 400;
+    padding: 1vh 1vw;
+    margin: 0.5em;
+}
+
 /* כללי - חשוב שיהיה למטה */
 .hidden {
     display: none;

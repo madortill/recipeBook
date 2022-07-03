@@ -2171,28 +2171,19 @@ let PAGES = {
         content: {
             subject1 : {
                 "מבוא-למקצוע":{
-                    content: "יאיי מלא תוכן לתת נושא"
+                    type : "listNumbers",
+                    content: [
+                        ``,
+                    ], // מערך של תוכן לפי פסקאות
                 },
                 "תת-נושא-2":{
-                    content: "יאיי מלא תוכן לתת נושא"
+                    type : "text",
+                    content: ["פסקה ראשונה", "פסקה שניה", "פסקה שלישית"], // מערך של תוכן לפי פסקאות
                 },
-                "תת-נושא-3":{
-                    content: "יאיי מלא תוכן לתת נושא"
-                },
-                "תת-נושא-4":{
-                    content: "יאיי מלא תוכן לתת נושא"
-                },
-                "תת-נושא-5":{
-                    content: "יאיי מלא תוכן לתת נושא"
-                },
-                "תת-נושא-6":{
-                    content: "יאיי מלא תוכן לתת נושא"
-                },
-                "תת-נושא-7":{
-                    content: "יאיי מלא תוכן לתת נושא"
-                },
-                "תת-נושא-8":{
-                    content: "יאיי מלא תוכן לתת נושא"
+                "תת-נושא-3": {
+                    type : "textAndPics",
+                    pic : [`../assets/images/foodImages/eventGallary/event79.jpeg`, `../assets/images/foodImages/eventGallary/event75.jpeg`,],
+                    content: ["פסקה ראשונה", "פסקה שניה", "פסקה שלישית"], // מערך של תוכן לפי פסקאות
                 },
             },
             subject2 : {},
@@ -2489,9 +2480,7 @@ const createTopic_learningPage = (currTopic) => {
 Description: */
 const showLearningContent = (event) => {
     let subjectTitle = event.currentTarget.classList[1];
-    let subjectContent = PAGES[strCurrentPage].content[strCurrentTopic_learningPage][subjectTitle].content;
-    console.log(subjectContent);
-
+    let subjectContent = PAGES[strCurrentPage].content[strCurrentTopic_learningPage][subjectTitle];
     // כפתור חזור
     document.querySelector(`.button_menu`).setAttribute("src", "../assets/images/grapics/general/right_arrow.svg");
     document.querySelector(`.button_menu`).classList.remove("menu");
@@ -2499,6 +2488,50 @@ const showLearningContent = (event) => {
 
     document.querySelector(`.learningScrollContainer`).innerHTML = "";
     document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
+
+    let content = El("div", {cls: "learningContantContainer"},
+        El("div", {cls: "learningContantTitle"}, addSpace(subjectTitle)), );
+    let container;
+    document.querySelector(`.learningScrollContainer`).append(content);
+    switch (subjectContent.type) {
+        case 'text':
+            container =  El("div", {cls: "learningContant"},);
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.content.length; i++){
+                let parah = El("div", {cls : "IdParah"}, subjectContent.content[i]);
+                document.querySelector(`.learningContant`).append(parah); 
+            }
+            break;
+        case 'listDots': 
+            container =  El("ul", {cls: "learningContant"},);
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.content.length; i++){
+                let parah = El("li", {cls : "listItem"}, subjectContent.content[i]);
+                document.querySelector(`.learningContant`).append(parah); 
+            }
+            break;
+        case 'listNumbers':
+            container =  El("ol", {cls: "learningContant"},);
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.content.length; i++){
+                let parah = El("li", {cls : "listItem"}, subjectContent.content[i]);
+                document.querySelector(`.learningContant`).append(parah); 
+            }
+            break;
+        case 'textAndPics':
+            for(let i = 0; i < subjectContent.content.length; i++){
+                let parah = El("div", {cls : "IdParah"}, subjectContent.content[i]);
+                document.querySelector(`.learningContant`).append(parah); 
+            }
+            container = El("div", {cls: "idPicContainer"});
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.pic.length; i++){
+                let parah = El("img", {cls : "picId", attributes : {src : subjectContent.pic[i]}});
+                document.querySelector(`.idPicContainer`).append(parah); 
+            }
+            break;
+        default: console.log("default");
+    }
 }
 
 

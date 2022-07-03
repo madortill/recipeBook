@@ -4,7 +4,7 @@ let PAGES = {
         topNavBar : {
             backgroundColor : `#0D635F`,
             img_button_about : `about_icon.svg`, // אודות / איקס / תפריט
-            div_topNavText_main : `אומנות הבישול בה"ד 6`,
+            div_topNavText_main : `מתכונט - מתכונים בשלוף`,
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_white.svg`,
         },
@@ -349,7 +349,7 @@ let PAGES = {
                 },
             }, 
             starters : { // תת נושא
-                "מרק-אפונה" :  {
+                "מרק-אפונה-מחיתי" :  {
                     pic: `pees`,
                     description: ``,
                     quantity: `5 מנות`,
@@ -478,7 +478,7 @@ let PAGES = {
                         `להשלמת המנה יש לקצוץ פטרוזיליה ועלי סלרי בגמר הבישול.`,
                     ],
                 },
-                "מרק-עדשים-איטלקי" :  {
+                "מרק-עדשים-קטיפתי" :  {
                     pic: `latel`,
                     description: ``,
                     quantity: `8 מנות`,
@@ -507,7 +507,7 @@ let PAGES = {
                         `להשלמת המנה יש לקצוץ פטרוזיליה ולסחוט מעט לימון.`,
                     ],
                 },
-                "מרק-ירקות" :  {
+                "מרק-ירקות-עשיר" :  {
                     pic: `vegtabels`,
                     description: ``,
                     quantity: `8 מנות`,
@@ -550,7 +550,7 @@ let PAGES = {
                         `מוסיפים את הסולת בהדרגה תוך כדי ערבוב מתבלים את המרק.`,
                     ],
                 },
-                "מרק-כתום" :  {
+                "מרק-כתום-מחיתי" :  {
                     pic: `orange`,
                     description: ``,
                     quantity: `8 מנות`,
@@ -628,7 +628,7 @@ let PAGES = {
                 },
                 "ארנצ'יני" :  {
                     pic: `arenchini`,
-                    description: `ריזוטו אורז ופטריות מטוגן בפירורי מאפה`,
+                    description: `כדורי ריזוטו אורז ופטריות מטוגן בפירורי מאפה`,
                     quantity: `20 מנות`,
                     time: `2 שעות`,
                     ingredients : [
@@ -730,20 +730,24 @@ let PAGES = {
                 "שקשוקה" :  {
                     pic: `shaksuka`,
                     description: ``,
+                    quantity: `10 מנות`,
+                    time: `30 דקות`,
                     ingredients : [
-                        `שום `,
-                        `פלפל חריף`,
-                        `עגבניות קוביות (טומט קוסקנה)`,
-                        `ביצים`,
-                        `מלח פלפל שחור`,
-                        `פפריקה`,
-                        `כמון `,
-                        `שמן זית`,
+                        `10 שיני שום `,
+                        `2 יח' פלפל חריף`,
+                        `20 יח' עגבניות קוביות (טומט קוסקנה)`,
+                        `20 ביצים`,
+                        `כף מלח`,
+                        `חצי כפית פלפל שחור`,
+                        `3 כפות פפריקה`,
+                        `כפית כמון `,
+                        `1/3 כוס שמן זית`,
+                        `2 כפות רסק עגבניות `,
                     ],
                     preparation : [
                         `מחממים סיר רחב שוליים, מוסיפים מעט שמן זית, זורקים את השום והפלפל החריף.`,
                         `מטלטלים מעט לפתיחת הטעמים ולאחר מכן מוסיפים את העגבניות קוביות מבשלים עד לריכוך ופירוק מלא של העגבניות.`,
-                        `מוסיפים כוס מים, מרתיחים, מתבלים ומערבבים היטב.`,
+                        `מוסיפים כוס מים ורסק עגבניות, מרתיחים, מתבלים ומערבבים היטב.`,
                         `לאחר מכן שוברים את כמות הביצים הרצויה.`,
                         `מנמיכים את האש, מכסים, מבשלים כ-10 דק'.`,
                     ],
@@ -751,22 +755,26 @@ let PAGES = {
                 "שקשוקה-בלקנית-עם-חצילים-מטוגנים" :  {
                     pic: `balkanicShakshuka`,
                     description: ``,
+                    quantity: `10 מנות`,
+                    time: `30 דקות`,
                     ingredients : [
-                        `ביצים`,
-                        `פלפל חריף`,
-                        `שום`,
-                        `חצילים`,
-                        `שמן`,
-                        `עגבניות קוביות (טומט קונקסה)`,
-                        `מלח ופלפל שחור`,
-                        `כמון `,
-                        `פפריקה`,
+                        `20 ביצים`,
+                        `2 יח' פלפל חריף`,
+                        `10 שיני שום`,
+                        `2 יח' חצילים`,
+                        `1/3 כוס שמן`,
+                        `15-20 יח' עגבניות קוביות (טומט קונקסה)`,
+                        `כף מלח`,
+                        `כפית פלפל שחור`,
+                        `כפית כמון `,
+                        `3 כפות פפריקה`,
+                        `2 כפות רסק עגבניות`,
                     ],
                     preparation : [
                         `חותכים את החצילים לקוביות מטגנים ומניחים בצד.`,
                         `מחממים סיר רחב שוליים עם מעט שמן.`,
                         `מוסיפים את הפלפל חריף ושום לפתיחת טעמים.`,
-                        `מוסיפים את העגבניות קוביות, מבשלים עד לריכוך ומוסיפים חצי כוס מים.`,
+                        `מוסיפים את העגבניות קוביות, מבשלים עד לריכוך ומוסיפים חצי כוס מים ואת הרסק עגבניות.`,
                         `מוסיפים את החצילים המטוגנים, מערבבים ומטבלים.`,
                         `שוברים לתוך הרוטב את הביצים ומורידים לאש נמוכה כ- רבע שעה.`,
                         `מנמיכים את האש, מכסים, מבשלים כ-10 דק'.`,
@@ -775,13 +783,16 @@ let PAGES = {
                 "חביתת-ירק" :  {
                     pic: `beans`,
                     description: ``,
+                    quantity: `10 מנות`,
+                    time: `20 דקות`,
                     ingredients : [
-                        `ביצים`,
+                        `20 יח' ביצים`,
                         `צרור פטרוזיליה קצוצה`,
-                        `בצל קצוץ`,
-                        `פטריות חתוכות `,
-                        `שמן זית`,
-                        `מלח פלפל שחור`,
+                        `2 יח' בצל קצוץ`,
+                        `סלסלה פטריות חתוכות `,
+                        `1/2 כוס שמן זית`,
+                        `כפית מלח`,
+                        `חצי כפית פלפל שחור`,
                     ],
                     preparation : [
                         `מחממים מחבת עם מעט שמן, שוברים את הביצים לתוך קערה.`,
@@ -970,7 +981,7 @@ let PAGES = {
                 },
             }, 
             sides : { // תת נושא
-                "אורז" :  {
+                "אורז-מאודה" :  {
                     pic: `rice`,
                     description: ``,
                     quantity: `10 מנות`,
@@ -989,7 +1000,7 @@ let PAGES = {
                 },
                 "מג'דרה" :  {
                     pic: `magadra`,
-                    description: ``,
+                    description: `אורז עם עדשים`,
                     quantity: `10 מנות`,
                     time: `35 דקות`,
                     ingredients : [
@@ -1005,7 +1016,7 @@ let PAGES = {
                         `מוסיפים את העדשים המבושלות, מים פי 2 מכמות האורז ומנמיכים את האש ל-18 דקות.`,
                     ],
                 },
-                "בורגול" :  {
+                "בורגול-עם-ירקות" :  {
                     pic: `burgul`,
                     description: ``,
                     quantity: `10 מנות`,
@@ -1047,8 +1058,8 @@ let PAGES = {
                         `מבשלים על אש נמוכה כ-16-20 דקות, בסוף הבישול מוסיפים פטרוזיליה לקישוט/טעם.`,
                     ],
                 },
-                "פסטה-איטלקית" :  {
-                    pic: `pasta`,
+                "פסטה-איטלקית-ברוטב-עגבניות" :  {
+                    pic: `napolitana`,
                     description: ``,
                     quantity: `10 מנות`,
                     time: `35 דקות`,
@@ -1097,7 +1108,7 @@ let PAGES = {
                     ],
                 },
                 "פסטה-נפוליטנה" :  {
-                    pic: `napolitana`,
+                    pic: `pasta`,
                     description: ``,
                     quantity: `10 מנות`,
                     time: `35 דקות`,
@@ -1121,7 +1132,7 @@ let PAGES = {
                         `שופכים את הפסטה המבושלת לרוטב להמשך בישול ומגישים.`,
                     ],
                 },
-                "תפוח-אדמה-ירח" :  {
+                "תפוח-אדמה-ירח-אפוי" :  {
                     pic: `potatoSlices`,
                     description: `אפוי בקליפתו`,
                     quantity: `10 מנות`,
@@ -1140,7 +1151,7 @@ let PAGES = {
                         `אם זה תנור ביתי אז 30 דקות עם נייר כסף ועוד 10 דקות ללא הנייר לקבלת השחמה.`,
                     ],
                 },
-                "תפוח-אדמה-מניפה" :  {
+                "תפוח-אדמה-מניפה-ירח" :  {
                     pic: `potatofan`,
                     description: `אפוי בקליפתו`,
                     quantity: `10 מנות`,
@@ -1159,7 +1170,7 @@ let PAGES = {
                         `מורידים את הנייר כסף ואופים לעוד 10 דקות כדי לקבל השחמה.`,
                     ],
                 },
-                'תפו"א-מדורה' :  {
+                'תפו"א-מדורה-צלוי' :  {
                     pic: `campFirePotato`,
                     description: ``,
                     quantity: `10 מנות`,
@@ -1252,12 +1263,14 @@ let PAGES = {
                 'בטטה-צלויה-בקרם-קוקוס' :  {
                     pic: `sweetPotato`,
                     description: ``,
+                    quantity: `10 מנות`,
+                    time: `1 שעות`,
                     ingredients : [
-                        `בטטה`,
-                        `חלב קוקוס`,
-                        `מלח`,
-                        `פלפל`,
-                        `צ'ילי טרי`,
+                        `7 יח' בטטה`,
+                        `פחית חלב קוקוס`,
+                        `מעט מלח`,
+                        `מעט פלפל`,
+                        `מעט צ'ילי טרי`,
                     ],
                     preparation : [
                         `פורסים את הבטטה לפרוסות ומסדרים בתבנית.`,
@@ -1268,13 +1281,17 @@ let PAGES = {
                 'המבורגר-עדשים-וסויה-טחון' :  {
                     pic: `lentelBurger`,
                     description: ``,
+                    quantity: `10 מנות`,
+                    time: `50 דקות`,
                     ingredients : [
-                        `עדשים שחורות/ירוקות`,
-                        `בצל מטוגן`,
-                        `סויה טחון`,
-                        `מלח`,
-                        `פלפל שחור גרוס`,
-                        `פירורי מאפה`,
+                        `2 כוס עדשים שחורות/ירוקות`,
+                        `2 בצל מטוגן`,
+                        `1 כוס סויה טחון`,
+                        `סלסלה פטריות שמפניון`,
+                        `כף מלח`,
+                        `כף פלפל שחור גרוס`,
+                        `חצי כוס פירורי מאפה`,
+                        `חצי כפית פלפל שחור טחון`,
                     ],
                     preparation : [
                         `מבשלים את העדשים השחורות כ- 20-25 דקות.`,
@@ -1289,17 +1306,19 @@ let PAGES = {
                 'קרם-חציל-עם-גרגירי-חומוס' :  {
                     pic: `eggPlantHumus`,
                     description: ``,
+                    quantity: `10 מנות`,
+                    time: `1 שעות`,
                     ingredients : [
-                        `חציל`,
-                        `שום`,
-                        `גרגירי חומוס`,
-                        `לימון טרי`,
-                        `שמן זית`,
-                        `סילאן`,
-                        `מלח`,
-                        `פלפל`,
-                        `טחינה גולמית`,
-                        `פטרוזיליה`,
+                        `3 חציל`,
+                        `5 שיני שום`,
+                        `2 כוסות גרגירי חומוס`,
+                        `1 לימון טרי`,
+                        ` 1/2 כוס שמן זית`,
+                        `20 גר' סילאן`,
+                        `כף שטוחה מלח`,
+                        `חצי כפית פלפל`,
+                        `40 גר' טחינה גולמית`,
+                        `צרור פטרוזיליה`,
                     ],
                     preparation : [
                         `מבשלים את גרגירי החומוס בסיר עם מים כשעה עד ריכוך.`,
@@ -1314,18 +1333,21 @@ let PAGES = {
                 },
                 'סיגר-פלאפל' :  {
                     pic: `plapelCigar`,
+                    quantity: `10 מנות`,
+                    time: `1 שעות`,
                     description: `סיגר ממולא פלאפל מטוגן`,
                     ingredients : [
-                        `גרגירי חומוס`,
-                        `כוסברה`,
-                        `פטרוזיליה `,
-                        `בצל`,
-                        `שום`,
-                        `פלפל חריף`,
-                        `כמון`,
-                        `עלי סיגר`,
-                        `מלח ופלפל`,
-                        `קמח`,
+                        `2 כוס גרגירי חומוס`,
+                        `צרור כוסברה`,
+                        `צרור פטרוזיליה `,
+                        `1 בצל`,
+                        `5 שיני שום`,
+                        `1 יח' פלפל חריף`,
+                        `כפית כמון`,
+                        `20 יח' עלי סיגר`,
+                        `כף שטוחה מלח`,
+                        `חצי כפית פלפל שחור`,
+                        `50 גר' קמח`,
                     ],
                     preparation : [
                         `מבשלים את החומוס עד שמתרכך.`,
@@ -1340,15 +1362,17 @@ let PAGES = {
                 'טורטייה-טבעונית' :  {
                     pic: `tortilaSoy`,
                     description: `טורטייה טבעונית במילוי צ'ילי קונקרה בסויה טחון`,
+                    quantity: `10 מנות`,
+                    time: `1 שעות`,
                     ingredients : [
-                        `טורטייה `,
-                        `סויה טחון`,
-                        `שעועית לבנה`,
-                        `פלפל צ'ילי אדום/ צ'ילי גרוס- שאטה`,
-                        `בצל `,
-                        `עגבנייה `,
-                        `כוסברה`,
-                        `שמן זית`,
+                        `10 יח' טורטייה `,
+                        `1.5 ק"ג סויה טחון`,
+                        `כוס שעועית לבנה`,
+                        `2 יח' פלפל צ'ילי אדום/ צ'ילי גרוס- שאטה`,
+                        `2 יח' בצל `,
+                        `2 יח' עגבנייה `,
+                        `צרור כוסברה`,
+                        `1/3 כוס שמן זית`,
                     ],
                     preparation : [
                         `מבשלים את הסויה טחון בישול במים כ-3 דקות.`,
@@ -1360,19 +1384,22 @@ let PAGES = {
                 'רוסטביף-דלעת,-דלורית-ובטטה' :  {
                     pic: `skwashSweetPotato`,
                     description: ``,
+                    quantity: `10 מנות`,
+                    time: `1 שעות`,
                     ingredients : [
-                        `דלעת`,
-                        `דלורית`,
-                        `חרדל דיז'ון`,
-                        `חרדל חלק`,
-                        `סויה`,
-                        `סילאן `,
-                        `צ'ילי גרוס`,
-                        `חומץ בלסמי`,
-                        `שמן זית `,
-                        `מלח גס`,
-                        `פלפל שחור גרוס`,
-                        `טימין יבש`,
+                        `1 ק"ג דלעת`,
+                        `1 ק"ג דלורית`,
+                        `כף חרדל דיז'ון`,
+                        `כף חרדל חלק`,
+                        `90 סמ"ק סויה`,
+                        `50 גר' סילאן `,
+                        `מעט צ'ילי גרוס`,
+                        `20 סמ"ק חומץ בלסמי`,
+                        `50 סמ"ק שמן זית `,
+                        `כפית מלח גס`,
+                        `כפית פלפל שחור גרוס`,
+                        `כפית טימין יבש`,
+                        `כפית מלח דק`,
                     ],
                     preparation : [
                         `קולפים את הדלעת, דלורית ובטטה.`,
@@ -2011,15 +2038,15 @@ let PAGES = {
                 "סלט-מטבוחה" : [`matbochaSalad`, "salads"],
                 "סלט-חמוצים" : [`kimchiSalad`, "salads"],
                 "סלט-חומוס" : [`homusSalad`, "salads"],
-                "מרק-אפונה" : [`pees`, "starters"],
+                "מרק-אפונה-מחיתי" : [`pees`, "starters"],
                 "אנטיפסטי" : [`antiPasti`, "starters"],
                 "מרק-תירס" : [`corn`, "starters"],
                 "מרק-בצל" : [`onion`, "starters"],
                 "מרק-שעועית-איטלקי" : [`beans`, "starters"],
-                "מרק-עדשים-איטלקי" : [`latel`, "starters"],
-                "מרק-ירקות" : [`vegtabels`, "starters"],
+                "מרק-עדשים-קטיפתי" : [`latel`, "starters"],
+                "מרק-ירקות-עשיר" : [`vegtabels`, "starters"],
                 "מרק-סולת" : [`solet`, "starters"],
-                "מרק-כתום" : [`orange`, "starters"],
+                "מרק-כתום-מחיתי" : [`orange`, "starters"],
                 "מרק-חרירה-מרוקאי" : [`hrira`, "starters"],
                 "פלפל-ממולא" : [`stafedPeper`, "starters"],
                 "ארנצ'יני" : [`arenchini`, "starters"],
@@ -2038,17 +2065,17 @@ let PAGES = {
                 "פוקאצ'ה" : [`fukatcha`, "starters"],
                 "בצק-שמרים" : [`dough`, "starters"],
                 "חלות/-לחמניות" : [`buns`, "starters"],
-                "אורז" : [`rice`, "sides"],
+                "אורז-מאודה" : [`rice`, "sides"],
                 "מג'דרה" : [`magadra`, "sides"],
-                "בורגול" : [`burgul`, "sides"],
+                "בורגול-עם-ירקות" : [`burgul`, "sides"],
                 "פריקי" : [`priki`, "sides"],
-                "פסטה-איטלקית" : [`pasta`, "sides"],
+                "פסטה-איטלקית-ברוטב-עגבניות" : [`napolitana`, "sides"],
                 "ספגטי-ברוטב-ארביאטה" : [`spagty`, "sides"],
-                "פסטה-נפוליטנה" : [`napolitana`, "sides"],
-                "תפוח-אדמה-ירח" : [`potatoSlices`, "sides"],
-                "תפוח-אדמה-מניפה" : [`potatofan`, "sides"],
-                'תפו"א-מדורה' : [`campFirePotato`, "sides"],
-                'תפו"א-ובטטה-"פוטטו"' : [`potatoAndSweetPotato`, "sides"],
+                "פסטה-נפוליטנה" : [`pasta`, "sides"],
+                "תפוח-אדמה-ירח-אפוי" : [`potatoSlices`, "sides"],
+                "תפוח-אדמה-מניפה-ירח" : [`potatofan`, "sides"],
+                'תפו"א-מדורה-צלוי' : [`campFirePotato`, "sides"],
+                'תפו"א-מטוגן-ובטטה-"פוטטו"' : [`potatoAndSweetPotato`, "sides"],
                 "פירה" : [`mashedPotato`, "sides"],
                 'ירקות-מוקפצים' : [`chiniseVeg`, "vegan"],
                 'בטטה-צלויה-בקרם-קוקוס' : [`sweetPotato`, "vegan"],
@@ -2133,7 +2160,7 @@ let PAGES = {
             img_tillLogo : `till_logo_white.svg`,
         },
         bottomNavBar : { // סמלים של הקטגוריות של המתכונים
-            subject1 : ["קטגוריה 1", "green_book", 0],
+            subject1 : ["תורת המקצוע", "green_book", 0],
             subject2 : ["קטגוריה 2", "green_book", 0],
             subject3 : ["קטגוריה 3", "green_book", -100],
             // vegan : ["מנות טבעוניות", "green_vegan", -245],
@@ -2143,7 +2170,7 @@ let PAGES = {
         functions : [`showTopics()`], // פונקציות שצריכות לפעול
         content: {
             subject1 : {
-                "תת-נושא-1":{
+                "מבוא-למקצוע":{
                     content: "יאיי מלא תוכן לתת נושא"
                 },
                 "תת-נושא-2":{
@@ -2184,6 +2211,7 @@ let strCurrentTopic_learningPage = "subject1";
 let nCurrentTopicNumber = 0;
 let currentPicNum;
 let currentPicName;
+let currTopic;
 
 // consts
 const NUMBER_OF_PICTUERS = 83;
@@ -2383,7 +2411,7 @@ const showTopics = (event) => {
         arrTopic.push(topics);
     }
 
-    let currTopic = eval(`strCurrentTopic_${strCurrentPage}`)
+    currTopic = eval(`strCurrentTopic_${strCurrentPage}`)
 
     // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
     document.querySelector(`.${strCurrentPage} .${currTopic}`).classList.remove("bold");
@@ -2506,14 +2534,29 @@ const createTopic_galleryPage = (currTopic) => {
     let currentPic = 0;
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.galleryScrollContainer`).innerHTML = "";
-    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_galleryPage])) {
-        let recipeDisplay = El("div",
-        {attributes: {class: `galleryScrollDisplay ${key} ${currentPic}`}, 
-        listeners : {click : showPicDisplay}},
-        )
-        recipeDisplay.style.backgroundImage = `url(../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][key][0]}.jpeg)`
-        document.querySelector(`.galleryScrollContainer`).append(recipeDisplay);
-        currentPic++;
+    if(strCurrentTopic_galleryPage === "recipe") {
+        for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_galleryPage])) {
+            let recipeDisplay = El("div",
+            {attributes: {class: `galleryScrollDisplay ${key} ${currentPic}`}, 
+            listeners : {click : showPicDisplay}},
+            )
+            recipeDisplay.style.backgroundImage = `url(../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][key][0]}.jpeg)`
+            document.querySelector(`.galleryScrollContainer`).append(recipeDisplay);
+            currentPic++;
+        }
+    } else {
+        for(let i = 1; i <= 97; i++ ) {
+            let recipeDisplay = El("div",
+            {attributes: {class: `galleryScrollDisplay pic${i} ${currentPic}`}, 
+            listeners : {click : showPicDisplay}},
+            )
+            recipeDisplay.style.backgroundImage = `url(../assets/images/foodImages/eventGallary/event${i}.jpeg)`
+            document.querySelector(`.galleryScrollContainer`).append(recipeDisplay);
+            if(!PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][`pic${i}`]) {
+                PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][`pic${i}`] = `event${i}`;
+            }
+            currentPic++;
+        }
     }
 }
 
@@ -2550,11 +2593,35 @@ const showPicDisplay = (event) => {
     document.querySelector(`.galleryPicDisplay`).classList.remove("hidden");
     document.querySelector(`.galleryPicDisplay`).innerHTML = "";
     // יוצר את התצוגה ומכניס לדיב
-    let picDisplay = El("div", {cls : `picDisplayContiner`},
+    if(strCurrentTopic_galleryPage === "recipe"){
+        let picDisplay = El("div", {cls : `picDisplayContiner`},
+            El("img", 
+            {attributes: {class: `galleryDisplayPic`, 
+            src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][0]}.jpeg`},}),
+            El("div", {cls: `galleryDisplayText`}, addSpace(currentPicName)),
+            El("div", {cls: "toRecipeButton"}),
+            El ("div", {cls: `galleryDisplayArrows`},
+                El("img", 
+                {attributes: {class: `rightArrow arrow`, 
+                src : `../assets/images/grapics/general/right_arrow.svg`},
+                listeners : {click : showPicDisplay}}),
+                El("img", 
+                {attributes: {class: `leftArrow arrow`, 
+                src : `../assets/images/grapics/general/left_arrow.svg`},
+                listeners : {click : showPicDisplay}}),
+            )
+        );
+        document.querySelector(`.galleryPicDisplay`).append(picDisplay);
+        let toRecipe = El("img", {attributes: {class: `galleryToRecipe ${currentPicName} ${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][1]}`, 
+        src : `../assets/images/grapics/general/lamatkon_button.svg`},
+        listeners : {click : showRecipe}})
+        document.querySelector(`.toRecipeButton`).append(toRecipe);
+    } else {
+        let picDisplay = El("div", {cls : `picDisplayContiner`},
         El("img", 
         {attributes: {class: `galleryDisplayPic`, 
-        src : `../assets/images/foodImages/gallery/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][0]}.jpeg`},}),
-        El("div", {cls: `galleryDisplayText`}, addSpace(currentPicName)),
+        src : `../assets/images/foodImages/eventGallary/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName]}.jpeg`},}),
+        // El("div", {cls: `galleryDisplayText`}, addSpace(currentPicName)),
         El("div", {cls: "toRecipeButton"}),
         El ("div", {cls: `galleryDisplayArrows`},
             El("img", 
@@ -2567,12 +2634,7 @@ const showPicDisplay = (event) => {
             listeners : {click : showPicDisplay}}),
         )
     );
-    document.querySelector(`.galleryPicDisplay`).append(picDisplay);
-    if(strCurrentTopic_galleryPage === "recipe"){
-        let toRecipe = El("img", {attributes: {class: `galleryToRecipe ${currentPicName} ${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][1]}`, 
-        src : `../assets/images/grapics/general/lamatkon_button.svg`},
-        listeners : {click : showRecipe}})
-        document.querySelector(`.toRecipeButton`).append(toRecipe);
+    document.querySelector(`.galleryPicDisplay`).append(picDisplay);  
     }
 }
 

@@ -630,7 +630,7 @@ html, body {
 
 .learningDisplayText {
     color: white;
-    width: 40vw;
+    width: 80vw;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.527);
     font-weight: 400;
@@ -666,8 +666,7 @@ html, body {
 }
 
 .picId {
-    width: 40vw;
-    height: 20vh;
+    width: 95vw;
     padding: 0.6em;
 }
 

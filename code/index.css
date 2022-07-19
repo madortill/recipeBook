@@ -565,7 +565,7 @@ html, body {
 /* video page */
 .videosScrollContainer {
     position: absolute;
-    top: 12vh;
+    top: 10vh;
     overflow-y: scroll;
     height: 67vh;
     width: 100vw;
@@ -612,16 +612,11 @@ html, body {
 /* learningPage */
 .learningScrollContainer {
     position: absolute;
-    top: 12vh;
+    top: 10vh;
     overflow-y: scroll;
-    height: 67vh;
+    height: 72vh;
     width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
 }
-
-
 
 .learningScrollContainer::-webkit-scrollbar {
     display: none;
@@ -668,6 +663,51 @@ html, body {
 .picId {
     width: 95vw;
     padding: 0.6em;
+}
+
+.learningItem {
+    font-size: 1.5em;
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid rgb(158, 157, 157) 0.09em;
+    padding-right:0.2em;
+}
+
+.learningItemicon {
+    width: 8vw;
+    padding: 0.3em 0.5em;
+}
+
+.learningItemArrow {
+    height: 3vh;
+    width: 5.5vw;
+    padding: 0.3em;
+    padding-left: 1em;
+}
+
+.learningItemContainer, .menuDropDownItemContainer {
+    display: flex;
+    align-items: center;
+}
+
+.learningDropDownItemicon {
+    width: 6.5vw;
+    padding: 0.3em 0.5em;
+}
+
+.learningDropDownItemContainer {
+    height: fit-content;
+    color: white;
+    width: 80vw;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.527);
+    font-weight: 400;
+    padding: 1vh 1vw;
+    margin: auto;
+    margin-top: 0.5em;
 }
 
 /* כללי - חשוב שיהיה למטה */

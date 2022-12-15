@@ -31,7 +31,7 @@ html, body {
     background-color: #E8E8E8;
 }
 
-/* טוען */
+/* טוען ---------------------------------------------------------------------*/
 .loader {
     position: fixed;
     z-index: 99;
@@ -64,7 +64,7 @@ html, body {
     }
 }
 
-/* ניווט עליון */
+/* ניווט עליון --------------------------------------------------------------*/
 .topNavBar {
     height: 10vh;
     width: 100%;
@@ -116,7 +116,7 @@ html, body {
     width: 8vw;
 }
 
-/* עמוד ראשי */
+/* עמוד ראשי ----------------------------------------------------------------*/
 .mainPage {
     position: absolute;
     top: 10.5vh;
@@ -159,7 +159,7 @@ html, body {
     padding-top: 1em;
 }
 
-/* אודות */
+/* אודות ---------------------------------------------------------------------*/
 
 .aboutPage {
     padding: 1vh 4vw;
@@ -195,7 +195,7 @@ html, body {
     width: 10vw;
 }
 
-/* חיפוש */
+/* חיפוש ---------------------------------------------------------------------*/
 .darkScreen {
     height: 100%;
     width: 100%;
@@ -259,6 +259,9 @@ html, body {
     margin-top: 0.3em;
     padding-top: 0.8em;
     text-align: center;
+    display: block;
+    color: black;
+    text-decoration: none;
 }
 
 .searchBoxContainer{
@@ -272,166 +275,8 @@ html, body {
     transform: translateX(-50%);
     align-items: center;
 }
- 
 
-/* מתכונים */
-
-.bottomNavBar {
-    height: 13vh;
-    position: fixed;
-    bottom: 0;
-    overflow-x: scroll;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    background-color: #E8E8E8;
-}
-
-.bottomNavBar::-webkit-scrollbar {
-    display: none;
-}
-
-.bottomNavBarPic {
-    height: 5vh;
-    padding:  0 2.3em;
-}
-
-.bottomNavBarTopic {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0.3em;
-}
-
-.bold {
-    font-weight: 800;
-    font-size: 1.1em;
-}
-
-.recipesScrollContainer {
-    position: absolute;
-    top: 12vh;
-    overflow-y: scroll;
-    height: 67vh;
-    width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.recipesScrollContainer::-webkit-scrollbar {
-    display: none;
-}
-
-.recipeDisplay  {
-    height: 18vh;
-    width: 42vw;
-    margin: 0.7em 0;
-    position: relative;
-}
-
-.recipeDisplayPic {
-    height: 18vh;
-    width: 42vw;
-}
-
-.recipeDisplayText {
-    color: white;
-    width: 40vw;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.527);
-    position: absolute;
-    bottom: 0;
-    font-weight: 400;
-    padding: 1vh 1vw;
-}
-
-.recipeContent {
-    position: absolute;
-    top: 10vh;
-    overflow-y: scroll;
-    height: 77vh;
-    -webkit-user-select: text;
-    font-size: 1.2em;
-}
-
-.recipeContent::-webkit-scrollbar {
-    display: none;
-}
-
-.recipeContentHeadline {
-    font-weight: 800;
-    font-size: 1.6em;
-    padding: 0.2em 0.4em;
-}
-
-.recipeContentPic {
-    width: 100vw;
-    height: 35vh;
-}
-.recipeContentDescription {
-    font-weight: 200;
-    padding: 0 0.9em 0.5em;
-    border-bottom: solid rgb(158, 157, 157) 0.13em;
-}
-
-.recipeContentIngredientHead {
-    font-weight: 800;
-    font-size: 1.3em;
-    padding: 0.2em 0.4em;
-    border-top: solid rgb(158, 157, 157) 0.09em;
-}
-
-.ingredientContainer, .preparationContainer {
-    display: flex;
-    align-items: start;
-    padding: 1em 0.6em;
-}
-
-.ingredientCheckPic, .preparationCheckPic {
-    width: 6vw;
-    padding-left: 0.6em;
-}
-
-.recipeInfoConteiner {
-    display: flex;
-    padding: 0.4em 0;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.headers {
-    font-weight: 200;
-    color: rgb(88, 88, 88);
-    text-align: center;
-    direction: rtl;
-    display: flex;
-    align-items: center;
-    padding: 0 0.1em;
-}
-
-.recipeInfoPics {
-    width: 6vw;
-    padding-left: 0.2em;
-}
-
-.recipeInfoText {
-    color: black;
-    padding: 0.3em;
-}
-
-.quantity, .difficulty {
-    border-left: solid rgb(158, 157, 157) 0.13em;
-}
-
-.headerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* תפריט */
+/* תפריט ----------------------------------------------------------------------*/
 .menuPage {
     position: absolute;
     top: 10.5vh;
@@ -493,224 +338,7 @@ html, body {
     /* position: absolute; */
 }
 
-/* גלריה */
-.galleryScrollContainer {
-    position: absolute;
-    top: 10.5vh;
-    overflow-y: scroll;
-    height: 75vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.galleryScrollContainer::-webkit-scrollbar {
-    display: none;
-}
-
-.galleryScrollDisplay {
-    height: 14vh;
-    width: 31vw;
-    margin: 0.3em 0;
-    background-size: cover;
-}
-
-.galleryScrollDisplayPic {
-    height: 100%;
-    width: 100%;
-}
-
-.picDisplayContiner {
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    width: 84vw;
-    z-index: 2;
-}
-
-.galleryDisplayPic {
-    height: 35vh;
-    width: 84vw;
-}
-
-.galleryDisplayText {
-    background-color: #E8E8E8;
-    text-align: center;
-    padding: 0.2em 0;
-    font-size: 1.5em;
-    font-weight: 800;
-}
-
-.galleryDisplayArrows {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.3em;
-}
-
-.arrow {
-    width: 12vw;
-    padding: 0.3em;
-}
-
-.galleryToRecipe {
-    width: 38vw;
-    position: absolute;
-    left: 50%;
-    top: -18%;
-    transform: translateX(-50%);
-}
-
-/* video page */
-.videosScrollContainer {
-    position: absolute;
-    top: 10vh;
-    overflow-y: scroll;
-    height: 67vh;
-    width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.videosScrollContainer::-webkit-scrollbar {
-    display: none;
-}
-
-.youtubeVideoContainer {
-    width: 80vw;
-    height: 30.5vh;
-    margin: 0.7em 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.videosDisplayText {
-    color: white;
-    width: 98%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.527);
-    font-weight: 400;
-    padding: 1vh 1vw;
-}
-
-.youtubeVideo {
-    width: 100%;
-    height: 28.5vh;
-    display: block;
-    border: none;
-}
-
-.videosPage .bottomNavBar, .galleryPage .bottomNavBar {
-    justify-content: space-evenly;
-} 
-
-/* learningPage */
-.learningScrollContainer {
-    position: absolute;
-    top: 10vh;
-    overflow-y: scroll;
-    height: 72vh;
-    width: 100vw;
-}
-
-.learningScrollContainer::-webkit-scrollbar {
-    display: none;
-}
-
-
-.learningDisplayText {
-    color: white;
-    width: 80vw;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.527);
-    font-weight: 400;
-    padding: 1vh 1vw;
-    margin: 0.5em;
-}
-
-.learningContantContainer {
-    width: 100%;
-}
-
-.learningContantTitle {
-    text-align: center;
-    font-size: 1.4em;
-    font-weight: bold;
-    padding: 0.6em; 
-}
-
-.learningContant {
-    font-size: 1.2em;
-}
-
-.learningContant li, .IdParah {
-    padding: 0.3em; 
-}
-
-.idPicContainer {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.picId {
-    width: 95vw;
-    padding: 0.6em;
-}
-
-.learningItem {
-    font-size: 1.5em;
-    display: flex;
-    width: 100vw;
-    height: 10vh;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: solid rgb(158, 157, 157) 0.09em;
-    padding-right:0.2em;
-}
-
-.learningItemicon {
-    width: 8vw;
-    padding: 0.3em 0.5em;
-}
-
-.learningItemArrow {
-    height: 3vh;
-    width: 5.5vw;
-    padding: 0.3em;
-    padding-left: 1em;
-}
-
-.learningItemContainer, .menuDropDownItemContainer {
-    display: flex;
-    align-items: center;
-}
-
-.learningDropDownItemicon {
-    width: 6.5vw;
-    padding: 0.3em 0.5em;
-}
-
-.learningDropDownItemContainer {
-    height: fit-content;
-    color: white;
-    width: 80vw;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.527);
-    font-weight: 400;
-    padding: 1vh 1vw;
-    margin: auto;
-    margin-top: 0.5em;
-}
-
-/* כללי - חשוב שיהיה למטה */
+/* כללי - חשוב שיהיה למטה --------------------------------------------------*/
 .hidden {
     display: none;
 }

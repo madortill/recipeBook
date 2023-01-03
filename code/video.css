@@ -61,4 +61,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    overflow-y: scroll;
+}
+
+#soonText {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#soonImg {
+ padding-top: 8rem;
 }

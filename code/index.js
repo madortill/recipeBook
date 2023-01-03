@@ -21,10 +21,10 @@ window.addEventListener(`load`, () => {
         arrMainPageButtons[i].addEventListener('click', showPage);
     };
     showNavBar();
-    document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', showTopics);
-    document.querySelector(`.videosScrollContainer`).addEventListener('swiped', showTopics);
-    document.querySelector(`.learningScrollContainer`).addEventListener('swiped', showTopics);
-    document.querySelector(`.galleryScrollContainer`).addEventListener('swiped', showTopics);
+    document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', checkSwipeDirection);
+    document.querySelector(`.videosScrollContainer`).addEventListener('swiped', checkSwipeDirection);
+    document.querySelector(`.learningScrollContainer`).addEventListener('swiped', checkSwipeDirection);
+    document.querySelector(`.galleryScrollContainer`).addEventListener('swiped', checkSwipeDirection);
 });
 
 /* showPage
@@ -391,35 +391,12 @@ const createTopic_videosPage = (currTopic) => {
         document.querySelector(`.videosScrollContainer`).append(menuDisplay)
     }
 
-    for(let videoTopic of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage])) {
-        for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic])) {
-            let videoId = PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic][key]
-            let videoDisplay = El("div",
-                {classes: [`youtubeVideoContainer`, key],},
-                El("div", {cls: `videosDisplayText`}, addSpace(key)),
-            );
-            let thumbnail = El("a",
-                {cls: "videoPageVideoThumbnail",
-                attributes: {
-                    href: `https://www.youtube.com/watch?v=${videoId}`,
-                    id: videoId,
-                    "data-index": key,
-                    "data-playlist": videoTopic
-            },},)
-            thumbnail.style.backgroundImage = `url("http://img.youtube.com/vi/${videoId}/0.jpg")`;
-            videoDisplay.prepend(thumbnail);
-            // El("div",
-            //     {classes: [`youtubeVideoContainer`, key],},
-            //     El("iframe", {attributes:
-            //         {class: "youtubeVideo",
-            //         src: `https://www.youtube.com/embed/${PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic][key]}`,
-            //         allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-            //         allowfullscreen: true,
-            //     }}),
-            //     El("div", {cls: `videosDisplayText`}, addSpace(key))
-            // );
-            // document.querySelector(`.videosScrollContainer`).append(videoDisplay);
-        }
+    if(strCurrentTopic_videosPage !== "recipe") {
+        let soon = El("div", {},
+            El("img", {id: "soonImg", attributes: {src: "../assets/images/grapics/videos/gear.svg"}}),
+            El("div", {id: "soonText"}, "עובדים על זה...")
+        )
+        document.querySelector(`.videosScrollContainer`).append(soon);
     }
 }
 
@@ -672,13 +649,13 @@ const onClickSearch = () => {
     } else if(strCurrentPage === "videosPage"){
         document.querySelector(`.searchBox`).setAttribute("placeholder", "חיפוש סרטון");
     }
-    document.querySelector(`.searchBox`).addEventListener("input", onSearch);
+    document.querySelector(`.searchBox`).addEventListener("input", window[`onSearch_${strCurrentPage}`]);
 }
 
 /* onSearch
 --------------------------------------------------------------
 Description: cheack for search match and creat dropdown accordingly */
-const onSearch = () => {
+var onSearch_recipePage = () => {
     document.querySelector('.dropDown').innerHTML = "";
     // עובר על כול הקטגוריות של המתכונים
     for (let keys of Object.keys(PAGES[strCurrentPage].content)){
@@ -686,11 +663,27 @@ const onSearch = () => {
         for (let key of Object.keys(PAGES[strCurrentPage].content[keys])) {
             let strUserInput = document.querySelector(`.searchBox`).value;
             if(addSpace(key).includes(strUserInput) && strUserInput !== ""){
-                if(strCurrentPage === "recipePage") {
-                    let dropDownItem = El("div", {classes : ["dropDownItem", key, keys], listeners : {click : showRecipe}}, addSpace(key))
-                    document.querySelector('.dropDown').append(dropDownItem);
-                } else if(strCurrentPage === "videosPage"){
-                    let dropDownItem = El("a", {attributes: {href: `https://www.youtube.com/watch?v=${PAGES[strCurrentPage].content[keys][key]}`}, classes : ["dropDownItem", key, keys],}, addSpace(key))
+                let dropDownItem = El("div", {classes : ["dropDownItem", key, keys], listeners : {click : showRecipe}}, addSpace(key))
+                document.querySelector('.dropDown').append(dropDownItem);
+            }
+        }
+    
+    }
+}
+
+/* onSearch
+--------------------------------------------------------------
+Description: cheack for search match and creat dropdown accordingly */
+var onSearch_videosPage = () => {
+    document.querySelector('.dropDown').innerHTML = "";
+    // עובר על כול הקטגוריות של המתכונים
+    for (let videoTopic of Object.keys(PAGES[strCurrentPage].content)){
+        // בכול קטגוריה, עובר על כול המתכונים ומחפש התאמה לחיפוש
+        for (let videoSubTopic of Object.keys(PAGES[strCurrentPage].content[videoTopic])) {
+            for (let video of Object.keys(PAGES[strCurrentPage].content[videoTopic][videoSubTopic])) {
+                let strUserInput = document.querySelector(`.searchBox`).value;
+                if(addSpace(video).includes(strUserInput) && strUserInput !== ""){
+                    let dropDownItem = El("a", {attributes: {href: `https://www.youtube.com/watch?v=${PAGES[strCurrentPage].content[videoTopic][videoSubTopic][video]}`}, classes : ["dropDownItem", videoSubTopic, video],}, addSpace(video))
                     document.querySelector('.dropDown').append(dropDownItem);
                 }
             }
@@ -742,6 +735,13 @@ const showNavBar = () => {
     }
 }
 
+
+const checkSwipeDirection = (event) => {
+    if(event.detail.dir === "right" || event.detail.dir === "left"){
+        showTopics(event)
+    }
+}
+
 /* addSpace
 --------------------------------------------------------------
 Description: change hyphen to space */
@@ -767,3 +767,16 @@ function El(tagName, options = {}, ...children) {
     }
     return el;
 }
+
+
+// embed youtube video
+// El("div",
+//     {classes: [`youtubeVideoContainer`, key],},
+//     El("iframe", {attributes:
+//         {class: "youtubeVideo",
+//         src: `https://www.youtube.com/embed/${PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic][key]}`,
+//         allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+//         allowfullscreen: true,
+//     }}),
+//     El("div", {cls: `videosDisplayText`}, addSpace(key))
+// );

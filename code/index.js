@@ -66,8 +66,8 @@ const showPage = (event) => {
             nNumberTheSymbols++;
         }
         document.querySelector(`.${strCurrentPage} .bottomNavBar .${eval(`strCurrentTopic_${strCurrentPage}`)}`).classList.add("bold");
-        document.querySelector(`.bottomNavBar`).scrollLeft = 0;
-        document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[eval(`strCurrentTopic_${strCurrentPage}`)][2];
+        document.querySelector(`.${strCurrentPage} .bottomNavBar`).scrollLeft = 0;
+        document.querySelector(`.${strCurrentPage} .bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[eval(`strCurrentTopic_${strCurrentPage}`)][2];
     }
     // קורא לפונקציות אם צריך
     if (PAGES[strCurrentPage].functions) {
@@ -217,7 +217,7 @@ const showTopics = (event) => {
         nCurrentTopicNumber = Number(document.querySelector(`.${strCurrentPage} .${currTopic}`).classList[2]);
     }
 
-    document.querySelector(`.bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[currTopic][2];
+    document.querySelector(`.${strCurrentPage} .bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[currTopic][2];
 
     document.querySelector(`.${strCurrentPage} .${currTopic}`).classList.add("bold");
     document.querySelector(`.${strCurrentPage} .${currTopic} .bottomNavBarPic`).style.height = "6vh";
@@ -315,7 +315,7 @@ const showLearningContent = (event) => {
 
     document.querySelector(`.learningScrollContainer`).innerHTML = "";
     document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
-
+    document.querySelector(`.learningScrollContainer`).scrollTop = 0;
     let content = El("div", {cls: "learningContantContainer"},
         El("div", {cls: "learningContantTitle"}, addSpace(subjectTitle)), );
     let container;
@@ -375,24 +375,89 @@ const createTopic_videosPage = (currTopic) => {
     strCurrentTopic_videosPage = currTopic
     // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
     document.querySelector(`.videosScrollContainer`).innerHTML = "";
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage])) {
+        let menuDisplay = El("div",{ classes: [`learningContainer`, key]},
+            El("div",
+                {attributes: {class: `learningItem ${key}`}}, 
+                    El("div", {classes: [`learningItemContainer`,"container", key],}, 
+                        addSpace(key)
+                    ),
+                    El("img",
+                        {attributes: {class: `learningItemArrow ${key}`, 
+                        src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`},
+                        listeners : {click : videoDropDown}}),
+            )
+        )
+        document.querySelector(`.videosScrollContainer`).append(menuDisplay)
+    }
 
     for(let videoTopic of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage])) {
         for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic])) {
-
-            let recipeDisplay =
-            El("div",
+            let videoId = PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic][key]
+            let videoDisplay = El("div",
                 {classes: [`youtubeVideoContainer`, key],},
-                El("iframe", {attributes:
-                    {class: "youtubeVideo",
-                    src: `https://www.youtube.com/embed/${PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic][key]}`,
-                    allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
-                }}),
-                El("div", {cls: `videosDisplayText`}, addSpace(key))
-            )
-            document.querySelector(`.videosScrollContainer`).append(recipeDisplay);
+                El("div", {cls: `videosDisplayText`}, addSpace(key)),
+            );
+            let thumbnail = El("a",
+                {cls: "videoPageVideoThumbnail",
+                attributes: {
+                    href: `https://www.youtube.com/watch?v=${videoId}`,
+                    id: videoId,
+                    "data-index": key,
+                    "data-playlist": videoTopic
+            },},)
+            thumbnail.style.backgroundImage = `url("http://img.youtube.com/vi/${videoId}/0.jpg")`;
+            videoDisplay.prepend(thumbnail);
+            // El("div",
+            //     {classes: [`youtubeVideoContainer`, key],},
+            //     El("iframe", {attributes:
+            //         {class: "youtubeVideo",
+            //         src: `https://www.youtube.com/embed/${PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic][key]}`,
+            //         allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            //         allowfullscreen: true,
+            //     }}),
+            //     El("div", {cls: `videosDisplayText`}, addSpace(key))
+            // );
+            // document.querySelector(`.videosScrollContainer`).append(videoDisplay);
         }
     }
+}
+
+/* videoDropDown
+--------------------------------------------------------------
+Description:  */
+const videoDropDown = (event) => {
+    let currentTopic = event.currentTarget.classList[1];
+    let objCurrentDropDown = PAGES.videosPage.content[strCurrentTopic_videosPage][currentTopic];
+    // מראה דרופ דאון
+    if (document.querySelector(`.videosPage .${currentTopic} .learningItem `).lastChild.getAttribute("src") === "../assets/images/grapics/menu/dropdown_sideArrow.svg") {
+        document.querySelector(`.videosPage .${currentTopic} .learningItem `).lastChild.setAttribute("src", "../assets/images/grapics/menu/opened_dropdown.svg");
+        for(let key of Object.keys(objCurrentDropDown)) {
+            let videoId = PAGES[strCurrentPage].content[strCurrentTopic_videosPage][currentTopic][key]
+            let videoDisplay = El("div",
+                {classes: [`youtubeVideoContainer`, key],},
+                El("div", {cls: `videosDisplayText`}, addSpace(key)),
+            );
+            let thumbnail = El("a",
+                {cls: "videoPageVideoThumbnail",
+                attributes: {
+                    href: `https://www.youtube.com/watch?v=${videoId}`,
+                    id: videoId,
+                    "data-index": key,
+                    "data-playlist": currentTopic
+            },},)
+            thumbnail.style.backgroundImage = `url("http://img.youtube.com/vi/${videoId}/0.jpg")`;
+            videoDisplay.prepend(thumbnail);
+            document.querySelector(`.videosPage .${currentTopic}`).append(videoDisplay);
+        }
+    } else { // מעלים דרופ דאון
+        document.querySelector(`.videosPage .${currentTopic} > .learningItem`).lastChild.setAttribute("src", "../assets/images/grapics/menu/dropdown_sideArrow.svg");
+        let arrDropDownItems = document.querySelectorAll(`.videosPage .${currentTopic} .youtubeVideoContainer`);
+        for (let i = 0; i < arrDropDownItems.length; i++) {
+            document.querySelector(`.videosPage .${currentTopic}`).removeChild(arrDropDownItems[i]);
+        };
+    }
+
 }
 
 /* createTopic_galleryPage

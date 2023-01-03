@@ -44,3 +44,21 @@
 .videosPage .bottomNavBar, .galleryPage .bottomNavBar {
     justify-content: space-evenly;
 } 
+
+
+.videoPageVideoThumbnail{
+    width: 45vw;
+    min-width: 45vw;
+    height: 27vw;
+    background-size: 100% 136%;
+    background-position: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.learningContainer  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

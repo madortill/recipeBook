@@ -191,7 +191,7 @@ html, body {
 
 .aboutPage .backToMain {
     position: absolute;
-    bottom: 6vh;
+    bottom: -1vh;
     width: 10vw;
 }
 

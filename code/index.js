@@ -1,1 +1,782 @@
-var _0x6c6b=["\x6D\x61\x69\x6E\x50\x61\x67\x65","\x73\x61\x6C\x61\x64\x73","\x72\x65\x63\x69\x70\x65","\x73\x75\x62\x6A\x65\x63\x74\x31","\x6C\x6F\x61\x64","\x66\x61\x64\x65","\x61\x64\x64","\x63\x6C\x61\x73\x73\x4C\x69\x73\x74","\x2E\x6C\x6F\x61\x64\x65\x72","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72","\x2E\x6D\x61\x69\x6E\x50\x61\x67\x65\x42\x75\x74\x74\x6F\x6E","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C","\x6C\x65\x6E\x67\x74\x68","\x63\x6C\x69\x63\x6B","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x73\x77\x69\x70\x65\x64","\x2E\x72\x65\x63\x69\x70\x65\x73\x53\x63\x72\x6F\x6C\x6C\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x2E\x76\x69\x64\x65\x6F\x73\x53\x63\x72\x6F\x6C\x6C\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x2E\x6C\x65\x61\x72\x6E\x69\x6E\x67\x53\x63\x72\x6F\x6C\x6C\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x2E\x67\x61\x6C\x6C\x65\x72\x79\x53\x63\x72\x6F\x6C\x6C\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x68\x69\x64\x64\x65\x6E","\x2E","","\x63\x75\x72\x72\x65\x6E\x74\x54\x61\x72\x67\x65\x74","\x78","\x6D\x65\x6E\x75\x50\x61\x67\x65","\x50\x61\x67\x65","\x72\x65\x6D\x6F\x76\x65","\x6D\x65\x6E\x75\x44\x72\x6F\x70\x44\x6F\x77\x6E\x49\x74\x65\x6D\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x73\x74\x72\x43\x75\x72\x72\x65\x6E\x74\x54\x6F\x70\x69\x63\x5F","\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x20\x2E\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72","\x6B\x65\x79\x73","\x64\x69\x76","\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72\x54\x6F\x70\x69\x63\x20","\x20","\x69\x6D\x67","\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72\x50\x69\x63","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72\x2F","\x2E\x73\x76\x67","\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72\x54\x65\x78\x74","\x61\x70\x70\x65\x6E\x64","\x62\x6F\x6C\x64","\x20\x2E\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72\x20\x2E","\x73\x63\x72\x6F\x6C\x6C\x4C\x65\x66\x74","\x66\x75\x6E\x63\x74\x69\x6F\x6E\x73","\x6C\x69\x73\x74\x65\x6E\x65\x72\x73","\x20\x2E","\x2E\x72\x65\x63\x69\x70\x65\x43\x6F\x6E\x74\x65\x6E\x74","\x72\x65\x6D\x6F\x76\x65\x43\x68\x69\x6C\x64","\x2E\x72\x65\x63\x69\x70\x65\x50\x61\x67\x65","\x2E\x73\x65\x61\x72\x63\x68\x53\x63\x72\x65\x65\x6E","\x67\x61\x6C\x6C\x65\x72\x79\x50\x61\x67\x65","\x72\x65\x63\x69\x70\x65\x50\x61\x67\x65","\x72\x65\x63\x69\x70\x65\x43\x6F\x6E\x74\x65\x6E\x74","\x72\x65\x63\x69\x70\x65\x43\x6F\x6E\x74\x65\x6E\x74\x50\x69\x63","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x66\x6F\x6F\x64\x49\x6D\x61\x67\x65\x73\x2F","\x2F","\x70\x69\x63","\x63\x6F\x6E\x74\x65\x6E\x74","\x2E\x6A\x70\x65\x67","\x72\x65\x63\x69\x70\x65\x43\x6F\x6E\x74\x65\x6E\x74\x48\x65\x61\x64\x6C\x69\x6E\x65","\x72\x65\x63\x69\x70\x65\x43\x6F\x6E\x74\x65\x6E\x74\x44\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E","\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E","\x72\x65\x63\x69\x70\x65\x49\x6E\x66\x6F\x43\x6F\x6E\x74\x65\x69\x6E\x65\x72","\x68\x65\x61\x64\x65\x72\x73","\x71\x75\x61\x6E\x74\x69\x74\x79","\x68\x65\x61\x64\x65\x72\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x72\x65\x63\x69\x70\x65\x49\x6E\x66\x6F\x50\x69\x63\x73","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x72\x65\x63\x69\x70\x65\x2F\x73\x65\x72\x76\x69\x6E\x67\x5F\x73\x69\x7A\x65\x5F\x69\x63\x6F\x6E\x2E\x73\x76\x67","\u05DB\u05DE\u05D5\u05EA\x3A","\x72\x65\x63\x69\x70\x65\x49\x6E\x66\x6F\x54\x65\x78\x74","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x72\x65\x63\x69\x70\x65\x2F\x74\x69\x6D\x65\x72\x2E\x73\x76\x67","\u05D6\u05DE\u05DF\x20\u05D4\u05DB\u05E0\u05D4\x3A","\x74\x69\x6D\x65","\x69\x6E\x67\x72\x65\x64\x69\x65\x6E\x74\x73\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x72\x65\x63\x69\x70\x65\x43\x6F\x6E\x74\x65\x6E\x74\x49\x6E\x67\x72\x65\x64\x69\x65\x6E\x74\x48\x65\x61\x64","\u05DE\u05E6\u05E8\u05DB\u05D9\u05DD","\x70\x72\x65\x70\x61\x72\x61\x74\x69\x6F\x6E\x73\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\u05D0\u05D5\u05E4\u05DF\x20\u05D4\u05DB\u05E0\u05D4","\x76\x69\x64\x65\x6F","\x61","\x72\x65\x63\x69\x70\x65\x50\x61\x67\x65\x54\x6F\x56\x69\x64\x65\x6F\x42\x75\x74\x74\x6F\x6E","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x79\x6F\x75\x74\x75\x62\x65\x2E\x63\x6F\x6D\x2F\x77\x61\x74\x63\x68\x3F\x76\x3D","\u05DC\u05E6\u05E4\u05D9\u05D9\u05D4\x20\u05D1\u05E1\u05E8\u05D8\u05D5\u05DF","\x2E\x72\x65\x63\x69\x70\x65\x43\x6F\x6E\x74\x65\x6E\x74\x44\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E","\x69\x6E\x67\x72\x65\x64\x69\x65\x6E\x74\x73","\x69\x6E\x67\x72\x65\x64\x69\x65\x6E\x74\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x69\x6E\x67\x72\x65\x64\x69\x65\x6E\x74\x43\x68\x65\x63\x6B\x50\x69\x63\x20\x69\x6E\x67\x72\x65\x64\x69\x65\x6E\x74\x43\x68\x65\x63\x6B\x50\x69\x63","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x72\x65\x63\x69\x70\x65\x2F\x63\x68\x65\x63\x6B\x62\x6F\x78\x5F\x62\x6C\x61\x6E\x6B\x2E\x73\x76\x67","\x2E\x69\x6E\x67\x72\x65\x64\x69\x65\x6E\x74\x73\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x70\x72\x65\x70\x61\x72\x61\x74\x69\x6F\x6E","\x70\x72\x65\x70\x61\x72\x61\x74\x69\x6F\x6E\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x70\x72\x65\x70\x61\x72\x61\x74\x69\x6F\x6E\x43\x68\x65\x63\x6B\x50\x69\x63\x20\x70\x72\x65\x70\x61\x72\x61\x74\x69\x6F\x6E\x43\x68\x65\x63\x6B\x50\x69\x63","\x20\x67\x72\x61\x79","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x72\x65\x63\x69\x70\x65\x2F\x72\x6F\x75\x6E\x64\x5F\x63\x68\x65\x63\x6B\x62\x6F\x78\x2E\x73\x76\x67","\x2E\x70\x72\x65\x70\x61\x72\x61\x74\x69\x6F\x6E\x73\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x73\x72\x63","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x67\x65\x6E\x65\x72\x61\x6C\x2F\x72\x69\x67\x68\x74\x5F\x61\x72\x72\x6F\x77\x2E\x73\x76\x67","\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x2E\x62\x75\x74\x74\x6F\x6E\x5F\x6D\x65\x6E\x75","\x6D\x65\x6E\x75","\x67\x61\x6C\x6C\x65\x72\x79\x54\x6F\x52\x65\x63\x69\x70\x65","\x67\x61\x6C\x6C\x65\x72\x79","\x70\x75\x73\x68","\x68\x65\x69\x67\x68\x74","\x73\x74\x79\x6C\x65","\x20\x2E\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72\x50\x69\x63","\x35\x76\x68","\x62\x6F\x74\x74\x6F\x6D\x4E\x61\x76\x42\x61\x72\x54\x6F\x70\x69\x63","\x73\x63\x72\x6F\x6C\x6C\x54\x6F\x70","\x64\x69\x72","\x64\x65\x74\x61\x69\x6C","\x6C\x65\x66\x74","\x72\x69\x67\x68\x74","\x36\x76\x68","\x63\x72\x65\x61\x74\x65\x54\x6F\x70\x69\x63\x5F","\x28\x63\x75\x72\x72\x54\x6F\x70\x69\x63\x29","\x72\x65\x63\x69\x70\x65\x44\x69\x73\x70\x6C\x61\x79\x20","\x72\x65\x63\x69\x70\x65\x44\x69\x73\x70\x6C\x61\x79\x50\x69\x63","\x72\x65\x63\x69\x70\x65\x44\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x49\x74\x65\x6D\x20","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x49\x74\x65\x6D\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x49\x74\x65\x6D\x41\x72\x72\x6F\x77\x20","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x6D\x65\x6E\x75\x2F\x64\x72\x6F\x70\x64\x6F\x77\x6E\x5F\x73\x69\x64\x65\x41\x72\x72\x6F\x77\x2E\x73\x76\x67","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x50\x61\x67\x65","\x67\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x6C\x61\x73\x74\x43\x68\x69\x6C\x64","\x2E\x6C\x65\x61\x72\x6E\x69\x6E\x67\x50\x61\x67\x65\x20\x2E","\x20\x2E\x6C\x65\x61\x72\x6E\x69\x6E\x67\x49\x74\x65\x6D\x20","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x6D\x65\x6E\x75\x2F\x6F\x70\x65\x6E\x65\x64\x5F\x64\x72\x6F\x70\x64\x6F\x77\x6E\x2E\x73\x76\x67","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x44\x72\x6F\x70\x44\x6F\x77\x6E\x49\x74\x65\x6D\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x20\x3E\x20\x2E\x6C\x65\x61\x72\x6E\x69\x6E\x67\x49\x74\x65\x6D","\x20\x2E\x6C\x65\x61\x72\x6E\x69\x6E\x67\x44\x72\x6F\x70\x44\x6F\x77\x6E\x49\x74\x65\x6D\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x6C\x65\x61\x72\x6E\x69\x6E\x67","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x43\x6F\x6E\x74\x61\x6E\x74\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x43\x6F\x6E\x74\x61\x6E\x74\x54\x69\x74\x6C\x65","\x6C\x65\x61\x72\x6E\x69\x6E\x67\x43\x6F\x6E\x74\x61\x6E\x74","\x2E\x6C\x65\x61\x72\x6E\x69\x6E\x67\x43\x6F\x6E\x74\x61\x6E\x74\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x49\x64\x50\x61\x72\x61\x68","\x2E\x6C\x65\x61\x72\x6E\x69\x6E\x67\x43\x6F\x6E\x74\x61\x6E\x74","\x74\x65\x78\x74","\x75\x6C","\x6C\x69","\x6C\x69\x73\x74\x49\x74\x65\x6D","\x6C\x69\x73\x74\x44\x6F\x74\x73","\x6F\x6C","\x6C\x69\x73\x74\x4E\x75\x6D\x62\x65\x72\x73","\x69\x64\x50\x69\x63\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x70\x69\x63\x49\x64","\x2E\x69\x64\x50\x69\x63\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x74\x65\x78\x74\x41\x6E\x64\x50\x69\x63\x73","\x64\x65\x66\x61\x75\x6C\x74","\x6C\x6F\x67","\x74\x79\x70\x65","\x73\x6F\x6F\x6E\x49\x6D\x67","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x76\x69\x64\x65\x6F\x73\x2F\x67\x65\x61\x72\x2E\x73\x76\x67","\x73\x6F\x6F\x6E\x54\x65\x78\x74","\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD\x20\u05E2\u05DC\x20\u05D6\u05D4\x2E\x2E\x2E","\x76\x69\x64\x65\x6F\x73\x50\x61\x67\x65","\x2E\x76\x69\x64\x65\x6F\x73\x50\x61\x67\x65\x20\x2E","\x79\x6F\x75\x74\x75\x62\x65\x56\x69\x64\x65\x6F\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x76\x69\x64\x65\x6F\x73\x44\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74","\x76\x69\x64\x65\x6F\x50\x61\x67\x65\x56\x69\x64\x65\x6F\x54\x68\x75\x6D\x62\x6E\x61\x69\x6C","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x49\x6D\x61\x67\x65","\x75\x72\x6C\x28\x22\x68\x74\x74\x70\x3A\x2F\x2F\x69\x6D\x67\x2E\x79\x6F\x75\x74\x75\x62\x65\x2E\x63\x6F\x6D\x2F\x76\x69\x2F","\x2F\x30\x2E\x6A\x70\x67\x22\x29","\x70\x72\x65\x70\x65\x6E\x64","\x20\x2E\x79\x6F\x75\x74\x75\x62\x65\x56\x69\x64\x65\x6F\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x67\x61\x6C\x6C\x65\x72\x79\x53\x63\x72\x6F\x6C\x6C\x44\x69\x73\x70\x6C\x61\x79\x20","\x75\x72\x6C\x28\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x66\x6F\x6F\x64\x49\x6D\x61\x67\x65\x73\x2F","\x2E\x6A\x70\x65\x67\x29","\x67\x61\x6C\x6C\x65\x72\x79\x53\x63\x72\x6F\x6C\x6C\x44\x69\x73\x70\x6C\x61\x79\x20\x70\x69\x63","\x75\x72\x6C\x28\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x66\x6F\x6F\x64\x49\x6D\x61\x67\x65\x73\x2F\x65\x76\x65\x6E\x74\x47\x61\x6C\x6C\x61\x72\x79\x2F\x65\x76\x65\x6E\x74","\x65\x76\x65\x6E\x74","\x2E\x67\x61\x6C\x6C\x65\x72\x79\x50\x69\x63\x44\x69\x73\x70\x6C\x61\x79","\x2E\x67\x61\x6C\x6C\x65\x72\x79\x50\x61\x67\x65\x20\x2E\x64\x61\x72\x6B\x53\x63\x72\x65\x65\x6E","\x72\x69\x67\x68\x74\x41\x72\x72\x6F\x77","\x6C\x65\x66\x74\x41\x72\x72\x6F\x77","\x67\x61\x6C\x6C\x65\x72\x79\x53\x63\x72\x6F\x6C\x6C\x44\x69\x73\x70\x6C\x61\x79","\x70\x69\x63\x44\x69\x73\x70\x6C\x61\x79\x43\x6F\x6E\x74\x69\x6E\x65\x72","\x67\x61\x6C\x6C\x65\x72\x79\x44\x69\x73\x70\x6C\x61\x79\x50\x69\x63","\x67\x61\x6C\x6C\x65\x72\x79\x44\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74","\x74\x6F\x52\x65\x63\x69\x70\x65\x42\x75\x74\x74\x6F\x6E","\x67\x61\x6C\x6C\x65\x72\x79\x44\x69\x73\x70\x6C\x61\x79\x41\x72\x72\x6F\x77\x73","\x72\x69\x67\x68\x74\x41\x72\x72\x6F\x77\x20\x61\x72\x72\x6F\x77","\x6C\x65\x66\x74\x41\x72\x72\x6F\x77\x20\x61\x72\x72\x6F\x77","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x67\x65\x6E\x65\x72\x61\x6C\x2F\x6C\x65\x66\x74\x5F\x61\x72\x72\x6F\x77\x2E\x73\x76\x67","\x67\x61\x6C\x6C\x65\x72\x79\x54\x6F\x52\x65\x63\x69\x70\x65\x20","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x67\x65\x6E\x65\x72\x61\x6C\x2F\x6C\x61\x6D\x61\x74\x6B\x6F\x6E\x5F\x62\x75\x74\x74\x6F\x6E\x2E\x73\x76\x67","\x2E\x74\x6F\x52\x65\x63\x69\x70\x65\x42\x75\x74\x74\x6F\x6E","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x66\x6F\x6F\x64\x49\x6D\x61\x67\x65\x73\x2F\x65\x76\x65\x6E\x74\x47\x61\x6C\x6C\x61\x72\x79\x2F","\x70\x72\x65\x70\x61\x72\x61\x74\x69\x6F\x6E\x43\x68\x65\x63\x6B\x50\x69\x63","\x67\x72\x61\x79","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x72\x65\x63\x69\x70\x65\x2F\x63\x68\x65\x63\x6B\x62\x6F\x78\x5F\x76\x2E\x73\x76\x67","\x2E\x6D\x65\x6E\x75\x50\x61\x67\x65","\x6D\x65\x6E\x75\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x6D\x65\x6E\x75\x49\x74\x65\x6D","\x6D\x65\x6E\x75\x49\x74\x65\x6D\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x6D\x65\x6E\x75\x49\x74\x65\x6D\x69\x63\x6F\x6E","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x6D\x65\x6E\x75\x2F","\x6D\x65\x6E\x75\x49\x74\x65\x6D\x41\x72\x72\x6F\x77\x20","\x2E\x6D\x65\x6E\x75\x50\x61\x67\x65\x20\x3E\x20\x2E","\x20\x3E\x20\x2E\x6D\x65\x6E\x75\x49\x74\x65\x6D","\x6D\x65\x6E\x75\x44\x72\x6F\x70\x44\x6F\x77\x6E\x49\x74\x65\x6D\x69\x63\x6F\x6E","\x20\x2E\x6D\x65\x6E\x75\x44\x72\x6F\x70\x44\x6F\x77\x6E\x49\x74\x65\x6D\x43\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x76\x61\x6C\x75\x65","\x2E\x73\x65\x61\x72\x63\x68\x42\x6F\x78","\x2E\x64\x72\x6F\x70\x44\x6F\x77\x6E","\x2E\x63\x6C\x6F\x73\x65\x53\x65\x61\x72\x63\x68","\x70\x6C\x61\x63\x65\x68\x6F\x6C\x64\x65\x72","\u05D7\u05D9\u05E4\u05D5\u05E9\x20\u05DE\u05EA\u05DB\u05D5\u05DF","\u05D7\u05D9\u05E4\u05D5\u05E9\x20\u05E1\u05E8\u05D8\u05D5\u05DF","\x69\x6E\x70\x75\x74","\x6F\x6E\x53\x65\x61\x72\x63\x68\x5F","\x69\x6E\x63\x6C\x75\x64\x65\x73","\x64\x72\x6F\x70\x44\x6F\x77\x6E\x49\x74\x65\x6D","\x2E\x74\x6F\x70\x4E\x61\x76\x42\x61\x72","\x74\x6F\x70\x4E\x61\x76\x42\x61\x72","\x73\x6C\x69\x63\x65","\x62\x75\x74\x74\x6F\x6E","\x2E\x2E\x2F\x61\x73\x73\x65\x74\x73\x2F\x69\x6D\x61\x67\x65\x73\x2F\x67\x72\x61\x70\x69\x63\x73\x2F\x74\x6F\x70\x4E\x61\x76\x42\x61\x72\x2F","\x69\x6D\x67\x5F\x53\x65\x61\x72\x63\x68\x49\x63\x6F\x6E","\x69\x6D\x67\x5F\x68\x6F\x6D\x65","\x20\x62\x61\x63\x6B\x54\x6F\x48\x6F\x6D\x65\x20\x6D\x61\x69\x6E","\x74\x6F\x70\x4E\x61\x76\x54\x65\x78\x74","\x72\x65\x70\x6C\x61\x63\x65","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x66\x69\x65\x6C\x64\x73","\x61\x73\x73\x69\x67\x6E","\x63\x6C\x61\x73\x73\x65\x73","\x63\x6C\x73","\x69\x64","\x66\x69\x6C\x74\x65\x72","\x61\x74\x74\x72\x69\x62\x75\x74\x65\x73"];let strCurrentPage=_0x6c6b[0];let strFormerPage=_0x6c6b[0];var strCurrentTopic_recipePage=_0x6c6b[1];var strCurrentTopic_videosPage=_0x6c6b[2];var strCurrentTopic_galleryPage=_0x6c6b[2];var strCurrentTopic_learningPage=_0x6c6b[3];let nCurrentTopicNumber=0;let currentPicNum;let currentPicName;let currTopic;window[_0x6c6b[14]](`${_0x6c6b[4]}`,()=>{document[_0x6c6b[9]](`${_0x6c6b[8]}`)[_0x6c6b[7]][_0x6c6b[6]](`${_0x6c6b[5]}`);let _0xde59xb=document[_0x6c6b[11]](_0x6c6b[10]);for(let _0xde59xc=0;_0xde59xc< _0xde59xb[_0x6c6b[12]];_0xde59xc++){_0xde59xb[_0xde59xc][_0x6c6b[14]](_0x6c6b[13],showPage)};showNavBar();document[_0x6c6b[9]](`${_0x6c6b[16]}`)[_0x6c6b[14]](_0x6c6b[15],checkSwipeDirection);document[_0x6c6b[9]](`${_0x6c6b[17]}`)[_0x6c6b[14]](_0x6c6b[15],checkSwipeDirection);document[_0x6c6b[9]](`${_0x6c6b[18]}`)[_0x6c6b[14]](_0x6c6b[15],checkSwipeDirection);document[_0x6c6b[9]](`${_0x6c6b[19]}`)[_0x6c6b[14]](_0x6c6b[15],checkSwipeDirection)});const showPage=(_0xde59xe)=>{document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[20]);if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]!== _0x6c6b[24]){if(strCurrentPage=== _0x6c6b[25]){document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[20]);strCurrentPage= `${_0x6c6b[22]}${_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][2]}${_0x6c6b[26]}`}else {strFormerPage= strCurrentPage;strCurrentPage= _0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]+ _0x6c6b[26]}}else {strCurrentPage= strFormerPage};document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[20]);showNavBar();if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][0]=== _0x6c6b[28]){window[`${_0x6c6b[29]}${strCurrentPage}${_0x6c6b[22]}`]= _0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]};if(PAGES[strCurrentPage][_0x6c6b[30]]){let _0xde59xf=0;document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[32]}`)[_0x6c6b[31]]= _0x6c6b[22];for(let _0xde59x10 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[30]])){let _0xde59x11=El(_0x6c6b[34],{attributes:{class:`${_0x6c6b[35]}${_0xde59x10}${_0x6c6b[36]}${_0xde59xf}${_0x6c6b[22]}`},listeners:{click:showTopics}},El(_0x6c6b[37],{attributes:{class:_0x6c6b[38],src:`${_0x6c6b[39]}${PAGES[strCurrentPage][_0x6c6b[30]][_0xde59x10][1]}${_0x6c6b[40]}`}}),El(_0x6c6b[34],{cls:_0x6c6b[41]},PAGES[strCurrentPage][_0x6c6b[30]][_0xde59x10][0]));document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[32]}`)[_0x6c6b[42]](_0xde59x11);_0xde59xf++};document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[44]}${eval(`${_0x6c6b[29]}${strCurrentPage}${_0x6c6b[22]}`)}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[43]);document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[32]}`)[_0x6c6b[45]]= 0;document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[32]}`)[_0x6c6b[45]]= PAGES[strCurrentPage][_0x6c6b[30]][eval(`${_0x6c6b[29]}${strCurrentPage}${_0x6c6b[22]}`)][2]};if(PAGES[strCurrentPage][_0x6c6b[46]]){for(let _0xde59xc=0;_0xde59xc< PAGES[strCurrentPage][_0x6c6b[46]][_0x6c6b[12]];_0xde59xc++){eval(PAGES[strCurrentPage][_0x6c6b[46]][_0xde59xc])}};if(PAGES[strCurrentPage][_0x6c6b[47]]){for(_0xde59x10 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[47]])){document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[48]}${_0xde59x10}${_0x6c6b[22]}`)[_0x6c6b[14]](_0x6c6b[13],eval(PAGES[strCurrentPage][_0x6c6b[47]][_0xde59x10]))}};if(document[_0x6c6b[9]](`${_0x6c6b[49]}`)){let _0xde59x12=document[_0x6c6b[9]](`${_0x6c6b[49]}`);document[_0x6c6b[9]](`${_0x6c6b[51]}`)[_0x6c6b[50]](_0xde59x12)}};const showRecipe=(_0xde59xe)=>{let _0xde59x14=_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1];if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][2]){strCurrentTopic_recipePage= _0xde59xe[_0x6c6b[23]][_0x6c6b[7]][2]};if(document[_0x6c6b[9]](_0x6c6b[52])[_0x6c6b[7]][2]=== undefined|| strCurrentPage=== _0x6c6b[53]){document[_0x6c6b[9]](_0x6c6b[52])[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[20]);document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[20]);strCurrentPage= _0x6c6b[54];document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[20]);showNavBar()};document[_0x6c6b[9]](`${_0x6c6b[16]}`)[_0x6c6b[31]]= _0x6c6b[22];document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[32]}`)[_0x6c6b[31]]= _0x6c6b[22];if(document[_0x6c6b[9]](`${_0x6c6b[49]}`)){let _0xde59x12=document[_0x6c6b[9]](`${_0x6c6b[49]}`);document[_0x6c6b[9]](`${_0x6c6b[51]}`)[_0x6c6b[50]](_0xde59x12)};let _0xde59x12=El(_0x6c6b[34],{cls:_0x6c6b[55]},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[56]}`,src:`${_0x6c6b[57]}${strCurrentTopic_recipePage}${_0x6c6b[58]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[59]]}${_0x6c6b[61]}`}}),El(_0x6c6b[34],{cls:_0x6c6b[62]},addSpace(_0xde59x14)),El(_0x6c6b[34],{cls:_0x6c6b[63]},PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[64]]),El(_0x6c6b[34],{cls:_0x6c6b[65]},El(_0x6c6b[34],{classes:[_0x6c6b[66],_0x6c6b[67]]},El(_0x6c6b[34],{cls:_0x6c6b[68]},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[69]}`,src:`${_0x6c6b[70]}`}}),_0x6c6b[71]),El(_0x6c6b[34],{cls:_0x6c6b[72]},PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[67]])),El(_0x6c6b[34],{cls:_0x6c6b[66]},El(_0x6c6b[34],{cls:_0x6c6b[68]},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[69]}`,src:`${_0x6c6b[73]}`}}),_0x6c6b[74]),El(_0x6c6b[34],{cls:_0x6c6b[72]},PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[75]]))),El(_0x6c6b[34],{cls:_0x6c6b[76]},El(_0x6c6b[34],{cls:_0x6c6b[77]},_0x6c6b[78])),El(_0x6c6b[34],{cls:_0x6c6b[79]},El(_0x6c6b[34],{cls:_0x6c6b[77]},_0x6c6b[80])));document[_0x6c6b[9]](`${_0x6c6b[51]}`)[_0x6c6b[42]](_0xde59x12);if(PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[81]]){let _0xde59x15=El(_0x6c6b[82],{attributes:{class:_0x6c6b[83],href:`${_0x6c6b[84]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[81]]}${_0x6c6b[22]}`}},_0x6c6b[85]);document[_0x6c6b[9]](`${_0x6c6b[86]}`)[_0x6c6b[42]](_0xde59x15)};for(let _0xde59xc=0;_0xde59xc< PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[87]][_0x6c6b[12]];_0xde59xc++){let _0xde59x16=El(_0x6c6b[34],{cls:_0x6c6b[88]},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[89]}${_0xde59xc}${_0x6c6b[22]}`,src:`${_0x6c6b[90]}`},listeners:{click:onClickCheckBox}}),PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[87]][_0xde59xc]);document[_0x6c6b[9]](`${_0x6c6b[91]}`)[_0x6c6b[42]](_0xde59x16)};for(let _0xde59xc=0;_0xde59xc< PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[92]][_0x6c6b[12]];_0xde59xc++){let _0xde59x17=El(_0x6c6b[34],{cls:_0x6c6b[93]},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[94]}${_0xde59xc}${_0x6c6b[95]}`,src:`${_0x6c6b[96]}`},listeners:{click:onClickCheckBox}}),PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x14][_0x6c6b[92]][_0xde59xc]);document[_0x6c6b[9]](`${_0x6c6b[97]}`)[_0x6c6b[42]](_0xde59x17)};document[_0x6c6b[9]](`${_0x6c6b[101]}`)[_0x6c6b[100]](_0x6c6b[98],_0x6c6b[99]);document[_0x6c6b[9]](`${_0x6c6b[101]}`)[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[102]);if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][0]=== _0x6c6b[103]){document[_0x6c6b[9]](`${_0x6c6b[101]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[104])}else {document[_0x6c6b[9]](`${_0x6c6b[101]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[2])}};const showTopics=(_0xde59xe)=>{let _0xde59x19=[];for(let _0xde59x1a of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]])){_0xde59x19[_0x6c6b[105]](_0xde59x1a)};currTopic= eval(`${_0x6c6b[29]}${strCurrentPage}${_0x6c6b[22]}`);document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[48]}${currTopic}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[43]);document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[48]}${currTopic}${_0x6c6b[108]}`)[_0x6c6b[107]][_0x6c6b[106]]= _0x6c6b[109];if(_0xde59xe){if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][0]=== _0x6c6b[110]){document[_0x6c6b[9]](`${_0x6c6b[16]}`)[_0x6c6b[111]]= 0;currTopic= _0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1];nCurrentTopicNumber= Number(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][2])}else {if(_0xde59xe[_0x6c6b[113]][_0x6c6b[112]]=== _0x6c6b[114]&& nCurrentTopicNumber> 0){document[_0x6c6b[9]](`${_0x6c6b[16]}`)[_0x6c6b[111]]= 0;nCurrentTopicNumber--}else {if(_0xde59xe[_0x6c6b[113]][_0x6c6b[112]]=== _0x6c6b[115]&& nCurrentTopicNumber< Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[30]])[_0x6c6b[12]]- 1){document[_0x6c6b[9]](`${_0x6c6b[16]}`)[_0x6c6b[111]]= 0;nCurrentTopicNumber++}};currTopic= _0xde59x19[nCurrentTopicNumber]}}else {nCurrentTopicNumber= Number(document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[48]}${currTopic}${_0x6c6b[22]}`)[_0x6c6b[7]][2])};document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[32]}`)[_0x6c6b[45]]= PAGES[strCurrentPage][_0x6c6b[30]][currTopic][2];document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[48]}${currTopic}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[43]);document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[48]}${currTopic}${_0x6c6b[108]}`)[_0x6c6b[107]][_0x6c6b[106]]= _0x6c6b[116];eval(`${_0x6c6b[117]}${strCurrentPage}${_0x6c6b[118]}`)};const createTopic_recipePage=(currTopic)=>{strCurrentTopic_recipePage= currTopic;document[_0x6c6b[9]](`${_0x6c6b[16]}`)[_0x6c6b[31]]= _0x6c6b[22];for(let _0xde59x10 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage])){let _0xde59x1c=El(_0x6c6b[34],{attributes:{class:`${_0x6c6b[119]}${_0xde59x10}${_0x6c6b[22]}`},listeners:{click:showRecipe}},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[120]}`,src:`${_0x6c6b[57]}${strCurrentTopic_recipePage}${_0x6c6b[58]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_recipePage][_0xde59x10][_0x6c6b[59]]}${_0x6c6b[61]}`}}),El(_0x6c6b[34],{cls:`${_0x6c6b[121]}`},addSpace(_0xde59x10)));document[_0x6c6b[9]](`${_0x6c6b[16]}`)[_0x6c6b[42]](_0xde59x1c)}};const createTopic_learningPage=(currTopic)=>{strCurrentTopic_learningPage= currTopic;document[_0x6c6b[9]](`${_0x6c6b[18]}`)[_0x6c6b[31]]= _0x6c6b[22];for(let _0xde59x10 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_learningPage])){let _0xde59x1e=El(_0x6c6b[34],{classes:[`${_0x6c6b[122]}`,_0xde59x10]},El(_0x6c6b[34],{attributes:{class:`${_0x6c6b[123]}${_0xde59x10}${_0x6c6b[22]}`}},El(_0x6c6b[34],{classes:[`${_0x6c6b[124]}`,_0x6c6b[125],_0xde59x10]},addSpace(_0xde59x10)),El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[126]}${_0xde59x10}${_0x6c6b[22]}`,src:`${_0x6c6b[127]}`},listeners:{click:learningDropDown}})));document[_0x6c6b[9]](`${_0x6c6b[18]}`)[_0x6c6b[42]](_0xde59x1e)}};const learningDropDown=(_0xde59xe)=>{let _0xde59x20=_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1];let _0xde59x21=PAGES[_0x6c6b[128]][_0x6c6b[60]][strCurrentTopic_learningPage][_0xde59x20];if(document[_0x6c6b[9]](`${_0x6c6b[131]}${_0xde59x20}${_0x6c6b[132]}`)[_0x6c6b[130]][_0x6c6b[129]](_0x6c6b[98])=== _0x6c6b[127]){document[_0x6c6b[9]](`${_0x6c6b[131]}${_0xde59x20}${_0x6c6b[132]}`)[_0x6c6b[130]][_0x6c6b[100]](_0x6c6b[98],_0x6c6b[133]);for(let _0xde59x10 of Object[_0x6c6b[33]](_0xde59x21)){let menuDropDown=El(_0x6c6b[34],{classes:[`${_0x6c6b[134]}`,_0xde59x10,_0xde59x20],listeners:{click:showLearningContent}},addSpace(_0xde59x10));document[_0x6c6b[9]](`${_0x6c6b[131]}${_0xde59x20}${_0x6c6b[22]}`)[_0x6c6b[42]](menuDropDown)}}else {document[_0x6c6b[9]](`${_0x6c6b[131]}${_0xde59x20}${_0x6c6b[135]}`)[_0x6c6b[130]][_0x6c6b[100]](_0x6c6b[98],_0x6c6b[127]);let _0xde59x23=document[_0x6c6b[11]](`${_0x6c6b[131]}${_0xde59x20}${_0x6c6b[136]}`);for(let _0xde59xc=0;_0xde59xc< _0xde59x23[_0x6c6b[12]];_0xde59xc++){document[_0x6c6b[9]](`${_0x6c6b[131]}${_0xde59x20}${_0x6c6b[22]}`)[_0x6c6b[50]](_0xde59x23[_0xde59xc])}}};const showLearningContent=(_0xde59xe)=>{let _0xde59x25=_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1];let _0xde59x26=_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][2];let _0xde59x27=PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_learningPage][_0xde59x26][_0xde59x25];document[_0x6c6b[9]](`${_0x6c6b[101]}`)[_0x6c6b[100]](_0x6c6b[98],_0x6c6b[99]);document[_0x6c6b[9]](`${_0x6c6b[101]}`)[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[102]);document[_0x6c6b[9]](`${_0x6c6b[101]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[137]);document[_0x6c6b[9]](`${_0x6c6b[18]}`)[_0x6c6b[31]]= _0x6c6b[22];document[_0x6c6b[9]](`${_0x6c6b[21]}${strCurrentPage}${_0x6c6b[32]}`)[_0x6c6b[31]]= _0x6c6b[22];document[_0x6c6b[9]](`${_0x6c6b[18]}`)[_0x6c6b[111]]= 0;let _0xde59x28=El(_0x6c6b[34],{cls:_0x6c6b[138]},El(_0x6c6b[34],{cls:_0x6c6b[139]},addSpace(_0xde59x25)));let _0xde59x29;document[_0x6c6b[9]](`${_0x6c6b[18]}`)[_0x6c6b[42]](_0xde59x28);switch(_0xde59x27[_0x6c6b[157]]){case _0x6c6b[144]:_0xde59x29= El(_0x6c6b[34],{cls:_0x6c6b[140]});document[_0x6c6b[9]](`${_0x6c6b[141]}`)[_0x6c6b[42]](_0xde59x29);for(let _0xde59xc=0;_0xde59xc< _0xde59x27[_0x6c6b[60]][_0x6c6b[12]];_0xde59xc++){let _0xde59x2a=El(_0x6c6b[34],{cls:_0x6c6b[142]});_0xde59x2a[_0x6c6b[31]]= _0xde59x27[_0x6c6b[60]][_0xde59xc];document[_0x6c6b[9]](`${_0x6c6b[143]}`)[_0x6c6b[42]](_0xde59x2a)};break;case _0x6c6b[148]:_0xde59x29= El(_0x6c6b[145],{cls:_0x6c6b[140]});document[_0x6c6b[9]](`${_0x6c6b[141]}`)[_0x6c6b[42]](_0xde59x29);for(let _0xde59xc=0;_0xde59xc< _0xde59x27[_0x6c6b[60]][_0x6c6b[12]];_0xde59xc++){let _0xde59x2a=El(_0x6c6b[146],{cls:_0x6c6b[147]});_0xde59x2a[_0x6c6b[31]]= _0xde59x27[_0x6c6b[60]][_0xde59xc];document[_0x6c6b[9]](`${_0x6c6b[143]}`)[_0x6c6b[42]](_0xde59x2a)};break;case _0x6c6b[150]:_0xde59x29= El(_0x6c6b[149],{cls:_0x6c6b[140]});document[_0x6c6b[9]](`${_0x6c6b[141]}`)[_0x6c6b[42]](_0xde59x29);for(let _0xde59xc=0;_0xde59xc< _0xde59x27[_0x6c6b[60]][_0x6c6b[12]];_0xde59xc++){let _0xde59x2a=El(_0x6c6b[146],{cls:_0x6c6b[147]});_0xde59x2a[_0x6c6b[31]]= _0xde59x27[_0x6c6b[60]][_0xde59xc];document[_0x6c6b[9]](`${_0x6c6b[143]}`)[_0x6c6b[42]](_0xde59x2a)};break;case _0x6c6b[154]:_0xde59x29= El(_0x6c6b[34],{cls:_0x6c6b[140]});document[_0x6c6b[9]](`${_0x6c6b[141]}`)[_0x6c6b[42]](_0xde59x29);for(let _0xde59xc=0;_0xde59xc< _0xde59x27[_0x6c6b[60]][_0x6c6b[12]];_0xde59xc++){let _0xde59x2a=El(_0x6c6b[34],{cls:_0x6c6b[142]});_0xde59x2a[_0x6c6b[31]]= _0xde59x27[_0x6c6b[60]][_0xde59xc];document[_0x6c6b[9]](`${_0x6c6b[143]}`)[_0x6c6b[42]](_0xde59x2a)};_0xde59x29= El(_0x6c6b[34],{cls:_0x6c6b[151]});document[_0x6c6b[9]](`${_0x6c6b[141]}`)[_0x6c6b[42]](_0xde59x29);for(let _0xde59xc=0;_0xde59xc< _0xde59x27[_0x6c6b[59]][_0x6c6b[12]];_0xde59xc++){let _0xde59x2a=El(_0x6c6b[37],{cls:_0x6c6b[152],attributes:{src:_0xde59x27[_0x6c6b[59]][_0xde59xc]}});document[_0x6c6b[9]](`${_0x6c6b[153]}`)[_0x6c6b[42]](_0xde59x2a)};break;default:console[_0x6c6b[156]](_0x6c6b[155])}};const createTopic_videosPage=(currTopic)=>{strCurrentTopic_videosPage= currTopic;document[_0x6c6b[9]](`${_0x6c6b[17]}`)[_0x6c6b[31]]= _0x6c6b[22];for(let _0xde59x10 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_videosPage])){let _0xde59x1e=El(_0x6c6b[34],{classes:[`${_0x6c6b[122]}`,_0xde59x10]},El(_0x6c6b[34],{attributes:{class:`${_0x6c6b[123]}${_0xde59x10}${_0x6c6b[22]}`}},El(_0x6c6b[34],{classes:[`${_0x6c6b[124]}`,_0x6c6b[125],_0xde59x10]},addSpace(_0xde59x10)),El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[126]}${_0xde59x10}${_0x6c6b[22]}`,src:`${_0x6c6b[127]}`},listeners:{click:videoDropDown}})));document[_0x6c6b[9]](`${_0x6c6b[17]}`)[_0x6c6b[42]](_0xde59x1e)};if(strCurrentTopic_videosPage!== _0x6c6b[2]){let _0xde59x2c=El(_0x6c6b[34],{},El(_0x6c6b[37],{id:_0x6c6b[158],attributes:{src:_0x6c6b[159]}}),El(_0x6c6b[34],{id:_0x6c6b[160]},_0x6c6b[161]));document[_0x6c6b[9]](`${_0x6c6b[17]}`)[_0x6c6b[42]](_0xde59x2c)}};const videoDropDown=(_0xde59xe)=>{let _0xde59x20=_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1];let _0xde59x21=PAGES[_0x6c6b[162]][_0x6c6b[60]][strCurrentTopic_videosPage][_0xde59x20];if(document[_0x6c6b[9]](`${_0x6c6b[163]}${_0xde59x20}${_0x6c6b[132]}`)[_0x6c6b[130]][_0x6c6b[129]](_0x6c6b[98])=== _0x6c6b[127]){document[_0x6c6b[9]](`${_0x6c6b[163]}${_0xde59x20}${_0x6c6b[132]}`)[_0x6c6b[130]][_0x6c6b[100]](_0x6c6b[98],_0x6c6b[133]);for(let _0xde59x10 of Object[_0x6c6b[33]](_0xde59x21)){let _0xde59x2e=PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_videosPage][_0xde59x20][_0xde59x10];let _0xde59x2f=El(_0x6c6b[34],{classes:[`${_0x6c6b[164]}`,_0xde59x10]},El(_0x6c6b[34],{cls:`${_0x6c6b[165]}`},addSpace(_0xde59x10)));let _0xde59x30=El(_0x6c6b[82],{cls:_0x6c6b[166],attributes:{href:`${_0x6c6b[84]}${_0xde59x2e}${_0x6c6b[22]}`,id:_0xde59x2e,"\x64\x61\x74\x61\x2D\x69\x6E\x64\x65\x78":_0xde59x10,"\x64\x61\x74\x61\x2D\x70\x6C\x61\x79\x6C\x69\x73\x74":_0xde59x20}});_0xde59x30[_0x6c6b[107]][_0x6c6b[167]]= `${_0x6c6b[168]}${_0xde59x2e}${_0x6c6b[169]}`;_0xde59x2f[_0x6c6b[170]](_0xde59x30);document[_0x6c6b[9]](`${_0x6c6b[163]}${_0xde59x20}${_0x6c6b[22]}`)[_0x6c6b[42]](_0xde59x2f)}}else {document[_0x6c6b[9]](`${_0x6c6b[163]}${_0xde59x20}${_0x6c6b[135]}`)[_0x6c6b[130]][_0x6c6b[100]](_0x6c6b[98],_0x6c6b[127]);let _0xde59x23=document[_0x6c6b[11]](`${_0x6c6b[163]}${_0xde59x20}${_0x6c6b[171]}`);for(let _0xde59xc=0;_0xde59xc< _0xde59x23[_0x6c6b[12]];_0xde59xc++){document[_0x6c6b[9]](`${_0x6c6b[163]}${_0xde59x20}${_0x6c6b[22]}`)[_0x6c6b[50]](_0xde59x23[_0xde59xc])}}};const createTopic_galleryPage=(currTopic)=>{strCurrentTopic_galleryPage= currTopic;let _0xde59x32=0;document[_0x6c6b[9]](`${_0x6c6b[19]}`)[_0x6c6b[31]]= _0x6c6b[22];if(strCurrentTopic_galleryPage=== _0x6c6b[2]){for(let _0xde59x1a of Object[_0x6c6b[33]](PAGES[_0x6c6b[54]][_0x6c6b[60]])){for(let _0xde59x33 of Object[_0x6c6b[33]](PAGES[_0x6c6b[54]][_0x6c6b[60]][_0xde59x1a])){if(!PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][_0xde59x33]){PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][_0xde59x33]= [PAGES[_0x6c6b[54]][_0x6c6b[60]][_0xde59x1a][_0xde59x33][_0x6c6b[59]],_0xde59x1a]}}};for(let _0xde59x10 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage])){let _0xde59x1c=El(_0x6c6b[34],{attributes:{class:`${_0x6c6b[172]}${_0xde59x10}${_0x6c6b[36]}${_0xde59x32}${_0x6c6b[22]}`},listeners:{click:showPicDisplay}});_0xde59x1c[_0x6c6b[107]][_0x6c6b[167]]= `${_0x6c6b[173]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][_0xde59x10][1]}${_0x6c6b[58]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][_0xde59x10][0]}${_0x6c6b[174]}`;document[_0x6c6b[9]](`${_0x6c6b[19]}`)[_0x6c6b[42]](_0xde59x1c);_0xde59x32++}}else {for(let _0xde59xc=1;_0xde59xc<= 97;_0xde59xc++){let _0xde59x1c=El(_0x6c6b[34],{attributes:{class:`${_0x6c6b[175]}${_0xde59xc}${_0x6c6b[36]}${_0xde59x32}${_0x6c6b[22]}`},listeners:{click:showPicDisplay}});_0xde59x1c[_0x6c6b[107]][_0x6c6b[167]]= `${_0x6c6b[176]}${_0xde59xc}${_0x6c6b[174]}`;document[_0x6c6b[9]](`${_0x6c6b[19]}`)[_0x6c6b[42]](_0xde59x1c);if(!PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][`${_0x6c6b[59]}${_0xde59xc}${_0x6c6b[22]}`]){PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][`${_0x6c6b[59]}${_0xde59xc}${_0x6c6b[22]}`]= `${_0x6c6b[177]}${_0xde59xc}${_0x6c6b[22]}`};_0xde59x32++}}};const showPicDisplay=(_0xde59xe)=>{const _0xde59x35=Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage])[_0x6c6b[12]]- 1;document[_0x6c6b[9]](`${_0x6c6b[179]}`)[_0x6c6b[14]](_0x6c6b[13],()=>{document[_0x6c6b[9]](`${_0x6c6b[178]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[20]);document[_0x6c6b[9]](`${_0x6c6b[179]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[20])});if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][0]=== _0x6c6b[180]){currentPicNum--;if(Number(currentPicNum)===  -1){currentPicNum= _0xde59x35}}else {if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][0]=== _0x6c6b[181]){currentPicNum++;if(Number(currentPicNum)=== _0xde59x35+ 1){currentPicNum= 0}}else {if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][0]=== _0x6c6b[182]){currentPicNum= _0xde59xe[_0x6c6b[23]][_0x6c6b[7]][2]}}};currentPicName= Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage])[currentPicNum];document[_0x6c6b[9]](`${_0x6c6b[179]}`)[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[20]);document[_0x6c6b[9]](`${_0x6c6b[178]}`)[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[20]);document[_0x6c6b[9]](`${_0x6c6b[178]}`)[_0x6c6b[31]]= _0x6c6b[22];if(strCurrentTopic_galleryPage=== _0x6c6b[2]){let _0xde59x36=El(_0x6c6b[34],{cls:`${_0x6c6b[183]}`},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[184]}`,src:`${_0x6c6b[57]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][currentPicName][1]}${_0x6c6b[58]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][currentPicName][0]}${_0x6c6b[61]}`}}),El(_0x6c6b[34],{cls:`${_0x6c6b[185]}`},addSpace(currentPicName)),El(_0x6c6b[34],{cls:_0x6c6b[186]}),El(_0x6c6b[34],{cls:`${_0x6c6b[187]}`},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[188]}`,src:`${_0x6c6b[99]}`},listeners:{click:showPicDisplay}}),El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[189]}`,src:`${_0x6c6b[190]}`},listeners:{click:showPicDisplay}})));document[_0x6c6b[9]](`${_0x6c6b[178]}`)[_0x6c6b[42]](_0xde59x36);let _0xde59x37=El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[191]}${currentPicName}${_0x6c6b[36]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][currentPicName][1]}${_0x6c6b[22]}`,src:`${_0x6c6b[192]}`},listeners:{click:showRecipe}});document[_0x6c6b[9]](`${_0x6c6b[193]}`)[_0x6c6b[42]](_0xde59x37)}else {let _0xde59x36=El(_0x6c6b[34],{cls:`${_0x6c6b[183]}`},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[184]}`,src:`${_0x6c6b[194]}${PAGES[strCurrentPage][_0x6c6b[60]][strCurrentTopic_galleryPage][currentPicName]}${_0x6c6b[61]}`}}),El(_0x6c6b[34],{cls:_0x6c6b[186]}),El(_0x6c6b[34],{cls:`${_0x6c6b[187]}`},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[188]}`,src:`${_0x6c6b[99]}`},listeners:{click:showPicDisplay}}),El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[189]}`,src:`${_0x6c6b[190]}`},listeners:{click:showPicDisplay}})));document[_0x6c6b[9]](`${_0x6c6b[178]}`)[_0x6c6b[42]](_0xde59x36)}};const onClickCheckBox=(_0xde59xe)=>{if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][0]=== _0x6c6b[195]){if(_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][2]=== _0x6c6b[196]){document[_0x6c6b[9]](`${_0x6c6b[21]}${_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[196])}else {document[_0x6c6b[9]](`${_0x6c6b[21]}${_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]}${_0x6c6b[22]}`)[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[196])}}else {if(document[_0x6c6b[9]](`${_0x6c6b[21]}${_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]}${_0x6c6b[22]}`)[_0x6c6b[129]](_0x6c6b[98])=== `${_0x6c6b[197]}`){document[_0x6c6b[9]](`${_0x6c6b[21]}${_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]}${_0x6c6b[22]}`)[_0x6c6b[100]](_0x6c6b[98],`${_0x6c6b[90]}`)}else {document[_0x6c6b[9]](`${_0x6c6b[21]}${_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]}${_0x6c6b[22]}`)[_0x6c6b[100]](_0x6c6b[98],`${_0x6c6b[197]}`)}}};const showMenu=()=>{document[_0x6c6b[9]](`${_0x6c6b[198]}`)[_0x6c6b[31]]= _0x6c6b[22];for(let _0xde59x10 of Object[_0x6c6b[33]](PAGES[_0x6c6b[25]][_0x6c6b[60]])){let _0xde59x1e=El(_0x6c6b[34],{classes:[`${_0x6c6b[199]}`,_0xde59x10]},El(_0x6c6b[34],{attributes:{class:`${_0x6c6b[200]}`}},El(_0x6c6b[34],{classes:[`${_0x6c6b[201]}`,_0x6c6b[125],_0xde59x10],listeners:{click:showPage}},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[202]}`,src:`${_0x6c6b[203]}${PAGES[_0x6c6b[25]][_0x6c6b[60]][_0xde59x10][1]}${_0x6c6b[40]}`}}),PAGES[_0x6c6b[25]][_0x6c6b[60]][_0xde59x10][0]),El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[204]}${_0xde59x10}${_0x6c6b[22]}`,src:`${_0x6c6b[127]}`},listeners:{click:menuDropDown}})));document[_0x6c6b[9]](`${_0x6c6b[198]}`)[_0x6c6b[42]](_0xde59x1e)}};const menuDropDown=(_0xde59xe)=>{let _0xde59x3a=_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1];let _0xde59x21=PAGES[_0x6c6b[25]][_0x6c6b[60]][_0xde59xe[_0x6c6b[23]][_0x6c6b[7]][1]][2];if(document[_0x6c6b[9]](`${_0x6c6b[205]}${_0xde59x3a}${_0x6c6b[206]}`)[_0x6c6b[130]][_0x6c6b[129]](_0x6c6b[98])=== _0x6c6b[127]){document[_0x6c6b[9]](`${_0x6c6b[205]}${_0xde59x3a}${_0x6c6b[206]}`)[_0x6c6b[130]][_0x6c6b[100]](_0x6c6b[98],_0x6c6b[133]);for(let _0xde59x10 of Object[_0x6c6b[33]](_0xde59x21)){let menuDropDown=El(_0x6c6b[34],{classes:[`${_0x6c6b[28]}`,_0xde59x10,_0xde59x3a],listeners:{click:showPage}},El(_0x6c6b[37],{attributes:{class:`${_0x6c6b[207]}`,src:`${_0x6c6b[203]}${_0xde59x21[_0xde59x10][1]}${_0x6c6b[40]}`}}),_0xde59x21[_0xde59x10][0]);document[_0x6c6b[9]](`${_0x6c6b[205]}${_0xde59x3a}${_0x6c6b[22]}`)[_0x6c6b[42]](menuDropDown)}}else {document[_0x6c6b[9]](`${_0x6c6b[205]}${_0xde59x3a}${_0x6c6b[206]}`)[_0x6c6b[130]][_0x6c6b[100]](_0x6c6b[98],_0x6c6b[127]);let _0xde59x23=document[_0x6c6b[11]](`${_0x6c6b[205]}${_0xde59x3a}${_0x6c6b[208]}`);for(let _0xde59xc=0;_0xde59xc< _0xde59x23[_0x6c6b[12]];_0xde59xc++){document[_0x6c6b[9]](`${_0x6c6b[205]}${_0xde59x3a}${_0x6c6b[22]}`)[_0x6c6b[50]](_0xde59x23[_0xde59xc])}}};const onClickSearch=()=>{document[_0x6c6b[9]](`${_0x6c6b[210]}`)[_0x6c6b[209]]= _0x6c6b[22];document[_0x6c6b[9]](_0x6c6b[211])[_0x6c6b[31]]= _0x6c6b[22];document[_0x6c6b[9]](_0x6c6b[52])[_0x6c6b[7]][_0x6c6b[27]](_0x6c6b[20]);document[_0x6c6b[9]](`${_0x6c6b[212]}`)[_0x6c6b[14]](_0x6c6b[13],()=>{document[_0x6c6b[9]](_0x6c6b[52])[_0x6c6b[7]][_0x6c6b[6]](_0x6c6b[20])});if(strCurrentPage=== _0x6c6b[54]){document[_0x6c6b[9]](`${_0x6c6b[210]}`)[_0x6c6b[100]](_0x6c6b[213],_0x6c6b[214])}else {if(strCurrentPage=== _0x6c6b[162]){document[_0x6c6b[9]](`${_0x6c6b[210]}`)[_0x6c6b[100]](_0x6c6b[213],_0x6c6b[215])}};document[_0x6c6b[9]](`${_0x6c6b[210]}`)[_0x6c6b[14]](_0x6c6b[216],window[`${_0x6c6b[217]}${strCurrentPage}${_0x6c6b[22]}`])};var onSearch_recipePage=()=>{document[_0x6c6b[9]](_0x6c6b[211])[_0x6c6b[31]]= _0x6c6b[22];for(let _0xde59x3d of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]])){for(let _0xde59x10 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][_0xde59x3d])){let _0xde59x3e=document[_0x6c6b[9]](`${_0x6c6b[210]}`)[_0x6c6b[209]];if(addSpace(_0xde59x10)[_0x6c6b[218]](_0xde59x3e)&& _0xde59x3e!== _0x6c6b[22]){let _0xde59x3f=El(_0x6c6b[34],{classes:[_0x6c6b[219],_0xde59x10,_0xde59x3d],listeners:{click:showRecipe}},addSpace(_0xde59x10));document[_0x6c6b[9]](_0x6c6b[211])[_0x6c6b[42]](_0xde59x3f)}}}};var onSearch_videosPage=()=>{document[_0x6c6b[9]](_0x6c6b[211])[_0x6c6b[31]]= _0x6c6b[22];for(let _0xde59x41 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]])){for(let _0xde59x42 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][_0xde59x41])){for(let _0xde59x43 of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[60]][_0xde59x41][_0xde59x42])){let _0xde59x3e=document[_0x6c6b[9]](`${_0x6c6b[210]}`)[_0x6c6b[209]];if(addSpace(_0xde59x43)[_0x6c6b[218]](_0xde59x3e)&& _0xde59x3e!== _0x6c6b[22]){let _0xde59x3f=El(_0x6c6b[82],{attributes:{href:`${_0x6c6b[84]}${PAGES[strCurrentPage][_0x6c6b[60]][_0xde59x41][_0xde59x42][_0xde59x43]}${_0x6c6b[22]}`},classes:[_0x6c6b[219],_0xde59x42,_0xde59x43]},addSpace(_0xde59x43));document[_0x6c6b[9]](_0x6c6b[211])[_0x6c6b[42]](_0xde59x3f)}}}}};const showNavBar=()=>{document[_0x6c6b[9]](`${_0x6c6b[220]}`)[_0x6c6b[31]]= _0x6c6b[22];for(key of Object[_0x6c6b[33]](PAGES[strCurrentPage][_0x6c6b[221]])){let _0xde59x45;if(key[_0x6c6b[222]](0,3)=== _0x6c6b[37]){if(key[_0x6c6b[218]](_0x6c6b[223])){_0xde59x45= El(key[_0x6c6b[222]](0,3),{attributes:{src:`${_0x6c6b[224]}${PAGES[strCurrentPage][_0x6c6b[221]][key]}${_0x6c6b[22]}`,class:`${_0x6c6b[22]}${key[_0x6c6b[222]](4)}${_0x6c6b[36]}${key[_0x6c6b[222]](11)}${_0x6c6b[22]}`},listeners:{click:showPage}});document[_0x6c6b[9]](`${_0x6c6b[220]}`)[_0x6c6b[42]](_0xde59x45)}else {if(key=== _0x6c6b[225]){_0xde59x45= El(key[_0x6c6b[222]](0,3),{attributes:{src:`${_0x6c6b[224]}${PAGES[strCurrentPage][_0x6c6b[221]][key]}${_0x6c6b[22]}`,class:key[_0x6c6b[222]](4)},listeners:{click:onClickSearch}});document[_0x6c6b[9]](`${_0x6c6b[220]}`)[_0x6c6b[42]](_0xde59x45)}else {if(key=== _0x6c6b[226]){_0xde59x45= El(key[_0x6c6b[222]](0,3),{attributes:{src:`${_0x6c6b[224]}${PAGES[strCurrentPage][_0x6c6b[221]][key]}${_0x6c6b[22]}`,class:`${_0x6c6b[22]}${key[_0x6c6b[222]](4)}${_0x6c6b[227]}`},listeners:{click:showPage}});document[_0x6c6b[9]](`${_0x6c6b[220]}`)[_0x6c6b[42]](_0xde59x45)}else {_0xde59x45= El(key[_0x6c6b[222]](0,3),{attributes:{src:`${_0x6c6b[224]}${PAGES[strCurrentPage][_0x6c6b[221]][key]}${_0x6c6b[22]}`,class:key[_0x6c6b[222]](4)}});document[_0x6c6b[9]](`${_0x6c6b[220]}`)[_0x6c6b[42]](_0xde59x45)}}}}else {if(key[_0x6c6b[222]](0,3)=== _0x6c6b[34]){if(key[_0x6c6b[222]](4,14)=== _0x6c6b[228]){_0xde59x45= El(key[_0x6c6b[222]](0,3),{classes:[key[_0x6c6b[222]](4,14),key[_0x6c6b[222]](15)],listeners:{click:showPage}},PAGES[strCurrentPage][_0x6c6b[221]][key]);document[_0x6c6b[9]](`${_0x6c6b[220]}`)[_0x6c6b[42]](_0xde59x45)}else {_0xde59x45= El(key[_0x6c6b[222]](0,3),{cls:key[_0x6c6b[222]](4)},PAGES[strCurrentPage][_0x6c6b[221]][key]);document[_0x6c6b[9]](`${_0x6c6b[220]}`)[_0x6c6b[42]](_0xde59x45)}}else {document[_0x6c6b[9]](`${_0x6c6b[220]}`)[_0x6c6b[107]][key]= PAGES[strCurrentPage][_0x6c6b[221]][key]}}}};const checkSwipeDirection=(_0xde59xe)=>{if(_0xde59xe[_0x6c6b[113]][_0x6c6b[112]]=== _0x6c6b[115]|| _0xde59xe[_0x6c6b[113]][_0x6c6b[112]]=== _0x6c6b[114]){showTopics(_0xde59xe)}};const addSpace=(_0xde59x48)=>{return _0xde59x48[_0x6c6b[229]](/-/g,_0x6c6b[36])};function El(_0xde59x4a,_0xde59x4b= {},..._0xde59x4c){let _0xde59x4d=Object[_0x6c6b[232]](document[_0x6c6b[230]](_0xde59x4a),_0xde59x4b[_0x6c6b[231]]|| {});if(_0xde59x4b[_0x6c6b[233]]&& _0xde59x4b[_0x6c6b[233]][_0x6c6b[12]]){_0xde59x4d[_0x6c6b[7]][_0x6c6b[6]](..._0xde59x4b[_0x6c6b[233]])}else {if(_0xde59x4b[_0x6c6b[234]]){_0xde59x4d[_0x6c6b[7]][_0x6c6b[6]](_0xde59x4b[_0x6c6b[234]])}};if(_0xde59x4b[_0x6c6b[235]]){_0xde59x4d[_0x6c6b[235]]= _0xde59x4b[_0x6c6b[235]]};_0xde59x4d[_0x6c6b[42]](..._0xde59x4c[_0x6c6b[236]]((_0xde59x4d)=>{return _0xde59x4d}));for(let _0xde59x4e of Object[_0x6c6b[33]](_0xde59x4b[_0x6c6b[47]]|| {})){if(_0xde59x4b[_0x6c6b[47]][_0xde59x4e]){_0xde59x4d[_0x6c6b[14]](_0xde59x4e,_0xde59x4b[_0x6c6b[47]][_0xde59x4e],false)}};for(let _0xde59x4f of Object[_0x6c6b[33]](_0xde59x4b[_0x6c6b[237]]|| {})){if(_0xde59x4b[_0x6c6b[237]][_0xde59x4f]!== undefined){_0xde59x4d[_0x6c6b[100]](_0xde59x4f,_0xde59x4b[_0x6c6b[237]][_0xde59x4f])}};return _0xde59x4d}
+// varubles
+let strCurrentPage = "mainPage";
+let strFormerPage = "mainPage";
+var strCurrentTopic_recipePage = "salads";
+var strCurrentTopic_videosPage = "recipe";
+var strCurrentTopic_galleryPage = "recipe";
+var strCurrentTopic_learningPage = "subject1";
+let nCurrentTopicNumber = 0;
+let currentPicNum;
+let currentPicName;
+let currTopic;
+
+
+/* loading function
+--------------------------------------------------------------
+Description: */
+window.addEventListener(`load`, () => {
+    document.querySelector(`.loader`).classList.add(`fade`);
+    let arrMainPageButtons = document.querySelectorAll('.mainPageButton');
+    for (let i = 0; i < arrMainPageButtons.length; i++) {
+        arrMainPageButtons[i].addEventListener('click', showPage);
+    };
+    showNavBar();
+    document.querySelector(`.recipesScrollContainer`).addEventListener('swiped', checkSwipeDirection);
+    document.querySelector(`.videosScrollContainer`).addEventListener('swiped', checkSwipeDirection);
+    document.querySelector(`.learningScrollContainer`).addEventListener('swiped', checkSwipeDirection);
+    document.querySelector(`.galleryScrollContainer`).addEventListener('swiped', checkSwipeDirection);
+});
+
+/* showPage
+--------------------------------------------------------------
+Description:  */
+const showPage = (event) => {
+    // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
+    document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
+    if (event.currentTarget.classList[1] !== "x") {   // מטפל במקרה של תפריט
+        if (strCurrentPage === "menuPage") {
+            document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
+            strCurrentPage = `${event.currentTarget.classList[2]}Page`;
+        } else {
+            strFormerPage = strCurrentPage;
+            strCurrentPage = event.currentTarget.classList[1] + "Page";
+        }
+    } else {
+        strCurrentPage = strFormerPage;
+    }
+    document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
+    // מראה תפריט עליון
+    showNavBar();
+    // שומר קטגוריה נוכחית
+    if (event.currentTarget.classList[0] === "menuDropDownItemContainer") {
+        window[`strCurrentTopic_${strCurrentPage}`] = event.currentTarget.classList[1];
+    }
+    // מראה בר תחתון
+    if (PAGES[strCurrentPage].bottomNavBar) {
+        let nNumberTheSymbols = 0; 
+        document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
+        for (let key of Object.keys(PAGES[strCurrentPage].bottomNavBar)) {
+            let bottomNavBarTopic = El("div", 
+            {attributes: {class: `bottomNavBarTopic ${key} ${nNumberTheSymbols}`}, 
+            listeners : {click : showTopics}},
+            El ("img", {attributes: {class : "bottomNavBarPic" , src: `../assets/images/grapics/bottomNavBar/${PAGES[strCurrentPage].bottomNavBar[key][1]}.svg`}}),
+            El ("div", {cls: "bottomNavBarText"}, PAGES[strCurrentPage].bottomNavBar[key][0])
+            );
+            document.querySelector(`.${strCurrentPage} .bottomNavBar`).append(bottomNavBarTopic);
+            nNumberTheSymbols++;
+        }
+        document.querySelector(`.${strCurrentPage} .bottomNavBar .${eval(`strCurrentTopic_${strCurrentPage}`)}`).classList.add("bold");
+        document.querySelector(`.${strCurrentPage} .bottomNavBar`).scrollLeft = 0;
+        document.querySelector(`.${strCurrentPage} .bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[eval(`strCurrentTopic_${strCurrentPage}`)][2];
+    }
+    // קורא לפונקציות אם צריך
+    if (PAGES[strCurrentPage].functions) {
+        for (let i = 0; i < PAGES[strCurrentPage].functions.length; i++) {
+            eval(PAGES[strCurrentPage].functions[i]);
+        }
+    }
+    // שם מאזינים אם צריך
+    if (PAGES[strCurrentPage].listeners) {
+        for (key of Object.keys(PAGES[strCurrentPage].listeners)) {
+            document.querySelector(`.${strCurrentPage} .${key}`).addEventListener('click', eval(PAGES[strCurrentPage].listeners[key]));
+        }
+    }
+    if(document.querySelector(`.recipeContent`)) {
+        let recipeContent = document.querySelector(`.recipeContent`);
+        document.querySelector(`.recipePage`).removeChild(recipeContent);
+    }
+}
+
+/* showRecipe
+--------------------------------------------------------------
+Description:  */
+const showRecipe = (event) => {
+    // שומר מתכון וקטגוריה נוכחיים
+    let strCurrentRecipe = event.currentTarget.classList[1];
+    if(event.currentTarget.classList[2]) {
+        strCurrentTopic_recipePage = event.currentTarget.classList[2];
+    }
+    // אם באים מחיפוש
+    if (document.querySelector('.searchScreen').classList[2] === undefined || strCurrentPage === "galleryPage") {
+        document.querySelector('.searchScreen').classList.add("hidden");
+        // מעלים דיב קודם שומר דיב נוכחי ומראה אותו
+        document.querySelector(`.${strCurrentPage}`).classList.add("hidden");
+        strCurrentPage = "recipePage";
+        document.querySelector(`.${strCurrentPage}`).classList.remove("hidden");
+        // מראה תפריט עליון
+        showNavBar();
+    }
+    // מרוקן דיבים
+    document.querySelector(`.recipesScrollContainer`).innerHTML = "";
+    document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
+    if(document.querySelector(`.recipeContent`)) {
+        let recipeContent = document.querySelector(`.recipeContent`);
+        document.querySelector(`.recipePage`).removeChild(recipeContent);
+    }
+    // יוצר מתכון ומכניס לדף
+    let recipeContent = El("div", {cls : "recipeContent"},
+        El("img", 
+        {attributes: {class: `recipeContentPic`, 
+        src : `../assets/images/foodImages/${strCurrentTopic_recipePage}/${PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].pic}.jpeg`}}),
+        El("div", {cls : "recipeContentHeadline"}, addSpace(strCurrentRecipe)),
+        El("div", {cls : "recipeContentDescription"}, PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].description),
+        El("div", {cls: "recipeInfoConteiner"}, // מידע על המנה
+            El("div", {classes: ["headers", "quantity"]},
+                El("div", {cls: "headerContainer"},
+                    El("img",{attributes: {class: `recipeInfoPics`, 
+                    src : `../assets/images/grapics/recipe/serving_size_icon.svg`}}),
+                    "כמות:",
+                ),
+                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].quantity)
+            ),
+            El("div", {cls: "headers"},
+                El("div", {cls: "headerContainer"},
+                    El("img",{attributes: {class: `recipeInfoPics`, 
+                    src : `../assets/images/grapics/recipe/timer.svg`}}),
+                    "זמן הכנה:",
+                ),
+                El("div", {cls: "recipeInfoText"},  PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].time)
+            ),
+        ),
+        El("div", {cls : "ingredientsContainer"},
+            El("div", {cls : "recipeContentIngredientHead"}, "מצרכים"),
+        ),
+        El("div", {cls : "preparationsContainer"},
+            El("div", {cls : "recipeContentIngredientHead"}, "אופן הכנה"),
+        ),
+    );
+    document.querySelector(`.recipePage`).append(recipeContent);
+    if(PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].video) {
+        let videoLink =  El("a", {attributes: {class: "recipePageToVideoButton", href: `https://www.youtube.com/watch?v=${PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].video}`}},"לצפייה בסרטון");
+        document.querySelector(`.recipeContentDescription`).append(videoLink);
+    }
+    // מכניס מצרכים
+    for (let i = 0; i < PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].ingredients.length; i++ ) {
+        let ingredient = El("div", {cls : "ingredientContainer"},
+        El("img",{attributes: {class: `ingredientCheckPic ingredientCheckPic${i}`, 
+        src : `../assets/images/grapics/recipe/checkbox_blank.svg`},
+        listeners : {click: onClickCheckBox}}),
+        PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].ingredients[i]
+        );
+        document.querySelector(`.ingredientsContainer`).append(ingredient);
+    }
+    // מכניס אופן הכנה
+    for (let i = 0; i < PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].preparation.length; i++ ) {
+        let preparation = El("div", {cls : "preparationContainer"},
+        El("img",{attributes: {class: `preparationCheckPic preparationCheckPic${i} gray`, 
+        src : `../assets/images/grapics/recipe/round_checkbox.svg`},
+        listeners : {click: onClickCheckBox}}),
+        PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].preparation[i]
+        );
+        document.querySelector(`.preparationsContainer`).append(preparation);
+    }
+    
+    // כפתור חזור
+    document.querySelector(`.button_menu`).setAttribute("src", "../assets/images/grapics/general/right_arrow.svg");
+    document.querySelector(`.button_menu`).classList.remove("menu");
+    if (event.currentTarget.classList[0] === "galleryToRecipe") {
+        document.querySelector(`.button_menu`).classList.add("gallery");
+    } else {
+        document.querySelector(`.button_menu`).classList.add("recipe");
+    }
+}
+
+/* showTopics
+--------------------------------------------------------------
+Description: */
+const showTopics = (event) => {
+    // שם מאזינים להחלקה ושומר את הקטגוריות במערך
+    let arrTopic = [];
+    for (let topics of Object.keys(PAGES[strCurrentPage].content)) {
+        arrTopic.push(topics);
+    }
+
+    currTopic = eval(`strCurrentTopic_${strCurrentPage}`)
+
+    // מוריד בולד לקטגוריה הקודמת, שומר קטגוריה נוכחית ושם עליה בולד
+    document.querySelector(`.${strCurrentPage} .${currTopic}`).classList.remove("bold");
+    document.querySelector(`.${strCurrentPage} .${currTopic} .bottomNavBarPic`).style.height = "5vh";
+    if(event) { // בודק אם נעשתה לחיצה או החלקה
+        if (event.currentTarget.classList[0] === "bottomNavBarTopic") { 
+            document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
+            // בלחיצה שומר קטגוריה נוכחית ואת מספרה
+            currTopic = event.currentTarget.classList[1];
+            nCurrentTopicNumber = Number(event.currentTarget.classList[2]);
+        } else {
+            // בהחלקה בודק לאיזה כיוון ההחלקה ומשנה קטגוריה בהתאם
+            if(event.detail.dir === "left" && nCurrentTopicNumber > 0) {
+                document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
+                nCurrentTopicNumber--;
+            } else if (event.detail.dir === "right" && nCurrentTopicNumber < Object.keys(PAGES[strCurrentPage].bottomNavBar).length -1) {
+                document.querySelector(`.recipesScrollContainer`).scrollTop = 0;
+                nCurrentTopicNumber++;
+            }
+            currTopic = arrTopic[nCurrentTopicNumber];
+        }
+    } else { // שומר את מספר הקטגוריה אם באים מהתפריט או מההתחלה
+        nCurrentTopicNumber = Number(document.querySelector(`.${strCurrentPage} .${currTopic}`).classList[2]);
+    }
+
+    document.querySelector(`.${strCurrentPage} .bottomNavBar`).scrollLeft = PAGES[strCurrentPage].bottomNavBar[currTopic][2];
+
+    document.querySelector(`.${strCurrentPage} .${currTopic}`).classList.add("bold");
+    document.querySelector(`.${strCurrentPage} .${currTopic} .bottomNavBarPic`).style.height = "6vh";
+    
+    eval(`createTopic_${strCurrentPage}(currTopic)`);
+}
+
+/* createTopic_recipePage
+--------------------------------------------------------------
+Description: */
+const createTopic_recipePage = (currTopic) => {
+    strCurrentTopic_recipePage = currTopic
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.recipesScrollContainer`).innerHTML = "";
+
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_recipePage])) {
+        let recipeDisplay = El("div",
+        {attributes: {class: `recipeDisplay ${key}`}, 
+        listeners : {click : showRecipe}},
+        El("img",
+        {attributes: {class: `recipeDisplayPic`, 
+        src : `../assets/images/foodImages/${strCurrentTopic_recipePage}/${PAGES[strCurrentPage].content[strCurrentTopic_recipePage][key].pic}.jpeg`},}),
+        El("div", {cls: `recipeDisplayText`}, addSpace(key))
+        )
+        document.querySelector(`.recipesScrollContainer`).append(recipeDisplay)
+    }
+}
+
+/* createTopic_learningPage
+--------------------------------------------------------------
+Description: */
+const createTopic_learningPage = (currTopic) => {
+    strCurrentTopic_learningPage = currTopic
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.learningScrollContainer`).innerHTML = "";
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_learningPage])) {
+        let menuDisplay = El("div",{ classes: [`learningContainer`, key]},
+            El("div",
+                {attributes: {class: `learningItem ${key}`}}, 
+                    El("div", {classes: [`learningItemContainer`,"container", key],}, 
+                        addSpace(key)
+                    ),
+                    El("img",
+                        {attributes: {class: `learningItemArrow ${key}`, 
+                        src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`},
+                        listeners : {click : learningDropDown}}),
+            )
+        )
+        document.querySelector(`.learningScrollContainer`).append(menuDisplay)
+    }
+}
+
+/* menuDropDown
+--------------------------------------------------------------
+Description:  */
+const learningDropDown = (event) => {
+    let currentTopic = event.currentTarget.classList[1];
+    let objCurrentDropDown = PAGES.learningPage.content[strCurrentTopic_learningPage][currentTopic];
+    // מראה דרופ דאון
+    if (document.querySelector(`.learningPage .${currentTopic} .learningItem `).lastChild.getAttribute("src") === "../assets/images/grapics/menu/dropdown_sideArrow.svg") {
+        document.querySelector(`.learningPage .${currentTopic} .learningItem `).lastChild.setAttribute("src", "../assets/images/grapics/menu/opened_dropdown.svg");
+        for(let key of Object.keys(objCurrentDropDown)) {
+            let menuDropDown = 
+                El("div", {classes: [`learningDropDownItemContainer`, key, currentTopic],
+                listeners : {click : showLearningContent}}, 
+                    // El("img",
+                    // {attributes: {class: `menuDropDownItemicon`, 
+                    // src : `../assets/images/grapics/menu/${objCurrentDropDown[key][1]}.svg`},}),
+                    addSpace(key),
+                );
+            document.querySelector(`.learningPage .${currentTopic}`).append(menuDropDown)
+        }
+    } else { // מעלים דרופ דאון
+        document.querySelector(`.learningPage .${currentTopic} > .learningItem`).lastChild.setAttribute("src", "../assets/images/grapics/menu/dropdown_sideArrow.svg");
+        let arrDropDownItems = document.querySelectorAll(`.learningPage .${currentTopic} .learningDropDownItemContainer`);
+        for (let i = 0; i < arrDropDownItems.length; i++) {
+            document.querySelector(`.learningPage .${currentTopic}`).removeChild(arrDropDownItems[i]);
+        };
+    }
+
+}
+
+
+/* showLearningContent
+--------------------------------------------------------------
+Description: */
+const showLearningContent = (event) => {
+    let subjectTitle = event.currentTarget.classList[1];
+    let topic = event.currentTarget.classList[2];
+    let subjectContent = PAGES[strCurrentPage].content[strCurrentTopic_learningPage][topic][subjectTitle];
+    // כפתור חזור
+    document.querySelector(`.button_menu`).setAttribute("src", "../assets/images/grapics/general/right_arrow.svg");
+    document.querySelector(`.button_menu`).classList.remove("menu");
+    document.querySelector(`.button_menu`).classList.add("learning");
+
+    document.querySelector(`.learningScrollContainer`).innerHTML = "";
+    document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
+    document.querySelector(`.learningScrollContainer`).scrollTop = 0;
+    let content = El("div", {cls: "learningContantContainer"},
+        El("div", {cls: "learningContantTitle"}, addSpace(subjectTitle)), );
+    let container;
+    document.querySelector(`.learningScrollContainer`).append(content);
+    switch (subjectContent.type) {
+        case 'text':
+            container =  El("div", {cls: "learningContant"},);
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.content.length; i++){
+                let parah = El("div", {cls : "IdParah"}, );
+                parah.innerHTML = subjectContent.content[i];
+                document.querySelector(`.learningContant`).append(parah); 
+            }
+            break;
+        case 'listDots': 
+            container =  El("ul", {cls: "learningContant"},);
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.content.length; i++){
+                let parah = El("li", {cls : "listItem"},);
+                parah.innerHTML = subjectContent.content[i];
+                document.querySelector(`.learningContant`).append(parah); 
+            }
+            break;
+        case 'listNumbers':
+            container =  El("ol", {cls: "learningContant"},);
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.content.length; i++){
+                let parah = El("li", {cls : "listItem"},);
+                parah.innerHTML = subjectContent.content[i];
+                document.querySelector(`.learningContant`).append(parah); 
+            }
+            break;
+        case 'textAndPics':
+            container =  El("div", {cls: "learningContant"},);
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.content.length; i++){
+                let parah = El("div", {cls : "IdParah"},);
+                parah.innerHTML = subjectContent.content[i];
+                document.querySelector(`.learningContant`).append(parah); 
+            }
+            container = El("div", {cls: "idPicContainer"});
+            document.querySelector(`.learningContantContainer`).append(container);
+            for(let i = 0; i < subjectContent.pic.length; i++){
+                let parah = El("img", {cls : "picId", attributes : {src : subjectContent.pic[i]}});
+                document.querySelector(`.idPicContainer`).append(parah); 
+            }
+            break;
+        default: console.log("default");
+    }
+}
+
+
+/* createTopic_videosPage
+--------------------------------------------------------------
+Description: */
+const createTopic_videosPage = (currTopic) => {
+    strCurrentTopic_videosPage = currTopic
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.videosScrollContainer`).innerHTML = "";
+    for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage])) {
+        let menuDisplay = El("div",{ classes: [`learningContainer`, key]},
+            El("div",
+                {attributes: {class: `learningItem ${key}`}}, 
+                    El("div", {classes: [`learningItemContainer`,"container", key],}, 
+                        addSpace(key)
+                    ),
+                    El("img",
+                        {attributes: {class: `learningItemArrow ${key}`, 
+                        src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`},
+                        listeners : {click : videoDropDown}}),
+            )
+        )
+        document.querySelector(`.videosScrollContainer`).append(menuDisplay)
+    }
+
+    if(strCurrentTopic_videosPage !== "recipe") {
+        let soon = El("div", {},
+            El("img", {id: "soonImg", attributes: {src: "../assets/images/grapics/videos/gear.svg"}}),
+            El("div", {id: "soonText"}, "עובדים על זה...")
+        )
+        document.querySelector(`.videosScrollContainer`).append(soon);
+    }
+}
+
+/* videoDropDown
+--------------------------------------------------------------
+Description:  */
+const videoDropDown = (event) => {
+    let currentTopic = event.currentTarget.classList[1];
+    let objCurrentDropDown = PAGES.videosPage.content[strCurrentTopic_videosPage][currentTopic];
+    // מראה דרופ דאון
+    if (document.querySelector(`.videosPage .${currentTopic} .learningItem `).lastChild.getAttribute("src") === "../assets/images/grapics/menu/dropdown_sideArrow.svg") {
+        document.querySelector(`.videosPage .${currentTopic} .learningItem `).lastChild.setAttribute("src", "../assets/images/grapics/menu/opened_dropdown.svg");
+        for(let key of Object.keys(objCurrentDropDown)) {
+            let videoId = PAGES[strCurrentPage].content[strCurrentTopic_videosPage][currentTopic][key]
+            let videoDisplay = El("div",
+                {classes: [`youtubeVideoContainer`, key],},
+                El("div", {cls: `videosDisplayText`}, addSpace(key)),
+            );
+            let thumbnail = El("a",
+                {cls: "videoPageVideoThumbnail",
+                attributes: {
+                    href: `https://www.youtube.com/watch?v=${videoId}`,
+                    id: videoId,
+                    "data-index": key,
+                    "data-playlist": currentTopic
+            },},)
+            thumbnail.style.backgroundImage = `url("http://img.youtube.com/vi/${videoId}/0.jpg")`;
+            videoDisplay.prepend(thumbnail);
+            document.querySelector(`.videosPage .${currentTopic}`).append(videoDisplay);
+        }
+    } else { // מעלים דרופ דאון
+        document.querySelector(`.videosPage .${currentTopic} > .learningItem`).lastChild.setAttribute("src", "../assets/images/grapics/menu/dropdown_sideArrow.svg");
+        let arrDropDownItems = document.querySelectorAll(`.videosPage .${currentTopic} .youtubeVideoContainer`);
+        for (let i = 0; i < arrDropDownItems.length; i++) {
+            document.querySelector(`.videosPage .${currentTopic}`).removeChild(arrDropDownItems[i]);
+        };
+    }
+
+}
+
+/* createTopic_galleryPage
+--------------------------------------------------------------
+Description: change hyphen to space */
+const createTopic_galleryPage = (currTopic) => {
+    strCurrentTopic_galleryPage = currTopic
+    let currentPic = 0;
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.galleryScrollContainer`).innerHTML = "";
+    if(strCurrentTopic_galleryPage === "recipe") {
+        for(let topics of Object.keys(PAGES.recipePage.content)) {
+            for(let recipe of Object.keys(PAGES.recipePage.content[topics])) {      
+                if(!PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][recipe]) {
+                    PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][recipe] = [PAGES.recipePage.content[topics][recipe].pic, topics];
+                }
+            }
+        }
+        for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_galleryPage])) {
+            let recipeDisplay = El("div",
+            {attributes: {class: `galleryScrollDisplay ${key} ${currentPic}`}, 
+            listeners : {click : showPicDisplay}},
+            )
+            recipeDisplay.style.backgroundImage = `url(../assets/images/foodImages/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][key][1]}/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][key][0]}.jpeg)`
+            document.querySelector(`.galleryScrollContainer`).append(recipeDisplay);
+            currentPic++;
+        }
+    } else {
+        for(let i = 1; i <= 97; i++ ) {
+            let recipeDisplay = El("div",
+            {attributes: {class: `galleryScrollDisplay pic${i} ${currentPic}`}, 
+            listeners : {click : showPicDisplay}},
+            )
+            recipeDisplay.style.backgroundImage = `url(../assets/images/foodImages/eventGallary/event${i}.jpeg)`
+            document.querySelector(`.galleryScrollContainer`).append(recipeDisplay);
+            if(!PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][`pic${i}`]) {
+                PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][`pic${i}`] = `event${i}`;
+            }
+            currentPic++;
+        }
+    }
+}
+
+/* showPicDisplay
+--------------------------------------------------------------
+Description:  */
+const showPicDisplay = (event) => {
+    const NUMBER_OF_PICTUERS = Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_galleryPage]).length - 1;
+
+    // שם מאזין לרקע להעלמת התצוגה
+    document.querySelector(`.galleryPage .darkScreen`).addEventListener("click", () => {
+        document.querySelector(`.galleryPicDisplay`).classList.add("hidden");
+        document.querySelector(`.galleryPage .darkScreen`).classList.add("hidden");
+    });
+
+    // בודק מה נלחץ ומשנה תמונה נוכחית בהתאם
+    if(event.currentTarget.classList[0] === "rightArrow") {
+        currentPicNum--;
+        if (Number(currentPicNum) === -1) {
+            currentPicNum = NUMBER_OF_PICTUERS;
+        }
+    } else if(event.currentTarget.classList[0] === "leftArrow") {
+        currentPicNum++;
+        if (Number(currentPicNum) === NUMBER_OF_PICTUERS + 1) {
+            currentPicNum = 0;
+        }
+    } else if(event.currentTarget.classList[0] === "galleryScrollDisplay") {
+        currentPicNum = event.currentTarget.classList[2];
+    }
+    // שומר שם של תמונה נוכחית
+    currentPicName = Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_galleryPage])[currentPicNum];
+    // מראה את תצוגת התמונה ומרוקן אותה
+    document.querySelector(`.galleryPage .darkScreen`).classList.remove("hidden");
+    document.querySelector(`.galleryPicDisplay`).classList.remove("hidden");
+    document.querySelector(`.galleryPicDisplay`).innerHTML = "";
+    // יוצר את התצוגה ומכניס לדיב
+    if(strCurrentTopic_galleryPage === "recipe"){
+        let picDisplay = El("div", {cls : `picDisplayContiner`},
+            El("img", 
+            {attributes: {class: `galleryDisplayPic`, 
+            src : `../assets/images/foodImages/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][1]}/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][0]}.jpeg`},}),
+            El("div", {cls: `galleryDisplayText`}, addSpace(currentPicName)),
+            El("div", {cls: "toRecipeButton"}),
+            El ("div", {cls: `galleryDisplayArrows`},
+                El("img", 
+                {attributes: {class: `rightArrow arrow`, 
+                src : `../assets/images/grapics/general/right_arrow.svg`},
+                listeners : {click : showPicDisplay}}),
+                El("img", 
+                {attributes: {class: `leftArrow arrow`, 
+                src : `../assets/images/grapics/general/left_arrow.svg`},
+                listeners : {click : showPicDisplay}}),
+            )
+        );
+        document.querySelector(`.galleryPicDisplay`).append(picDisplay);
+        let toRecipe = El("img", {attributes: {class: `galleryToRecipe ${currentPicName} ${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName][1]}`, 
+        src : `../assets/images/grapics/general/lamatkon_button.svg`},
+        listeners : {click : showRecipe}})
+        document.querySelector(`.toRecipeButton`).append(toRecipe);
+    } else {
+        let picDisplay = El("div", {cls : `picDisplayContiner`},
+        El("img", 
+        {attributes: {class: `galleryDisplayPic`, 
+        src : `../assets/images/foodImages/eventGallary/${PAGES[strCurrentPage].content[strCurrentTopic_galleryPage][currentPicName]}.jpeg`},}),
+        // El("div", {cls: `galleryDisplayText`}, addSpace(currentPicName)),
+        El("div", {cls: "toRecipeButton"}),
+        El ("div", {cls: `galleryDisplayArrows`},
+            El("img", 
+            {attributes: {class: `rightArrow arrow`, 
+            src : `../assets/images/grapics/general/right_arrow.svg`},
+            listeners : {click : showPicDisplay}}),
+            El("img", 
+            {attributes: {class: `leftArrow arrow`, 
+            src : `../assets/images/grapics/general/left_arrow.svg`},
+            listeners : {click : showPicDisplay}}),
+        )
+    );
+    document.querySelector(`.galleryPicDisplay`).append(picDisplay);  
+    }
+}
+
+/* onClickCheckBox
+--------------------------------------------------------------
+Description:  */
+const onClickCheckBox = (event) => {
+    if (event.currentTarget.classList[0] === "preparationCheckPic") {
+        if(event.currentTarget.classList[2] === "gray") {
+            document.querySelector(`.${event.currentTarget.classList[1]}`).classList.remove("gray");
+        } else {
+            document.querySelector(`.${event.currentTarget.classList[1]}`).classList.add("gray");
+        }
+    } else {
+        if (document.querySelector(`.${event.currentTarget.classList[1]}`).getAttribute("src") === `../assets/images/grapics/recipe/checkbox_v.svg`) {
+            document.querySelector(`.${event.currentTarget.classList[1]}`).setAttribute("src", `../assets/images/grapics/recipe/checkbox_blank.svg`);
+        } else {
+            document.querySelector(`.${event.currentTarget.classList[1]}`).setAttribute("src", `../assets/images/grapics/recipe/checkbox_v.svg`);
+        }
+    }
+
+}
+
+/* showMenu
+--------------------------------------------------------------
+Description:  */
+const showMenu = () => {
+    // מוחק מידע קודם ומכניס תמונות וטקסט בהתאם לקטגוריה
+    document.querySelector(`.menuPage`).innerHTML = "";
+    for(let key of Object.keys(PAGES.menuPage.content)) {
+        let menuDisplay = El("div",{classes: [`menuContainer`, key]},
+            El("div",
+            {attributes: {class: `menuItem`}}, 
+                El("div", {classes: [`menuItemContainer`,"container", key],
+                listeners : {click : showPage}}, 
+                    El("img",
+                    {attributes: {class: `menuItemicon`, 
+                    src : `../assets/images/grapics/menu/${PAGES.menuPage.content[key][1]}.svg`},}),
+                    PAGES.menuPage.content[key][0],
+                ),
+                El("img",
+                    {attributes: {class: `menuItemArrow ${key}`, 
+                    src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`},
+                    listeners : {click : menuDropDown}}),
+                )
+        )
+        document.querySelector(`.menuPage`).append(menuDisplay)
+    }
+
+}
+
+/* menuDropDown
+--------------------------------------------------------------
+Description:  */
+const menuDropDown = (event) => {
+    let currentPage = event.currentTarget.classList[1];
+    let objCurrentDropDown = PAGES.menuPage.content[event.currentTarget.classList[1]][2];
+    // מראה דרופ דאון
+    if (document.querySelector(`.menuPage > .${currentPage} > .menuItem`).lastChild.getAttribute("src") === "../assets/images/grapics/menu/dropdown_sideArrow.svg") {
+        document.querySelector(`.menuPage > .${currentPage} > .menuItem`).lastChild.setAttribute("src", "../assets/images/grapics/menu/opened_dropdown.svg");
+        for(let key of Object.keys(objCurrentDropDown)) {
+            let menuDropDown = 
+                El("div", {classes: [`menuDropDownItemContainer`, key, currentPage],
+                listeners : {click : showPage}}, 
+                    El("img",
+                    {attributes: {class: `menuDropDownItemicon`, 
+                    src : `../assets/images/grapics/menu/${objCurrentDropDown[key][1]}.svg`},}),
+                    objCurrentDropDown[key][0],
+                );
+            document.querySelector(`.menuPage > .${currentPage}`).append(menuDropDown)
+        }
+    } else { // מעלים דרופ דאון
+        document.querySelector(`.menuPage > .${currentPage} > .menuItem`).lastChild.setAttribute("src", "../assets/images/grapics/menu/dropdown_sideArrow.svg");
+        let arrDropDownItems = document.querySelectorAll(`.menuPage > .${currentPage} .menuDropDownItemContainer`);
+        for (let i = 0; i < arrDropDownItems.length; i++) {
+            document.querySelector(`.menuPage > .${currentPage}`).removeChild(arrDropDownItems[i]);
+        };
+    }
+
+}
+
+/* onClickSearch
+--------------------------------------------------------------
+Description:  */
+const onClickSearch = () => {
+    document.querySelector(`.searchBox`).value = "";
+    document.querySelector('.dropDown').innerHTML = "";
+    document.querySelector('.searchScreen').classList.remove("hidden");
+    document.querySelector(`.closeSearch`).addEventListener('click', () => {
+        document.querySelector('.searchScreen').classList.add("hidden");
+    });
+    if(strCurrentPage === "recipePage") {
+        document.querySelector(`.searchBox`).setAttribute("placeholder", "חיפוש מתכון");
+    } else if(strCurrentPage === "videosPage"){
+        document.querySelector(`.searchBox`).setAttribute("placeholder", "חיפוש סרטון");
+    }
+    document.querySelector(`.searchBox`).addEventListener("input", window[`onSearch_${strCurrentPage}`]);
+}
+
+/* onSearch
+--------------------------------------------------------------
+Description: cheack for search match and creat dropdown accordingly */
+var onSearch_recipePage = () => {
+    document.querySelector('.dropDown').innerHTML = "";
+    // עובר על כול הקטגוריות של המתכונים
+    for (let keys of Object.keys(PAGES[strCurrentPage].content)){
+        // בכול קטגוריה, עובר על כול המתכונים ומחפש התאמה לחיפוש
+        for (let key of Object.keys(PAGES[strCurrentPage].content[keys])) {
+            let strUserInput = document.querySelector(`.searchBox`).value;
+            if(addSpace(key).includes(strUserInput) && strUserInput !== ""){
+                let dropDownItem = El("div", {classes : ["dropDownItem", key, keys], listeners : {click : showRecipe}}, addSpace(key))
+                document.querySelector('.dropDown').append(dropDownItem);
+            }
+        }
+    
+    }
+}
+
+/* onSearch
+--------------------------------------------------------------
+Description: cheack for search match and creat dropdown accordingly */
+var onSearch_videosPage = () => {
+    document.querySelector('.dropDown').innerHTML = "";
+    // עובר על כול הקטגוריות של המתכונים
+    for (let videoTopic of Object.keys(PAGES[strCurrentPage].content)){
+        // בכול קטגוריה, עובר על כול המתכונים ומחפש התאמה לחיפוש
+        for (let videoSubTopic of Object.keys(PAGES[strCurrentPage].content[videoTopic])) {
+            for (let video of Object.keys(PAGES[strCurrentPage].content[videoTopic][videoSubTopic])) {
+                let strUserInput = document.querySelector(`.searchBox`).value;
+                if(addSpace(video).includes(strUserInput) && strUserInput !== ""){
+                    let dropDownItem = El("a", {attributes: {href: `https://www.youtube.com/watch?v=${PAGES[strCurrentPage].content[videoTopic][videoSubTopic][video]}`}, classes : ["dropDownItem", videoSubTopic, video],}, addSpace(video))
+                    document.querySelector('.dropDown').append(dropDownItem);
+                }
+            }
+        }
+    
+    }
+}
+
+/* showNavBar
+--------------------------------------------------------------
+Description: change hyphen to space */
+const showNavBar = () => {
+    // מוחק מידע קודם ומכניס תפריט ניווט עליון לפי העמוד הנוכחי 
+    document.querySelector(`.topNavBar`).innerHTML = "";
+    for (key of Object.keys(PAGES[strCurrentPage].topNavBar)) {
+        let navBarItem
+        if (key.slice(0,3) === "img") {
+            if (key.includes("button")) { // כפתור עליון שמאלי
+                navBarItem = El(key.slice(0,3), 
+                { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: `${key.slice(4)} ${key.slice(11)}`},
+                listeners: {click : showPage}});
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            } else if (key === "img_SearchIcon") { // חיפוש
+                navBarItem = El(key.slice(0,3), 
+                { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: key.slice(4)},
+                listeners: {click : onClickSearch}});
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            }else if (key === "img_home"){
+                navBarItem = El(key.slice(0,3), 
+                { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: `${key.slice(4)} backToHome main`},
+                listeners: {click : showPage}});
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            }else { // סמלים
+                navBarItem = El(key.slice(0,3), 
+                { attributes: { src: `../assets/images/grapics/topNavBar/${PAGES[strCurrentPage].topNavBar[key]}`, class: key.slice(4)}});
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            }
+        } else if (key.slice(0,3) === "div"){ // כותרת
+            if(key.slice(4,14) === "topNavText") {
+                navBarItem = El(key.slice(0,3), { classes: [key.slice(4,14), key.slice(15)], listeners : {click: showPage}}, PAGES[strCurrentPage].topNavBar[key]);
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            } else {
+                navBarItem = El(key.slice(0,3), { cls: key.slice(4)}, PAGES[strCurrentPage].topNavBar[key]);
+                document.querySelector(`.topNavBar`).append(navBarItem);
+            }
+        } else { // צבע רקע
+            document.querySelector(`.topNavBar`).style[key] = PAGES[strCurrentPage].topNavBar[key];
+        }
+    }
+}
+
+
+const checkSwipeDirection = (event) => {
+    if(event.detail.dir === "right" || event.detail.dir === "left"){
+        showTopics(event)
+    }
+}
+
+/* addSpace
+--------------------------------------------------------------
+Description: change hyphen to space */
+const addSpace = (phrase) => {
+    return phrase.replace(/-/g, ' ');
+}
+
+
+//   @template T
+//   @param {keyof HTMLElementTagNameMap} tagName 
+//   @param {{classes?: string[], cls?: string, id?: string, attributes: {[index: string]: string | { toString(): string }}, listeners: Listeners}} options 
+//   @param  {...string | Node} children 
+function El(tagName, options = {}, ...children) {
+    let el = Object.assign(document.createElement(tagName), options.fields || {});
+    if (options.classes && options.classes.length) el.classList.add(...options.classes);
+    else if (options.cls) el.classList.add(options.cls);
+    if (options.id) el.id = options.id;
+    el.append(...children.filter(el => el));
+    for (let listenerName of Object.keys(options.listeners || {}))
+        if (options.listeners[listenerName]) el.addEventListener(listenerName, options.listeners[listenerName], false);
+    for (let attributeName of Object.keys(options.attributes || {})) {
+        if (options.attributes[attributeName] !== undefined) el.setAttribute(attributeName, options.attributes[attributeName]);
+    }
+    return el;
+}
+
+
+// embed youtube video
+// El("div",
+//     {classes: [`youtubeVideoContainer`, key],},
+//     El("iframe", {attributes:
+//         {class: "youtubeVideo",
+//         src: `https://www.youtube.com/embed/${PAGES[strCurrentPage].content[strCurrentTopic_videosPage][videoTopic][key]}`,
+//         allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+//         allowfullscreen: true,
+//     }}),
+//     El("div", {cls: `videosDisplayText`}, addSpace(key))
+// );

@@ -6,7 +6,7 @@ let PAGES = {
             img_button_about : `about_icon.svg`, // אודות / איקס / תפריט
             div_topNavText_main : `מתכונט - מתכונים בשלוף`,
             img_bhdLogo : `בהד 6.png`,
-            img_tillLogo : `till_logo_white.svg`,
+            img_tillLogo : `till_logo_text_white.svg`,
         },
     },
     // עמוד אודות
@@ -19,8 +19,8 @@ let PAGES = {
             div_topNavText_about : `אודות`,
             img_tillLogo : `about_icon.svg`,
         },
-        listeners : {
-            backToMain : "showPage",
+        listeners : { // שם מאזינים לפי צורך
+            backToMain : "showPage", // כחול - האובייטק שעליו שמים את המאזין, כתום - לאיזה פונקציה הוא שולח
         }
     },
     // עמוד תפריט
@@ -32,7 +32,7 @@ let PAGES = {
             div_topNavLineGray : ``,
             img_home : `home_no_circle.svg`, 
             img_bhdLogo : `בהד 6.png`,
-            img_tillLogo : `till_logo_black.svg`,
+            img_tillLogo : `till_logo_text_black.svg`,
         },
         functions : [`showMenu()`], // פונקציות שצריכות לפעול
         content : {
@@ -74,7 +74,7 @@ let PAGES = {
             img_topNavTextIcon : `white_cookbook.svg`,
             div_topNavText_recipe : `ספר מתכונים`,
             img_bhdLogo : `בהד 6.png`,
-            img_tillLogo : `till_logo_white.svg`,
+            img_tillLogo : `till_logo_text_white.svg`,
         },
         bottomNavBar : { // סמלים של הקטגוריות של המתכונים
             salads : ["סלטים", "green_salads", 0],
@@ -2436,7 +2436,7 @@ let PAGES = {
             img_topNavTextIcon : `white_gallery.svg`,
             div_topNavText_gallery : `תמונות`,
             img_bhdLogo : `בהד 6.png`,
-            img_tillLogo : `till_logo_white.svg`,
+            img_tillLogo : `till_logo_text_white.svg`,
         },
         bottomNavBar : { // סמלים של הקטגוריות של המתכונים
             recipe : ["מתכונים", "green_cookbook", 0],
@@ -2458,7 +2458,7 @@ let PAGES = {
             img_topNavTextIcon : `white_videos.svg`,
             div_topNavText_videos : `סרטוני הדרכה`,
             img_bhdLogo : `בהד 6.png`,
-            img_tillLogo : `till_logo_white.svg`,
+            img_tillLogo : `till_logo_text_white.svg`,
         },
         bottomNavBar : { // סמלים של הקטגוריות של המתכונים
             recipe : ["מתכונים", "green_cookbook", 0],
@@ -2553,6 +2553,9 @@ let PAGES = {
                     "תירס-מוקפץ": "tiQPdNUnsVs",
                     "גזר-מזוגג": "7L6qRbzWY_Y",
                 },
+                // "מנות-השף": {
+                //     "שם הסרטון": "videoID",   
+                // },
             },
             safety : {
                 // "שם-הקטגוריה": {
@@ -2576,7 +2579,7 @@ let PAGES = {
             img_topNavTextIcon : `white_materials.svg`,
             div_topNavText_learning : `סוגים 1-5`,
             img_bhdLogo : `בהד 6.png`,
-            img_tillLogo : `till_logo_white.svg`,
+            img_tillLogo : `till_logo_text_white.svg`,
         },
         bottomNavBar : { // סמלים של הקטגוריות של המתכונים
             subject1 : ["מטבח", "kitchen-green", 0],

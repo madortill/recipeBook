@@ -146,6 +146,7 @@ const showRecipe = (event) => {
         ),
     );
     document.querySelector(`.recipePage`).append(recipeContent);
+    // מוסיף קישור לסרטון אם יש
     if(PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].video) {
         let videoLink =  El("a", {attributes: {class: "recipePageToVideoButton", href: `https://www.youtube.com/watch?v=${PAGES[strCurrentPage].content[strCurrentTopic_recipePage][strCurrentRecipe].video}`}},"לצפייה בסרטון");
         document.querySelector(`.recipeContentDescription`).append(videoLink);
@@ -237,10 +238,10 @@ const createTopic_recipePage = (currTopic) => {
         let recipeDisplay = El("div",
         {attributes: {class: `recipeDisplay ${key}`}, 
         listeners : {click : showRecipe}},
-        El("img",
-        {attributes: {class: `recipeDisplayPic`, 
-        src : `../assets/images/foodImages/${strCurrentTopic_recipePage}/${PAGES[strCurrentPage].content[strCurrentTopic_recipePage][key].pic}.jpeg`},}),
-        El("div", {cls: `recipeDisplayText`}, addSpace(key))
+            El("img",
+            {attributes: {class: `recipeDisplayPic`, 
+            src : `../assets/images/foodImages/${strCurrentTopic_recipePage}/${PAGES[strCurrentPage].content[strCurrentTopic_recipePage][key].pic}.jpeg`},}),
+            El("div", {cls: `recipeDisplayText`}, addSpace(key))
         )
         document.querySelector(`.recipesScrollContainer`).append(recipeDisplay)
     }
@@ -312,7 +313,7 @@ const showLearningContent = (event) => {
     document.querySelector(`.button_menu`).setAttribute("src", "../assets/images/grapics/general/right_arrow.svg");
     document.querySelector(`.button_menu`).classList.remove("menu");
     document.querySelector(`.button_menu`).classList.add("learning");
-
+    // מרוקן דיב ומאפס סקרול
     document.querySelector(`.learningScrollContainer`).innerHTML = "";
     document.querySelector(`.${strCurrentPage} .bottomNavBar`).innerHTML = "";
     document.querySelector(`.learningScrollContainer`).scrollTop = 0;
@@ -391,6 +392,7 @@ const createTopic_videosPage = (currTopic) => {
         document.querySelector(`.videosScrollContainer`).append(menuDisplay)
     }
 
+    // למחוק כשמוסיפים סרטוני בטיחות וברהצ
     if(strCurrentTopic_videosPage !== "recipe") {
         let soon = El("div", {},
             El("img", {id: "soonImg", attributes: {src: "../assets/images/grapics/videos/gear.svg"}}),

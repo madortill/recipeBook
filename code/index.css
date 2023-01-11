@@ -156,7 +156,7 @@ html, body {
 
 .sub-titles {
     font-weight: bold;
-    padding-top: 1em;
+    padding-top: 0.5em;
 }
 
 /* אודות ---------------------------------------------------------------------*/
@@ -167,7 +167,7 @@ html, body {
     width: 92vw;
     position: absolute;
     top: 10vh;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: "Assistant";
 }
 
@@ -337,6 +337,24 @@ html, body {
     /* left: 64vw; */
     /* position: absolute; */
 }
+
+/* credits */
+#credits {
+    position: absolute;
+    bottom: 0.5vh;
+    font-weight: bold;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8e8e8;
+}
+
+#credits img{
+    width: 7vw;
+    padding-right: 0.3rem;
+}
+
 
 /* כללי - חשוב שיהיה למטה --------------------------------------------------*/
 .hidden {

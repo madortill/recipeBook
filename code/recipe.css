@@ -3,7 +3,7 @@
 .bottomNavBar {
     height: 13vh;
     position: fixed;
-    bottom: 0;
+    bottom: 2vh;
     overflow-x: scroll;
     width: 100vw;
     display: flex;

@@ -25,6 +25,7 @@ window.addEventListener(`load`, () => {
     document.querySelector(`.videosScrollContainer`).addEventListener('swiped', checkSwipeDirection);
     document.querySelector(`.learningScrollContainer`).addEventListener('swiped', checkSwipeDirection);
     document.querySelector(`.galleryScrollContainer`).addEventListener('swiped', checkSwipeDirection);
+    document.querySelector(`#credits`).addEventListener('click', credits);
 });
 
 /* showPage
@@ -749,6 +750,16 @@ const checkSwipeDirection = (event) => {
 Description: change hyphen to space */
 const addSpace = (phrase) => {
     return phrase.replace(/-/g, ' ');
+}
+
+/* credits
+--------------------------------------------------------------
+Description: change hyphen to space */
+const credits = () => {
+    document.querySelector(`#contactUs`).classList.remove("hidden");
+    document.querySelector(`#contactUs`).addEventListener("click", () => {
+        document.querySelector(`#contactUs`).classList.add("hidden");
+    });
 }
 
 

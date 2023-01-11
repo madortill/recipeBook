@@ -109,7 +109,7 @@ html, body {
 }
 
 .tillLogo {
-    width: 10vw;
+    width: 13vw;
 }
 
 .button_about, .button_menu, .button_x {
@@ -191,7 +191,7 @@ html, body {
 
 .aboutPage .backToMain {
     position: absolute;
-    bottom: -1vh;
+    bottom: 0vh;
     width: 10vw;
 }
 
@@ -347,13 +347,37 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e8e8e8;
     color: #4c4c4c
 }
 
 #credits img{
     width: 7vw;
     padding-right: 0.3rem;
+}
+
+#contactUs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contactUsText {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #E8E8E8;
+    width: 80vw;
+    padding: 1rem;
+    line-height: 1.7;
+    border-radius: 0.7rem;
+}
+
+#contactUs .sub-titles {
+    padding-top: 0;
 }
 
 

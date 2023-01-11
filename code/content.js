@@ -44,7 +44,7 @@ let PAGES = {
                 mainCourse : ["מנות עיקריות", "black_maincourse"],
                 baking : ["קונדיטוריה", "black_baking"],
             }],
-            learning : ["סוגים 1-5","black_materials", { // תפריט נפתח
+            learning : ["חומר מקצועי בטבחות","black_materials", { // תפריט נפתח
                 subject1 : ["מטבח", "kitchen-black"],
                 subject2 : ["חומרים", "materials-black"],
                 subject3 : ["בשר", "meats-black"],
@@ -60,7 +60,7 @@ let PAGES = {
             videos : ["סרטוני הדרכה","black_videos", { // תפריט נפתח
                 recipe : ["מתכונים", "black_cookbook"],
                 safety : ["בטיחות", "black_protection"],
-                publicHealth : [`בוה"צ`, "black_health"],
+                publicHealth : [`ברה"צ`, "black_health"],
             }],
         }
     },

@@ -258,14 +258,14 @@ const createTopic_learningPage = (currTopic) => {
     for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_learningPage])) {
         let menuDisplay = El("div",{ classes: [`learningContainer`, key]},
             El("div",
-                {attributes: {class: `learningItem ${key}`}}, 
+                {attributes: {class: `learningItem ${key}`},
+                listeners : {click : learningDropDown}}, 
                     El("div", {classes: [`learningItemContainer`,"container", key],}, 
                         addSpace(key)
                     ),
                     El("img",
                         {attributes: {class: `learningItemArrow ${key}`, 
-                        src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`},
-                        listeners : {click : learningDropDown}}),
+                        src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`}}),
             )
         )
         document.querySelector(`.learningScrollContainer`).append(menuDisplay)
@@ -380,14 +380,14 @@ const createTopic_videosPage = (currTopic) => {
     for(let key of Object.keys(PAGES[strCurrentPage].content[strCurrentTopic_videosPage])) {
         let menuDisplay = El("div",{ classes: [`learningContainer`, key]},
             El("div",
-                {attributes: {class: `learningItem ${key}`}}, 
+                {attributes: {class: `learningItem ${key}`},
+                listeners : {click : videoDropDown}}, 
                     El("div", {classes: [`learningItemContainer`,"container", key],}, 
                         addSpace(key)
                     ),
                     El("img",
                         {attributes: {class: `learningItemArrow ${key}`, 
-                        src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`},
-                        listeners : {click : videoDropDown}}),
+                        src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`}}),
             )
         )
         document.querySelector(`.videosScrollContainer`).append(menuDisplay)
@@ -588,7 +588,8 @@ const showMenu = () => {
     for(let key of Object.keys(PAGES.menuPage.content)) {
         let menuDisplay = El("div",{classes: [`menuContainer`, key]},
             El("div",
-            {attributes: {class: `menuItem`}}, 
+            {classes: [`menuItem`, key],
+            listeners : {click : menuDropDown}}, 
                 El("div", {classes: [`menuItemContainer`,"container", key],
                 listeners : {click : showPage}}, 
                     El("img",
@@ -598,8 +599,7 @@ const showMenu = () => {
                 ),
                 El("img",
                     {attributes: {class: `menuItemArrow ${key}`, 
-                    src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`},
-                    listeners : {click : menuDropDown}}),
+                    src : `../assets/images/grapics/menu/dropdown_sideArrow.svg`}}),
                 )
         )
         document.querySelector(`.menuPage`).append(menuDisplay)

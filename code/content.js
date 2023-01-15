@@ -44,7 +44,7 @@ let PAGES = {
                 mainCourse : ["מנות עיקריות", "black_maincourse"],
                 baking : ["קונדיטוריה", "black_baking"],
             }],
-            learning : ["חומר מקצועי בטבחות","black_materials", { // תפריט נפתח
+            learning : ["חומרי לימוד","black_materials", { // תפריט נפתח
                 subject1 : ["מטבח", "kitchen-black"],
                 subject2 : ["חומרים", "materials-black"],
                 subject3 : ["בשר", "meats-black"],
@@ -2577,7 +2577,7 @@ let PAGES = {
             // img_SearchIcon : `search_white.svg`, 
             div_topNavLine : ``,
             img_topNavTextIcon : `white_materials.svg`,
-            div_topNavText_learning : `סוגים 1-5`,
+            div_topNavText_learning : `חומרי לימוד`,
             img_bhdLogo : `בהד 6.png`,
             img_tillLogo : `till_logo_text_white.svg`,
         },

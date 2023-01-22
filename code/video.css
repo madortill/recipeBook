@@ -41,6 +41,10 @@
     border: none;
 }
 
+.מנת-השף {
+    font-weight: 700;
+}
+
 .videosPage .bottomNavBar, .galleryPage .bottomNavBar {
     justify-content: space-evenly;
 } 

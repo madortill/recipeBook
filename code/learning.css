@@ -115,3 +115,7 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
+
+.learningItemContainer.container.מנות-השף {
+    font-weight: 700;
+}

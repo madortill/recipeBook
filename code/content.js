@@ -2469,7 +2469,7 @@ let PAGES = {
         content: {
             recipe : {
                 "מנות-השף": {
-                    "מנת-השף": "JiwhIo65iyU",   
+                    "מנת-השף": "VQEE44jm1I4",   
                 },
                 "סלטים": {
                     "סלט-ביצים": "Y34tvADcHec",   
